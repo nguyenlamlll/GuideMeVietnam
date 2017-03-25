@@ -8,6 +8,50 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Margin="0,25,0,0">
+            <Button x:Name="SearchButton" Content="Search" 
+                    RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" 
+                    Margin="0,0,10,0"  
+                    />
+            <TextBox x:Name="SearchTextBox" 
+                     RelativePanel.LeftOf="SearchButton" RelativePanel.AlignVerticalCenterWithPanel="True" 
+                     Width="100" 
+                     Margin="0,0,10,0" 
+                     />
+            <TextBlock x:Name="SearchTextBlock" 
+                       Text="Search:" 
+                       RelativePanel.LeftOf="SearchTextBox" RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       Margin="0,0,10,0" 
+                       />
+            <TextBlock x:Name="TitleTextBlock"
+                       Text="Title" 
+                       FontSize="36" FontWeight="Bold" 
+                       RelativePanel.AlignLeftWithPanel="True" 
+                       Margin="100,0,0,0" 
+                       />
+        </RelativePanel>
+
+
+        <Border BorderThickness="3" Background="#FFE0E0E0" Grid.Row="2" BorderBrush="#FFD2D2D2">
+            <RelativePanel>
+                <TextBlock Name="ItemsTextBlock" Text="Items:" RelativePanel.AlignLeftWithPanel="True" Margin="10,5,0,5" />
+                <TextBlock Text="10" RelativePanel.RightOf="ItemsTextBlock" Margin="5,5,0,5" />
+
+                <TextBlock  Text="Version:" RelativePanel.LeftOf="VersionTextBlock" Margin="0,5,5,5" />
+                <TextBlock Name="VersionTextBlock" Text="1.0.0"  RelativePanel.AlignRightWithPanel="True" Margin="0,5,10,5" />
+
+                <StackPanel RelativePanel.AlignHorizontalCenterWithPanel="True" Orientation="Horizontal">
+                    <TextBlock Text="User:" Margin="0,5,5,5" />
+                    <TextBlock Text="Bob" Margin="0,5,0,5" />
+                </StackPanel>
+
+            </RelativePanel>
+        </Border>
 
     </Grid>
 </Page>
