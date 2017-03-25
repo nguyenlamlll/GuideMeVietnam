@@ -3,7 +3,7 @@ Guide Me, Vietnam! is a UWP application which is being built by a team of three 
 
 ---------------------------------
 ## Group: "Cà Phê Đắng"
-Member:
+### Member:
 -- Lê Tuấn Khải
 -- Huỳnh Văn Khoa
 -- Lê Trần Nguyên Lam
