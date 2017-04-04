@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Source.Models;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,17 +23,22 @@ namespace Source
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        
+        private List<MenuItem> MenuItems;
         public MainPage()
         {
             this.InitializeComponent();
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
-            SecondFrame.Navigate(typeof(User_Interfaces.BlankPage2));
+          
+            //MenuItems = new List<MenuItem>();
+            MenuItems = MenuItemManager.GetMenuItems();
+           
+            
+        
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -42,7 +48,10 @@ namespace Source
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (FirstFrame.CanGoBack)
+            {
+                FirstFrame.GoBack();
+            }
         }
 
         private void SearchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -57,7 +66,74 @@ namespace Source
 
         private void MenuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //string itemClicked = e.ClickedItem.ToString();
+            //Title.Text = itemClicked;
+            //Button button = sender as Button;
+            //MenuItem item = button.DataContext as MenuItem;
 
+            //ListView listview = sender as ListView;
+            //MenuItem item = listvi as MenuItem;
+            var menuItem = (MenuItem)e.ClickedItem;
+            switch (menuItem.Category)
+            {
+                case MenuItemCategory.Homepage:
+                    {
+                        FirstFrame.Navigate(typeof(User_Interfaces.HomePage));
+                        break;
+                    }
+                case MenuItemCategory.Map:
+                    {
+                        break;
+                    }
+                case MenuItemCategory.About:
+                    {
+                        break;
+                    }
+                case MenuItemCategory.Photos:
+                    {
+                        break;
+                    }
+                case MenuItemCategory.Posts:
+                    {
+                        break;
+                    }
+                case MenuItemCategory.Settings:
+                    {
+                        break;
+                    }
+                default:
+                    {
+                        throw new Exception("Navigation Bar Message Unknown.");
+                    }
+            }
+        }
+
+        private void NavigationButtons_Click(object sender, RoutedEventArgs e)
+        {
+            /*Button button = sender as Button;
+            MenuItem item = button.DataContext as MenuItem;
+            MenuItemCategory Category = item.Category;
+            switch (Category)
+            {
+                case MenuItemCategory.Homepage:
+                    {
+                        FirstFrame.Navigate(typeof(User_Interfaces.HomePage));
+                        break;
+                    }
+                case MenuItemCategory.Map:
+                    {
+                        break;
+                    }
+                case MenuItemCategory.About:
+                    {
+                        break;
+                    }
+                default:
+                    {
+                        throw new Exception("Navigation Bar Message Unknown.");
+                    }
+            }
+            */
         }
     }
 }

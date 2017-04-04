@@ -5,6 +5,7 @@
     xmlns:local="using:Source"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Source.Models"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -34,6 +35,10 @@
                     Width="45"                    
                     Content="&#xE0A6;"
                     />
+            <TextBlock x:Name="Title"
+                       FontSize="25"
+                       RelativePanel.RightOf="BackButton"
+                       Margin="20,0,0,0"/>
             <AutoSuggestBox Name="SearchAutoSuggestBox" 
                             PlaceholderText="Search ..."
                             Width="200"
@@ -49,25 +54,31 @@
                    CompactPaneLength="45" 
                    OpenPaneLength="200">
             <SplitView.Pane>
-                <RelativePanel Margin="0,25,0,0">
-                    <Button x:Name="ButtonHome" 
-                        FontFamily="Segoe MDL2 Assets"
-                        FontSize="25"
-                        Content="&#xE10F;"
-                        Height="45" Width="45"
-                        />
-                    <Button x:Name="ButtonHome2" 
-                            FontFamily="Segoe MDL2 Assets"
-                            FontSize="25"
-                            Content="&#xE14C;"
-                            Height="45" Width="45"
-                            RelativePanel.Below="ButtonHome"
-                        />
-                </RelativePanel>
-                <!--
-                <ListView x:Name="MenuItemsListView" 
+
+               <ListView Name="MenuItemsListView" 
                           IsItemClickEnabled="True" 
-                          ItemClick="MenuItemsListView_ItemClick" />-->
+                          ItemsSource="{x:Bind MenuItems}"
+                          ItemClick="MenuItemsListView_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="data:MenuItem">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="NavigationButtons" 
+                                        Content="{x:Bind IconFile}"
+                                        FontFamily = "Segoe MDL2 Assets"
+                                        Height="35" 
+                                        Width="35"
+                                        Margin="-10,10,0,10" Click="NavigationButtons_Click"
+                                        />
+                                <TextBlock 
+                                    Text="{x:Bind Category}" 
+                                    FontSize="18" 
+                                    Margin="10,0,0,0" 
+                                    VerticalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
             </SplitView.Pane>
 
             <SplitView.Content>
@@ -75,12 +86,12 @@
                     <Grid Margin="20,20,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-
+                       
                         <Frame x:Name="FirstFrame"></Frame>
 
-                        <Frame x:Name="SecondFrame" Grid.Row="1"></Frame>
+                        
 
                     </Grid>
                 </ScrollViewer>
