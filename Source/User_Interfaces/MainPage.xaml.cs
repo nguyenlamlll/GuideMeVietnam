@@ -28,12 +28,12 @@ namespace Source
         {
             this.InitializeComponent();
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
-          
+
             //MenuItems = new List<MenuItem>();
             MenuItems = MenuItemManager.GetMenuItems();
-           
-            
-        
+
+
+
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace Source
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationSplitView.IsPaneOpen = !NavigationSplitView.IsPaneOpen;
+            Splitter.IsPaneOpen = !Splitter.IsPaneOpen;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -110,30 +110,9 @@ namespace Source
 
         private void NavigationButtons_Click(object sender, RoutedEventArgs e)
         {
-            /*Button button = sender as Button;
-            MenuItem item = button.DataContext as MenuItem;
-            MenuItemCategory Category = item.Category;
-            switch (Category)
-            {
-                case MenuItemCategory.Homepage:
-                    {
-                        FirstFrame.Navigate(typeof(User_Interfaces.HomePage));
-                        break;
-                    }
-                case MenuItemCategory.Map:
-                    {
-                        break;
-                    }
-                case MenuItemCategory.About:
-                    {
-                        break;
-                    }
-                default:
-                    {
-                        throw new Exception("Navigation Bar Message Unknown.");
-                    }
-            }
-            */
+            //ItemClickEventArgs eventArg = new ItemClickEventArgs();
+            //MenuItemsListView_ItemClick(this, eventArg);
+           
         }
     }
 }

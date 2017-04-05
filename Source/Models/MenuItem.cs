@@ -10,8 +10,6 @@ namespace Source.Models
     {
         public string IconFile { get; set; }
         public MenuItemCategory Category { get; set; }
-
-      
     }
   
     public enum MenuItemCategory
@@ -36,4 +34,5 @@ namespace Source.Models
             return items;
         }
     }
+   
 }

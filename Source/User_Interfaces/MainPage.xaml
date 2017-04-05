@@ -8,6 +8,7 @@
     xmlns:data="using:Source.Models"
     mc:Ignorable="d">
 
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,8 +16,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-
-        <RelativePanel>
+        <RelativePanel x:Name="HeaderPanel">
             <Button Name="HamburgerButton" 
                     RelativePanel.AlignLeftWithPanel="True" 
                     Click="HamburgerButton_Click"
@@ -49,52 +49,68 @@
                             RelativePanel.AlignRightWithPanel="True" />
         </RelativePanel>
 
-        <SplitView Grid.Row="1" x:Name="NavigationSplitView"
+        <SplitView x:Name="Splitter" Grid.Row="1"
+                   IsPaneOpen="False"
                    DisplayMode="CompactOverlay"
                    CompactPaneLength="45" 
                    OpenPaneLength="200">
             <SplitView.Pane>
-
-               <ListView Name="MenuItemsListView" 
-                          IsItemClickEnabled="True" 
-                          ItemsSource="{x:Bind MenuItems}"
-                          ItemClick="MenuItemsListView_ItemClick">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="data:MenuItem">
-                            <StackPanel Orientation="Horizontal">
-                                <Button x:Name="NavigationButtons" 
-                                        Content="{x:Bind IconFile}"
-                                        FontFamily = "Segoe MDL2 Assets"
-                                        Height="35" 
-                                        Width="35"
-                                        Margin="-10,10,0,10" Click="NavigationButtons_Click"
-                                        />
-                                <TextBlock 
+                <RelativePanel x:Name="NavigationPane">
+                    <ListView Name="MenuItemsListView" 
+                              Width="200"
+                              IsItemClickEnabled="True" 
+                              ItemsSource="{x:Bind MenuItems}"
+                              ItemClick="MenuItemsListView_ItemClick">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:MenuItem">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="NavigationButtons" 
+                                           Text="{x:Bind IconFile}"
+                                           FontFamily = "Segoe MDL2 Assets"
+                                           FontSize="30"
+                                           Height="35" 
+                                           Width="35"
+                                           Margin="-6,12,0,10"
+                                           VerticalAlignment="Center"
+                                           />
+                                    <TextBlock 
                                     Text="{x:Bind Category}" 
                                     FontSize="18" 
                                     Margin="10,0,0,0" 
                                     VerticalAlignment="Center" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackPanel x:Name="FooterPanel">
+
+                    </StackPanel>
+                </RelativePanel>
             </SplitView.Pane>
 
             <SplitView.Content>
-                <ScrollViewer x:Name="MainScrollViewer">
-                    <Grid Margin="20,20,0,0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                       
-                        <Frame x:Name="FirstFrame"></Frame>
+                <RelativePanel>
 
-                        
-
-                    </Grid>
-                </ScrollViewer>
+                    <Frame x:Name="FirstFrame" Margin="0,5,0,0" 
+                               RelativePanel.AlignTopWithPanel="True" 
+                               RelativePanel.Above="FrameStatusBar"
+                               RelativePanel.AlignRightWithPanel="True" 
+                               RelativePanel.AlignLeftWithPanel="True"/>
+                    <StackPanel x:Name="FrameStatusBar" 
+                                RelativePanel.AlignBottomWithPanel="True" 
+                                RelativePanel.AlignRightWithPanel="True" 
+                                RelativePanel.AlignLeftWithPanel="True">
+                        <TextBlock x:Name="StatusLabel" Margin="10,0,0,10" TextWrapping="Wrap" Text="Status:" />
+                        <Border x:Name="StatusBorder" Margin="0,0,0,0">
+                            <ScrollViewer VerticalScrollMode="Auto"  VerticalScrollBarVisibility="Auto" MaxHeight="200">
+                                <TextBlock x:Name="StatusBlock" 
+                                           FontWeight="Bold" 
+                                           Margin="10,10,10,20" 
+                                           TextWrapping="Wrap"/>
+                            </ScrollViewer>
+                        </Border>
+                    </StackPanel>
+                </RelativePanel>
             </SplitView.Content>
         </SplitView>
 
@@ -103,15 +119,14 @@
         <!--A small Status Bar-->
         <Border BorderThickness="3" Background="#FFE0E0E0" Grid.Row="2" BorderBrush="#FFD2D2D2">
             <RelativePanel>
-                <TextBlock Name="ItemsTextBlock" Text="Items:" RelativePanel.AlignLeftWithPanel="True" Margin="10,5,0,5" />
-                <TextBlock Text="10" RelativePanel.RightOf="ItemsTextBlock" Margin="5,5,0,5" />
+                <Image x:Name="Logo" Source="Assets\Images\Saigon.jpg"></Image>
 
                 <TextBlock  Text="Version:" RelativePanel.LeftOf="VersionTextBlock" Margin="0,5,5,5" />
                 <TextBlock Name="VersionTextBlock" Text="1.0.0"  RelativePanel.AlignRightWithPanel="True" Margin="0,5,10,5" />
 
                 <StackPanel RelativePanel.AlignHorizontalCenterWithPanel="True" Orientation="Horizontal">
                     <TextBlock Text="User:" Margin="0,5,5,5" />
-                    <TextBlock Text="Bob" Margin="0,5,0,5" />
+                    <TextBlock Text="Ca Phe Dang" Margin="0,5,0,5" />
                 </StackPanel>
 
             </RelativePanel>
