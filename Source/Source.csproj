@@ -109,6 +109,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User_Interfaces\MapViewPage.xaml.cs">
+      <DependentUpon>MapViewPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -117,7 +120,65 @@
     <None Include="Source_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\push-pin.png" />
     <Content Include="Assets\Images\Cities\Saigon.jpg" />
+    <Content Include="Assets\Images\Provinces\DaLat\dalat.jpg" />
+    <Content Include="Assets\Images\Provinces\DaLat\dalat2.gif" />
+    <Content Include="Assets\Images\Provinces\DaNang\danang.jpg" />
+    <Content Include="Assets\Images\Provinces\HaGiang\hagiang1.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_CauGiay\caugiay1.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_CauGiay\caugiay2.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda1.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda2.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda3.JPG" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda4.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda5.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\DSC_0010-1038x576.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\DSC_0125-1038x576.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\IMG_0077-1038x576.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\IMG_0361-1038x576.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\IMG_0508-683x1024.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh1.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh2.JPG" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh3.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh4.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh5.JPG" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh6.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh7.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho1.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho2.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho3.JPG" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho4.JPG" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho5.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho6.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi\hanoi.jpg" />
+    <Content Include="Assets\Images\Provinces\Hue\hue.jpg" />
+    <Content Include="Assets\Images\Provinces\KhanhHoa\khanhhoa.jpg" />
+    <Content Include="Assets\Images\Provinces\NamDinh\namdinh.jpg" />
+    <Content Include="Assets\Images\Provinces\NinhBinh\ninhbinh1.jpeg" />
+    <Content Include="Assets\Images\Provinces\PhuYen\phuyen.jpg" />
+    <Content Include="Assets\Images\Provinces\QuangNgai\quangngai.jpg" />
+    <Content Include="Assets\Images\Provinces\QuangNinh\quangninh1.jpeg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_10\quan10.JPG" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.1.JPG" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.3.JPG" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.4.JPG" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_3\quan3.1.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_3\quan3.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_4\quan4.JPG" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_5\quan5.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_BinhThanh\binhthanh.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_CuChi\cuchi.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_PhuNhuan\phunhuan.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_PhuNhuan\phunhuan1.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_PhuNhuan\phunhuan2.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_TanBinh\tanbinh.jpg" />
+    <Content Include="Assets\Images\Provinces\SaiGon\saigon.jpg" />
+    <Content Include="Assets\Images\Provinces\SaPa\sapa1.jpg" />
+    <Content Include="Assets\Images\Provinces\SaPa\sapa2.jpg" />
+    <Content Include="Assets\Images\Provinces\SaPa\sapa3.jpg" />
+    <Content Include="Assets\Images\Provinces\VungTau\VungTau.jpg" />
     <Content Include="Assets\Images\Vietnam_BlankMap.gif" />
     <Content Include="Assets\Images\Vietnam_Map.gif" />
     <Content Include="Properties\Default.rd.xml" />
@@ -150,11 +211,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="User_Interfaces\MapViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Audio\" />
-    <Folder Include="Assets\Icons\" />
     <Folder Include="Assets\Images\Locations\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

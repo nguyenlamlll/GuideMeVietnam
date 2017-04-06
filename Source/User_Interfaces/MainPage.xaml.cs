@@ -83,6 +83,7 @@ namespace Source
                     }
                 case MenuItemCategory.Map:
                     {
+                        FirstFrame.Navigate(typeof(User_Interfaces.MapViewPage));
                         break;
                     }
                 case MenuItemCategory.About:
