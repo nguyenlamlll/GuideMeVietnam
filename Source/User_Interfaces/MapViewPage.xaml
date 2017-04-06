@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="Source.User_Interfaces.MapViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Source.User_Interfaces"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12,20,12,12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RelativePanel>
+                <StackPanel Margin="0,0,0,10"
+                            RelativePanel.AlignLeftWithPanel="True"
+                            RelativePanel.AlignVerticalCenterWithPanel="True">
+                    <TextBlock x:Name="description" 
+                           Text="Mapview"
+                           FontSize="25"/>
+                    <TextBlock TextWrapping="Wrap" FontStyle="Italic">
+                    Use your mouse to move and scrollwheel to zoom in or out.
+                    </TextBlock>
+                </StackPanel>
+                <HyperlinkButton x:Name="BingMapsTOU"
+                                 RelativePanel.AlignRightWithPanel="True"
+                                 RelativePanel.AlignBottomWithPanel="True"
+                                 NavigateUri="https://www.microsoft.com/maps/assets/docs/terms.aspx" Content="Terms of Use"/>
+            </RelativePanel>
+            
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Image x:Name="PinImage" 
+                       Width="30" Height="30"
+                       Source="ms-appx:///Assets/Icons/push-pin.png" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+                <Button x:Name="addXamlChildrenButton" 
+                        Content="Add A Pin On The Map" 
+                        Click="addXamlChildrenButton_Click"/>
+            </StackPanel>
+
+            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2">
+                <maps:MapItemsControl x:Name="MapItems">
+                    <maps:MapItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button x:Name="mapItemButton" Click="mapItemButton_Click" Background="Transparent">
+                                <StackPanel>
+                                    <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                        <TextBlock Text="{Binding DisplayName}"/>
+                                    </Border>
+                                    <Image Source="{Binding ImageSourceUri}"
+                                               maps:MapControl.NormalizedAnchorPoint="{Binding NormalizedAnchorPoint}"
+                                               maps:MapControl.Location="{Binding Location}">
+                                        <Image.Transitions>
+                                            <TransitionCollection>
+                                                <EntranceThemeTransition/>
+                                            </TransitionCollection>
+                                        </Image.Transitions>
+                                    </Image>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </maps:MapItemsControl.ItemTemplate>
+                </maps:MapItemsControl>
+            </maps:MapControl>
+        </Grid>
+    </Grid>
+</Page>
