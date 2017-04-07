@@ -95,6 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\EnumTypes\ProvincesEnum.cs" />
+    <Compile Include="Models\FeaturedImage.cs" />
+    <Compile Include="Models\FeaturedImageManager.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="User_Interfaces\BlankPage1.xaml.cs">
       <DependentUpon>BlankPage1.xaml</DependentUpon>

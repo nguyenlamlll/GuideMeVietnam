@@ -15,16 +15,59 @@
         </ResourceDictionary>
     </Page.Resources>
     
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="Title" Style="{StaticResource ArticleTitleStyle}">HomePage</TextBlock>
-        <RelativePanel>
-            
-            
+        <TextBlock x:Name="Title" 
+                   Style="{StaticResource ArticleTitleStyle}">
+            HomePage
+        </TextBlock>
+        <RelativePanel Grid.Row="1">
+            <ScrollViewer x:Name="FeaturedImagesScrollViewer"
+                          RelativePanel.AlignHorizontalCenterWithPanel="True">
+
+                <RelativePanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="FeaturedImage1" 
+                               RelativePanel.AlignRightWithPanel="True" 
+                               Style="{StaticResource ImageStyle}" 
+                               Source="ms-appx:///Assets/Images/Provinces/HaNoi/District_TayHo/tayho4.JPG"/>
+                        <Image x:Name="FeaturedImage2" 
+                               RelativePanel.RightOf="FeaturedImage1" 
+                               Style="{StaticResource ImageStyle}" 
+                               Source="ms-appx:///Assets/Images/Provinces/HaNoi/hanoi.jpg"/>
+                        <Image x:Name="FeaturedImage3" 
+                               RelativePanel.RightOf="FeaturedImage2" 
+                               Style="{StaticResource ImageStyle}" 
+                               Source="ms-appx:///Assets/Images/Provinces/SaiGon/Dictrict_1/quan1.jpg" 
+                               />
+                    </StackPanel>
+                    
+                </RelativePanel>
+
+            </ScrollViewer>
+           <!--
+            <TextBlock x:Name="Content" 
+                       Style="{StaticResource ArticleSubtitleStyle}">
+                Vietnam is an amazing maze. Complex, unique but majestic.
+            </TextBlock>
+            <RichTextBlock RelativePanel.Below="Content"
+                           TextWrapping="Wrap"
+                           Style="{StaticResource ArticleRichTextBlockStyle}"
+                           Margin="150,20,0,0">
+                <Paragraph>
+                    This is some sample text to show the wrapping behavior. 
+                    This is some sample text to show the wrapping behavior.
+                </Paragraph>
+                <Paragraph>
+                    This is some sample text to show the wrapping behavior.
+                     This is some sample text to show the wrapping behavior.
+                </Paragraph>
+            </RichTextBlock>
+            -->
         </RelativePanel>
         
     </Grid>

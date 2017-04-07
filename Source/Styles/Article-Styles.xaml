@@ -3,13 +3,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Source.Styles">
 
-    <Style x:Key="ArticleTitleStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="40"/>
+    <Style x:Key="ArticleTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TitleTextBlockStyle}">
+        <Setter Property="FontSize" Value="42"/>
+        <Setter Property="FontFamily" Value="Poiret One"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="50,25,0,0"/>
+    </Style>
+    <Style x:Key="ArticleSubtitleStyle" TargetType="TextBlock" BasedOn="{StaticResource SubtitleTextBlockStyle}">
+        <Setter Property="FontSize" Value="35"/>
         <Setter Property="FontFamily" Value="Poiret One"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="50,25,0,0"/>
     </Style>
-    <Style x:Key="BodyTextStyle" TargetType="TextBlock">
+    <Style x:Key="BodyTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BodyTextBlockStyle}">
         <Setter Property="FontSize" Value="29"/>
     </Style>
+    <Style x:Key="ArticleRichTextBlockStyle" TargetType="RichTextBlock" BasedOn="{StaticResource BodyRichTextBlockStyle}">
+        
+    </Style>
+    <Style x:Key="ImageStyle" TargetType="Image">
+        <Setter Property="Width" Value="500"/>
+        <Setter Property="Height" Value="350"/>
+        <Setter Property="Margin" Value="20, 20, 20, 20"/>
+    </Style>
+    
 </ResourceDictionary>
