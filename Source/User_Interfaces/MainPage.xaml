@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:Source.Models"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <SolidColorBrush x:Key="AccentColor" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="AltHighColor" Color="{ThemeResource SystemAltHighColor}"/>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -55,7 +58,7 @@
                    CompactPaneLength="45" 
                    OpenPaneLength="200">
             <SplitView.Pane>
-                <RelativePanel x:Name="NavigationPane">
+                <RelativePanel x:Name="NavigationPane" Background="{ThemeResource AccentColor}">
                     <ListView Name="MenuItemsListView" 
                               Width="200"
                               IsItemClickEnabled="True" 
@@ -65,19 +68,19 @@
                             <DataTemplate x:DataType="data:MenuItem">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock x:Name="NavigationButtons" 
-                                           Text="{x:Bind IconFile}"
-                                           FontFamily = "Segoe MDL2 Assets"
-                                           FontSize="30"
-                                           Height="35" 
-                                           Width="35"
-                                           Margin="-6,12,0,10"
-                                           VerticalAlignment="Center"
-                                           />
-                                    <TextBlock 
-                                    Text="{x:Bind Category}" 
-                                    FontSize="18" 
-                                    Margin="10,0,0,0" 
-                                    VerticalAlignment="Center" />
+                                               Text="{x:Bind IconFile}"
+                                               FontFamily = "Segoe MDL2 Assets"
+                                               FontSize="30"
+                                               Height="35" 
+                                               Width="35"
+                                               Margin="-6,12,0,10"
+                                               VerticalAlignment="Center"
+                                               Foreground="{ThemeResource AltHighColor}"/>
+                                    <TextBlock Text="{x:Bind Category}" 
+                                               FontSize="18" 
+                                               Margin="10,0,0,0" 
+                                               VerticalAlignment="Center"
+                                               Foreground="{ThemeResource AltHighColor}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -116,7 +119,7 @@
 
 
         <!--A small Status Bar-->
-        <Border BorderThickness="3" Background="#FFE0E0E0" Grid.Row="2" BorderBrush="#FFD2D2D2">
+        <Border BorderThickness="3" Background="{ThemeResource AccentColor}" Grid.Row="2" BorderBrush="#FFD2D2D2">
             <RelativePanel>
                 <Image x:Name="Logo" Source="Assets\Images\Saigon.jpg"></Image>
 
