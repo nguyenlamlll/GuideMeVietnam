@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Source.Models;
+using Source.Models.EnumTypes;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +25,14 @@ namespace Source.User_Interfaces
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        private ObservableCollection<FeaturedImage> FeaturedImages;
         public HomePage()
         {
             this.InitializeComponent();
+
+            // Initialize FeaturedImages
+            FeaturedImages = new ObservableCollection<FeaturedImage>();
+            FeaturedImageManager.GetAllFeaturedImages(FeaturedImages);
         }
     }
    

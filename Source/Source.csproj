@@ -158,7 +158,7 @@
     <Content Include="Assets\Images\Provinces\Hue\hue.jpg" />
     <Content Include="Assets\Images\Provinces\KhanhHoa\khanhhoa.jpg" />
     <Content Include="Assets\Images\Provinces\NamDinh\namdinh.jpg" />
-    <Content Include="Assets\Images\Provinces\NinhBinh\ninhbinh1.jpeg" />
+    <Content Include="Assets\Images\Provinces\NinhBinh\ninhbinh.jpg" />
     <Content Include="Assets\Images\Provinces\PhuYen\phuyen.jpg" />
     <Content Include="Assets\Images\Provinces\QuangNgai\quangngai.jpg" />
     <Content Include="Assets\Images\Provinces\QuangNinh\quangninh1.jpeg" />
@@ -199,6 +199,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Styles\Article-Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Styles\ImageDisplayStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
