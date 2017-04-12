@@ -47,6 +47,6 @@ namespace Source.User_Interfaces
 
             var dialog = new MessageDialog("Pin Added!");
             await dialog.ShowAsync();
-        }
+        }  
     }
 }
