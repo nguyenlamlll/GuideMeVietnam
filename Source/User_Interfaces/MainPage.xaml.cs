@@ -35,10 +35,24 @@ namespace Source
 
 
         }
+        /// <summary>
+        /// Disable Mainpage's search box.
+        /// </summary>
+        public void DisableSearchBox()
+        {
+            SearchAutoSuggestBox.Visibility = Visibility.Collapsed;
+        }
+        /// <summary>
+        /// Enable Mainpage's search box
+        /// </summary>
+        public void EnableSearchBox()
+        {
+            SearchAutoSuggestBox.Visibility = Visibility.Visible;
+        }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -78,28 +92,34 @@ namespace Source
             {
                 case MenuItemCategory.Homepage:
                     {
+                        this.EnableSearchBox();
                         FirstFrame.Navigate(typeof(User_Interfaces.HomePage));
                         break;
                     }
                 case MenuItemCategory.Map:
                     {
+                        this.DisableSearchBox(); //MapViewPage has its own Search Box for places, addresses.
                         FirstFrame.Navigate(typeof(User_Interfaces.MapViewPage));
                         break;
                     }
                 case MenuItemCategory.About:
                     {
+                        this.EnableSearchBox();
                         break;
                     }
                 case MenuItemCategory.Photos:
                     {
+                        this.EnableSearchBox();
                         break;
                     }
                 case MenuItemCategory.Posts:
                     {
+                        this.EnableSearchBox();
                         break;
                     }
                 case MenuItemCategory.Settings:
                     {
+                        this.EnableSearchBox();
                         break;
                     }
                 default:

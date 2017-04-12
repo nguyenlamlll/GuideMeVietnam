@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Services.Maps;
+using Windows.Devices.Geolocation;
+using Source.Maps;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,7 +33,8 @@ namespace Source.User_Interfaces
         }
         private void MyMap_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            myMap.Center = DefinedGeopoints.DaNangGeoPoint;
+            myMap.ZoomLevel = 20;
         }
         private void addXamlChildrenButton_Click(object sender, RoutedEventArgs e)
         {
@@ -47,6 +51,12 @@ namespace Source.User_Interfaces
 
             var dialog = new MessageDialog("Pin Added!");
             await dialog.ShowAsync();
-        }  
+        }
+
+        private void DownloadMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            MapManager.ShowDownloadedMapsUI();
+        }
+
     }
 }
