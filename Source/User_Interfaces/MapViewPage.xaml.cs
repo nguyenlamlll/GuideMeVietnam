@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Services.Maps;
 using Windows.Devices.Geolocation;
 using Source.Maps;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,7 +35,7 @@ namespace Source.User_Interfaces
         private void MyMap_Loaded(object sender, RoutedEventArgs e)
         {
             myMap.Center = DefinedGeopoints.DaNangGeoPoint;
-            myMap.ZoomLevel = 20;
+            myMap.ZoomLevel = 6;
         }
         private void addXamlChildrenButton_Click(object sender, RoutedEventArgs e)
         {
@@ -46,11 +47,12 @@ namespace Source.User_Interfaces
 
         }
 
-        private async void PinImage_Tapped(object sender, TappedRoutedEventArgs e)
+        private void PinImage_Tapped(object sender, TappedRoutedEventArgs e)
         {
 
-            var dialog = new MessageDialog("Pin Added!");
-            await dialog.ShowAsync();
+            //var dialog = new MessageDialog("Pin Added!");
+            //await dialog.ShowAsync();
+
         }
 
         private void DownloadMapButton_Click(object sender, RoutedEventArgs e)
@@ -58,5 +60,26 @@ namespace Source.User_Interfaces
             MapManager.ShowDownloadedMapsUI();
         }
 
+        private void MapSearchSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+
+        }
+
+        private void MapSearchSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+
+        }
+
+        private async void MapSearchSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, sender.Text);
+            if (result != null)
+            {
+                myMap.Center = result;
+                myMap.ZoomLevel = 14;
+            }
+            sender.Text = "";
+            //Place a MapIcon at result.
+        }
     }
 }

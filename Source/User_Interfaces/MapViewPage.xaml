@@ -40,10 +40,13 @@
                                  NavigateUri="https://www.microsoft.com/maps/assets/docs/terms.aspx" Content="Terms of Use"/>
                 <AutoSuggestBox x:Name="MapSearchSuggestBox"
                                 PlaceholderText="Search for a place..."
-                                Width="200"
+                                Width="250"
                                 QueryIcon="Find"
                                 RelativePanel.AlignRightWithPanel="True"
-                                RelativePanel.AlignTopWithPanel="True"/>
+                                RelativePanel.AlignTopWithPanel="True"
+                                TextChanged="MapSearchSuggestBox_TextChanged"
+                                SuggestionChosen="MapSearchSuggestBox_SuggestionChosen"
+                                QuerySubmitted="MapSearchSuggestBox_QuerySubmitted"/>
             </RelativePanel>
             
 
