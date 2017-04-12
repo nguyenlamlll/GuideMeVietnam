@@ -21,19 +21,23 @@
 
         <RelativePanel x:Name="HeaderPanel">
             <Button Name="HamburgerButton" 
+                    Background="{ThemeResource AccentColor}"
                     RelativePanel.AlignLeftWithPanel="True" 
                     Click="HamburgerButton_Click"
                     FontFamily="Segoe MDL2 Assets" 
                     FontSize="20"
+                    Foreground="{ThemeResource AltHighColor}"
                     Height="45"
                     Width="45"
                     Content="&#xE700;"/>
 
             <Button Name="BackButton" 
+                    Background="{ThemeResource AccentColor}"
                     RelativePanel.RightOf="HamburgerButton"
                     Click="BackButton_Click"
                     FontFamily="Segoe MDL2 Assets"
                     FontSize="20"
+                    Foreground="{ThemeResource AltHighColor}"
                     Height="45"
                     Width="45"                    
                     Content="&#xE0A6;"
