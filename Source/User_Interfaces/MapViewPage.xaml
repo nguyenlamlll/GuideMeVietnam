@@ -41,16 +41,23 @@
             </RelativePanel>
             
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <RelativePanel Grid.Row="1">
                 <Image x:Name="PinImage" 
                        Width="30" Height="30"
                        Source="ms-appx:///Assets/Icons/push-pin.png" 
                        HorizontalAlignment="Center" 
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Tapped="PinImage_Tapped"/>
                 <Button x:Name="addXamlChildrenButton" 
                         Content="Add A Pin On The Map" 
+                        RelativePanel.RightOf="PinImage"
                         Click="addXamlChildrenButton_Click"/>
-            </StackPanel>
+                <Button x:Name="DownloadMapButton" 
+                        Content="Downloaded Maps" 
+                        HorizontalAlignment="Right"
+                        RelativePanel.AlignRightWithPanel="True"/>
+            </RelativePanel>
 
             <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2">
                 <maps:MapItemsControl x:Name="MapItems">

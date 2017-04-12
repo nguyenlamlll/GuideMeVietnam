@@ -105,6 +105,9 @@
     <Compile Include="User_Interfaces\BlankPage2.xaml.cs">
       <DependentUpon>BlankPage2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interfaces\DownloadedMap.xaml.cs">
+      <DependentUpon>DownloadedMap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User_Interfaces\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -213,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User_Interfaces\BlankPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\DownloadedMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
