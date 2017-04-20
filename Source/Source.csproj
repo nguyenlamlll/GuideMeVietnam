@@ -128,7 +128,9 @@
     <None Include="Source_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\add.png" />
     <Content Include="Assets\Icons\push-pin.png" />
+    <Content Include="Assets\Icons\substract.png" />
     <Content Include="Assets\Images\Cities\Saigon.jpg" />
     <Content Include="Assets\Images\Provinces\DaLat\dalat.jpg" />
     <Content Include="Assets\Images\Provinces\DaLat\dalat2.gif" />

@@ -9,6 +9,9 @@ using Windows.UI.Popups;
 
 namespace Source.Maps
 {
+    /// <summary>
+    /// Provide geographical coordinates corresponding to a location, and vice versa.
+    /// </summary>
     public static class GeoCoding
     {
         /// <summary>

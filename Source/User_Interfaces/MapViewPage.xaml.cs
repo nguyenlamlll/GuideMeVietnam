@@ -17,6 +17,7 @@ using Windows.Services.Maps;
 using Windows.Devices.Geolocation;
 using Source.Maps;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls.Maps;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -49,6 +50,22 @@ namespace Source.User_Interfaces
 
         private void PinImage_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            // Specify a known location.
+            Geopoint snPoint = DefinedGeopoints.RedRiverGeoPoint;
+
+            // Create a MapIcon.
+            MapIcon mapIcon1 = new MapIcon();
+            mapIcon1.Location = snPoint;
+            mapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
+            mapIcon1.Title = "Space Needle";
+            mapIcon1.ZIndex = 0;
+
+            // Add the MapIcon to the map.
+            myMap.MapElements.Add(mapIcon1);
+
+            // Center the map over the POI.
+            myMap.Center = snPoint;
+            myMap.ZoomLevel = 14;
 
             //var dialog = new MessageDialog("Pin Added!");
             //await dialog.ShowAsync();
@@ -80,6 +97,17 @@ namespace Source.User_Interfaces
             }
             sender.Text = "";
             //Place a MapIcon at result.
+        }
+
+
+        private void ZoomInButton_Click(object sender, RoutedEventArgs e)
+        {
+            myMap.ZoomLevel += 0.5;
+        }
+
+        private void ZoomOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            myMap.ZoomLevel -=0.5;
         }
     }
 }

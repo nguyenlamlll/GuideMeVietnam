@@ -29,7 +29,7 @@
                             RelativePanel.AlignVerticalCenterWithPanel="True">
                     <TextBlock x:Name="description" 
                            Text="Mapview"
-                           FontSize="25"/>
+                           FontSize="30"/>
                     <TextBlock TextWrapping="Wrap" FontStyle="Italic">
                     Use your mouse to move and scrollwheel to zoom in or out.
                     </TextBlock>
@@ -92,6 +92,30 @@
                     </maps:MapItemsControl.ItemTemplate>
                 </maps:MapItemsControl>
             </maps:MapControl>
+
+            <StackPanel x:Name="MapButtonsStackPanel" 
+                        Background="{ThemeResource ButtonBackground}" 
+                        Opacity="60"
+                        Orientation="Vertical"
+                        Grid.Row="2"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="40">
+                <Button x:Name="ZoomInButton" 
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="20"
+                        Content="&#xE109;"
+                        HorizontalAlignment="Center"
+                        Click="ZoomInButton_Click">
+                </Button>
+                <Button x:Name="ZoomOutButton" 
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="20"
+                        Content="&#xE108;"
+                        HorizontalAlignment="Center"
+                        Click="ZoomOutButton_Click">
+                </Button>
+            </StackPanel>
         </Grid>
         
     </Grid>
