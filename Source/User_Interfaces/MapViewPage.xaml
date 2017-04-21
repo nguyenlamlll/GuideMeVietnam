@@ -68,7 +68,7 @@
                         RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" Click="DownloadMapButton_Click"/>
             </RelativePanel>
 
-            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2">
+            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2" PointerPressed="myMap_PointerPressed" MapTapped="myMap_MapTapped" MapRightTapped="myMap_MapRightTapped">
                 <maps:MapItemsControl x:Name="MapItems">
                     <maps:MapItemsControl.ItemTemplate>
                         <DataTemplate>

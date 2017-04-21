@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Maps\DefinedGeopoints.cs" />
     <Compile Include="Maps\GeoCoding.cs" />
+    <Compile Include="Maps\ApplicationMapManager.cs" />
     <Compile Include="Models\EnumTypes\ProvincesEnum.cs" />
     <Compile Include="Models\FeaturedImage.cs" />
     <Compile Include="Models\FeaturedImageManager.cs" />
@@ -129,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\add.png" />
+    <Content Include="Assets\Icons\push-pin-64.png" />
     <Content Include="Assets\Icons\push-pin.png" />
     <Content Include="Assets\Icons\substract.png" />
     <Content Include="Assets\Images\Cities\Saigon.jpg" />

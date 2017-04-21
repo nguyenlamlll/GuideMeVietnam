@@ -18,6 +18,7 @@ using Windows.Devices.Geolocation;
 using Source.Maps;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls.Maps;
+using Windows.Storage.Streams;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,8 +32,17 @@ namespace Source.User_Interfaces
         public MapViewPage()
         {
             this.InitializeComponent();
+
+            //Default Map Service Token given by Bing Map API. 
+            //DO NOT ADJUST!!!
             myMap.MapServiceToken = "hFGoiz2f7LfL3WGcHktx~3PNh4h7P9rbooQhDYm1P6g~AgQEVrfjHiWpJwYbSuW-65CUw_RRyCUTexdBwAJsxsRJ5bUTSQsQYRtD7TiHUZXv";
+
+          
         }
+
+        /// <summary>
+        /// Load default settings when the map is first loaded.
+        /// </summary>
         private void MyMap_Loaded(object sender, RoutedEventArgs e)
         {
             myMap.Center = DefinedGeopoints.DaNangGeoPoint;
@@ -50,28 +60,15 @@ namespace Source.User_Interfaces
 
         private void PinImage_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            // Specify a known location.
-            Geopoint snPoint = DefinedGeopoints.RedRiverGeoPoint;
-
-            // Create a MapIcon.
-            MapIcon mapIcon1 = new MapIcon();
-            mapIcon1.Location = snPoint;
-            mapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
-            mapIcon1.Title = "Space Needle";
-            mapIcon1.ZIndex = 0;
-
-            // Add the MapIcon to the map.
-            myMap.MapElements.Add(mapIcon1);
-
-            // Center the map over the POI.
-            myMap.Center = snPoint;
-            myMap.ZoomLevel = 14;
 
             //var dialog = new MessageDialog("Pin Added!");
             //await dialog.ShowAsync();
 
         }
 
+        /// <summary>
+        /// Check Downloaded Maps in Windows Settings.
+        /// </summary>
         private void DownloadMapButton_Click(object sender, RoutedEventArgs e)
         {
             MapManager.ShowDownloadedMapsUI();
@@ -99,15 +96,50 @@ namespace Source.User_Interfaces
             //Place a MapIcon at result.
         }
 
-
+        /// <summary>
+        /// Used to zoom in (see more details) when using the map.
+        /// </summary>
         private void ZoomInButton_Click(object sender, RoutedEventArgs e)
         {
             myMap.ZoomLevel += 0.5;
         }
 
+        /// <summary>
+        /// Used to zoom out (see less details) when using the map.
+        /// </summary>
         private void ZoomOutButton_Click(object sender, RoutedEventArgs e)
         {
             myMap.ZoomLevel -=0.5;
+        }
+
+        private async void myMap_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            /*
+            Bing.Maps.Location l = new Bing.Maps.Location();
+            this.MyMap.TryPixelToLocation(e.GetCurrentPoint(this.MyMap).Position, out l);
+            Bing.Maps.Pushpin pushpin = new Bing.Maps.Pushpin();
+            pushpin.SetValue(Bing.Maps.MapLayer.PositionProperty, l);
+            this.MyMap.Children.Add(pushpin);
+            */
+            string pointer = e.Pointer.ToString();
+            var dialog = new MessageDialog("Pin Added!" + pointer);
+            await dialog.ShowAsync();
+            
+        }
+
+        private void myMap_MapTapped(MapControl sender, MapInputEventArgs args)
+        {
+            Geopoint location = args.Location;
+            ApplicationMapManager.AddStaticMapIcon(myMap, location);
+
+        }
+
+        /// <summary>
+        /// Show a menu
+        /// </summary>
+        private void myMap_MapRightTapped(MapControl sender, MapRightTappedEventArgs args)
+        {
+            
         }
     }
 }
