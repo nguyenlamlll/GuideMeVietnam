@@ -41,5 +41,39 @@ namespace Source.Maps
             // Center the map over the POI.
             myMap.Center = location;
         }
+
+
+        /// <summary>
+        /// Increase ZoomLevel of a MapControl.
+        /// </summary>
+        /// <param name="myMap">The map to be set ZoomLevel.</param>
+        /// <param name="level">The increasing amount of ZoomLevel.</param>
+        /// <returns></returns>
+        public static bool ZoomIn(MapControl myMap, double level)
+        {
+            try
+            {
+                myMap.ZoomLevel += level;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog(ex.ToString());
+            }
+            return false;
+        }
+
+        public static bool ZoomOut(MapControl myMap, double level)
+        {
+            try
+            {
+                myMap.ZoomLevel -= level;
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog(ex.ToString());
+            }
+            return false;
+        }
     }
 }

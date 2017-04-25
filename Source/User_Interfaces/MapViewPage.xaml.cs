@@ -101,7 +101,7 @@ namespace Source.User_Interfaces
         /// </summary>
         private void ZoomInButton_Click(object sender, RoutedEventArgs e)
         {
-            myMap.ZoomLevel += 0.5;
+            ApplicationMapManager.ZoomIn(myMap, 0.5);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Source.User_Interfaces
         /// </summary>
         private void ZoomOutButton_Click(object sender, RoutedEventArgs e)
         {
-            myMap.ZoomLevel -=0.5;
+            ApplicationMapManager.ZoomOut(myMap, 0.5);
         }
 
         private async void myMap_PointerPressed(object sender, PointerRoutedEventArgs e)
@@ -135,7 +135,7 @@ namespace Source.User_Interfaces
         }
 
         /// <summary>
-        /// Show a menu
+        /// Show a context menu when Right Click/Tap on the map
         /// </summary>
         private void myMap_MapRightTapped(MapControl sender, MapRightTappedEventArgs args)
         {

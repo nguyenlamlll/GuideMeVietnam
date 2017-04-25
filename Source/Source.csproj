@@ -121,6 +121,8 @@
     <Compile Include="User_Interfaces\MapViewPage.xaml.cs">
       <DependentUpon>MapViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Dialog.cs" />
+    <Compile Include="Utilities\DialogEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
