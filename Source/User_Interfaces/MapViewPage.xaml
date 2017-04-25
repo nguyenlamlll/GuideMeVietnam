@@ -91,6 +91,14 @@
                         </DataTemplate>
                     </maps:MapItemsControl.ItemTemplate>
                 </maps:MapItemsControl>
+                <FlyoutBase.AttachedFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:Name="FromDirection_MenuFlyoutItem" Text="Direction from here"/>
+                        <MenuFlyoutItem x:Name="ToDirection_MenuFlyoutItem" Text="Direction to here"/>
+                        <MenuFlyoutSeparator/>
+                        <MenuFlyoutItem x:Name="PinDrop_MenuFlyoutItem" Text="Drop a pin" Click="PinDrop_MenuFlyoutItem_Click"/>
+                    </MenuFlyout>
+                </FlyoutBase.AttachedFlyout>
             </maps:MapControl>
 
             <StackPanel x:Name="MapButtonsStackPanel" 

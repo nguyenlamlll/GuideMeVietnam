@@ -37,7 +37,7 @@ namespace Source.User_Interfaces
             //DO NOT ADJUST!!!
             myMap.MapServiceToken = "hFGoiz2f7LfL3WGcHktx~3PNh4h7P9rbooQhDYm1P6g~AgQEVrfjHiWpJwYbSuW-65CUw_RRyCUTexdBwAJsxsRJ5bUTSQsQYRtD7TiHUZXv";
 
-          
+
         }
 
         /// <summary>
@@ -121,16 +121,16 @@ namespace Source.User_Interfaces
             pushpin.SetValue(Bing.Maps.MapLayer.PositionProperty, l);
             this.MyMap.Children.Add(pushpin);
             */
-            string pointer = e.Pointer.ToString();
-            var dialog = new MessageDialog("Pin Added!" + pointer);
-            await dialog.ShowAsync();
-            
+            //string pointer = e.Pointer.ToString();
+            //var dialog = new MessageDialog("Pin Added!" + pointer);
+            //await dialog.ShowAsync();
+
         }
 
         private void myMap_MapTapped(MapControl sender, MapInputEventArgs args)
         {
-            Geopoint location = args.Location;
-            ApplicationMapManager.AddStaticMapIcon(myMap, location);
+            //Geopoint location = args.Location;
+            //ApplicationMapManager.AddStaticMapIcon(myMap, location);
 
         }
 
@@ -139,7 +139,16 @@ namespace Source.User_Interfaces
         /// </summary>
         private void myMap_MapRightTapped(MapControl sender, MapRightTappedEventArgs args)
         {
-            
+            var attachedFlyout = (MenuFlyout)FlyoutBase.GetAttachedFlyout(myMap);
+            attachedFlyout.ShowAt((UIElement)myMap, args.Position);
+            tappedLocation = args.Location;
+        }
+
+        private Geopoint tappedLocation = null;
+
+        private void PinDrop_MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationMapManager.AddStaticMapIcon(myMap, tappedLocation);
         }
     }
 }
