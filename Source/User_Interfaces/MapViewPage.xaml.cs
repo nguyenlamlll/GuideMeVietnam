@@ -112,20 +112,7 @@ namespace Source.User_Interfaces
             ApplicationMapManager.ZoomOut(myMap, 0.5);
         }
 
-        private async void myMap_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            /*
-            Bing.Maps.Location l = new Bing.Maps.Location();
-            this.MyMap.TryPixelToLocation(e.GetCurrentPoint(this.MyMap).Position, out l);
-            Bing.Maps.Pushpin pushpin = new Bing.Maps.Pushpin();
-            pushpin.SetValue(Bing.Maps.MapLayer.PositionProperty, l);
-            this.MyMap.Children.Add(pushpin);
-            */
-            //string pointer = e.Pointer.ToString();
-            //var dialog = new MessageDialog("Pin Added!" + pointer);
-            //await dialog.ShowAsync();
 
-        }
 
         private void myMap_MapTapped(MapControl sender, MapInputEventArgs args)
         {

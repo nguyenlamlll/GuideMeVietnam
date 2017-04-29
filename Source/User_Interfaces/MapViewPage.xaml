@@ -27,10 +27,10 @@
                 <StackPanel Margin="0,0,0,10"
                             RelativePanel.AlignLeftWithPanel="True"
                             RelativePanel.AlignVerticalCenterWithPanel="True">
-                    <TextBlock x:Name="description" 
+                    <TextBlock x:Name="description" Visibility="Collapsed"
                            Text="Mapview"
                            FontSize="30"/>
-                    <TextBlock TextWrapping="Wrap" FontStyle="Italic">
+                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Visibility="Collapsed">
                     Use your mouse to move and scrollwheel to zoom in or out.
                     </TextBlock>
                 </StackPanel>
@@ -44,6 +44,7 @@
                                 QueryIcon="Find"
                                 RelativePanel.AlignRightWithPanel="True"
                                 RelativePanel.AlignTopWithPanel="True"
+                                RelativePanel.Above="BingMapsTOU"
                                 TextChanged="MapSearchSuggestBox_TextChanged"
                                 SuggestionChosen="MapSearchSuggestBox_SuggestionChosen"
                                 QuerySubmitted="MapSearchSuggestBox_QuerySubmitted"/>
@@ -68,7 +69,7 @@
                         RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" Click="DownloadMapButton_Click"/>
             </RelativePanel>
 
-            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2" PointerPressed="myMap_PointerPressed" MapTapped="myMap_MapTapped" MapRightTapped="myMap_MapRightTapped">
+            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2" MapTapped="myMap_MapTapped" MapRightTapped="myMap_MapRightTapped">
                 <maps:MapItemsControl x:Name="MapItems">
                     <maps:MapItemsControl.ItemTemplate>
                         <DataTemplate>
