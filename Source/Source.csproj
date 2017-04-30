@@ -95,9 +95,31 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DBModels\ACCOUNT.cs" />
+    <Compile Include="DBModels\APPRECIATION.cs" />
+    <Compile Include="DBModels\ARTICLE.cs" />
+    <Compile Include="DBModels\CITY.cs" />
+    <Compile Include="DBModels\ICON.cs" />
+    <Compile Include="DBModels\IMAGE.cs" />
+    <Compile Include="DBModels\LOCATION.cs" />
+    <Compile Include="DBModels\LOCATION_TYPE.cs" />
+    <Compile Include="DBModels\MAP.cs" />
+    <Compile Include="DBModels\PLAN_TRIP.cs" />
+    <Compile Include="DBModels\PROVINCE.cs" />
+    <Compile Include="DBModels\REGION.cs" />
+    <Compile Include="DBModels\SCHEDULE_TEMPLATE.cs" />
+    <Compile Include="DBModels\TRANSPORTATION.cs" />
+    <Compile Include="DBModels\USER.cs" />
+    <Compile Include="DBModels\VIDEO.cs" />
+    <Compile Include="DBModels\VietTravelDBContext.cs" />
     <Compile Include="Maps\DefinedGeopoints.cs" />
     <Compile Include="Maps\GeoCoding.cs" />
     <Compile Include="Maps\ApplicationMapManager.cs" />
+    <Compile Include="Migrations\20170429175453_MyFirstMigration.cs" />
+    <Compile Include="Migrations\20170429175453_MyFirstMigration.designer.cs">
+      <DependentUpon>20170429175453_MyFirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VietTravelDBContextModelSnapshot.cs" />
     <Compile Include="Models\EnumTypes\ProvincesEnum.cs" />
     <Compile Include="Models\FeaturedImage.cs" />
     <Compile Include="Models\FeaturedImageManager.cs" />
