@@ -26,6 +26,7 @@ namespace Source.Maps
             MapIcon mapIcon1 = new MapIcon();
 
             //Set Image for the MapIcon
+            //mapIcon1.Title = GeoCoding.
             mapIcon1.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/Icons/push-pin-64.png"));
             mapIcon1.CollisionBehaviorDesired = MapElementCollisionBehavior.RemainVisible;
 
@@ -37,9 +38,14 @@ namespace Source.Maps
 
             // Add the MapIcon to the map.
             myMap.MapElements.Add(mapIcon1);
-
+            myMap.MapElementClick += MyMap_MapElementClick;
             // Center the map over the POI.
             myMap.Center = location;
+        }
+
+        private static void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
+        {
+            Utilities.Dialog.ShowDialog("Map Element Click");
         }
 
 

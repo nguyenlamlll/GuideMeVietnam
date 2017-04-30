@@ -14,6 +14,23 @@ namespace Source.Maps
     /// </summary>
     public static class GeoCoding
     {
+        public static async Task<string> ConvertGeopointToAddress(Geopoint pointToReverseGeocode)
+        {
+            // Reverse geocode the specified geographic location.
+            MapLocationFinderResult result =
+                  await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+
+            // If the query returns results, display the name of the town
+            // contained in the address of the first result.
+            if (result.Status == MapLocationFinderStatus.Success)
+            {
+                string resultAddress = result.Locations[0].Address.ToString();
+                return resultAddress;
+            }
+            return null;
+        }
+
+
         /// <summary>
         /// Convert an user-friendly address to GeoPoint (Example Use: To display on a map.)
         /// </summary>
@@ -25,7 +42,6 @@ namespace Source.Maps
         /// <param name="addressToGeocode">
         /// 
         /// </param>
-        /// 
         public static async Task<Geopoint> ConvertAddressToGeoPoint(Geopoint queryHintPoint, string addressToGeocode)
         {
             Geopoint GeopointResult = null;
