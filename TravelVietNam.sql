@@ -13,7 +13,7 @@ create table PROVINCE
 	totalArea real,
 	populationProvince real,
 	regionID smallint,
-             foreign key(regionID) references REGION(regionID)
+    foreign key(regionID) references REGION(regionID)
 );
 
 create table CITY
@@ -25,7 +25,7 @@ create table CITY
 	totalArea real,
 	populationCity real,
 	provinceID smallint,
-             foreign key(provinceID) references PROVINCE(provinceID)
+    foreign key(provinceID) references PROVINCE(provinceID)
 );
 
 create table ICON
@@ -39,7 +39,7 @@ create table LOCATION_TYPE
 	typeID smallint identity(1,1) not null primary key,
 	typeName nvarchar(50),
 	iconID smallint,
-             foreign key(iconID) references ICON(iconID)
+    foreign key(iconID) references ICON(iconID)
 );
 
 create table LOCATIONS
@@ -54,9 +54,9 @@ create table LOCATIONS
 	longitude decimal(10,6),
 	latitude decimal(10,6),
 	typeID smallint,
-             provinceID smallint,
-             foreign key(typeID) references LOCATION_TYPE(typeID),	
-             foreign key(provinceID) references PROVINCE(provinceID)
+	provinceID smallint,
+	foreign key(typeID) references LOCATION_TYPE(typeID),	
+	foreign key(provinceID) references PROVINCE(provinceID)
 );
 
 create table TRANSPORTATION
@@ -65,7 +65,7 @@ create table TRANSPORTATION
 	tranName nvarchar(50),
 	detail ntext,
 	locationID smallint,
-             foreign key(locationID) references LOCATIONS(locationID)
+    foreign key(locationID) references LOCATIONS(locationID)
 );
 
 create table ARTICLE
@@ -73,7 +73,7 @@ create table ARTICLE
 	articleID smallint identity(1,1) not null primary key,
 	content ntext,
 	locationID smallint,
-             foreign key(locationID) references LOCATIONS(locationID)
+    foreign key(locationID) references LOCATIONS(locationID)
 );
 
 create table IMAGES
@@ -81,7 +81,7 @@ create table IMAGES
 	imageID smallint identity(1,1) not null primary key,
 	imageSource nvarchar(100),
 	articleID smallint,
-             foreign key(articleID) references ARTICLE(articleID)
+    foreign key(articleID) references ARTICLE(articleID)
 );
 
 create table VIDEO
@@ -90,7 +90,7 @@ create table VIDEO
 	videoName nvarchar(50),
 	videoSource nvarchar(100),
 	locationID smallint,
-             foreign key(locationID) references LOCATIONS(locationID)
+    foreign key(locationID) references LOCATIONS(locationID)
 );
 
 create table SCHEDULE_TEMPLATE
@@ -99,7 +99,7 @@ create table SCHEDULE_TEMPLATE
 	scheduleDetail ntext,
 	expectedCharge money,
 	locationID smallint,
-             foreign key(locationID) references LOCATIONS(locationID)
+    foreign key(locationID) references LOCATIONS(locationID)
 );
 
 create table ACCOUNT
@@ -115,8 +115,8 @@ create table USERS
 	userID smallint identity(1,1) not null primary key,
 	userName nvarchar(50),
 	email nvarchar(50),
-             accountID smallint,
-             foreign key(accountID) references ACCOUNT(accountID)
+    accountID smallint,
+    foreign key(accountID) references ACCOUNT(accountID)
 );
 
 create table APPRECIATION
@@ -127,8 +127,8 @@ create table APPRECIATION
 	numStar smallint,
 	appreciaSubject nvarchar(100),
 	content ntext,
-             foreign key(userID) references USERS(userID),
-             foreign key(locationID) references LOCATIONS(locationID)
+    foreign key(userID) references USERS(userID),
+    foreign key(locationID) references LOCATIONS(locationID)
 );
 
 create table PLAN_TRIP
@@ -137,7 +137,7 @@ create table PLAN_TRIP
 	planName nvarchar(50),
 	detail ntext,
 	userID smallint, 
-             foreign key(userID) references USERS(userID)
+	foreign key(userID) references USERS(userID)
 );
 
 create table MAP
@@ -148,4 +148,3 @@ create table MAP
 	latitude decimal(10,6)
 );
 
-Insert into ACCOUNT values (1, "leekhai18", "kaka");

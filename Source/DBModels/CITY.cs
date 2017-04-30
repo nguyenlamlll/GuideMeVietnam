@@ -17,8 +17,8 @@ namespace VietTravel.DBModels
         [System.ComponentModel.DataAnnotations.Key]
         public short cityID { get; set; }
         public string cityName { get; set; }
-        public Nullable<decimal> longitude { get; set; }
-        public Nullable<decimal> latitude { get; set; }
+        public Nullable<float> longitude { get; set; }
+        public Nullable<float> latitude { get; set; }
         public Nullable<float> totalArea { get; set; }
         public Nullable<float> populationCity { get; set; }
         public Nullable<short> provinceID { get; set; }

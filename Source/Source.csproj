@@ -101,6 +101,7 @@
     <Compile Include="DBModels\CITY.cs" />
     <Compile Include="DBModels\ICON.cs" />
     <Compile Include="DBModels\IMAGE.cs" />
+    <Compile Include="DBModels\InitData.cs" />
     <Compile Include="DBModels\LOCATION.cs" />
     <Compile Include="DBModels\LOCATION_TYPE.cs" />
     <Compile Include="DBModels\MAP.cs" />

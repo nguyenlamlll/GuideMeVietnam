@@ -27,16 +27,11 @@ namespace Source.User_Interfaces
         {
             this.InitializeComponent();
 
-            //using (var db = new VietTravel.VietTravelDBContext())
-            //{
-            //    db.ACCOUNTs.Add(new ACCOUNT() { userName = "acc1", pass = "123" });
-            //    db.SaveChanges();
-
-            //    foreach (var acc in db.ACCOUNTs)
-            //    {
-            //        Console.WriteLine(acc.userName);
-            //    }
-            //}
+            using (var db = new VietTravel.VietTravelDBContext())
+            {
+                if (db.ACCOUNTs.Count() == 0)
+                    DBModels.InitData.Init();
+            }
         }
     }
 }

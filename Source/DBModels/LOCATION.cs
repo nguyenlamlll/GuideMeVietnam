@@ -31,8 +31,8 @@ namespace VietTravel.DBModels
         public Nullable<decimal> priceMin { get; set; }
         public Nullable<decimal> priceMax { get; set; }
         public string website { get; set; }
-        public Nullable<decimal> longitude { get; set; }
-        public Nullable<decimal> latitude { get; set; }
+        public Nullable<float> longitude { get; set; }
+        public Nullable<float> latitude { get; set; }
         public Nullable<short> typeID { get; set; }
         public Nullable<short> provinceID { get; set; }
     

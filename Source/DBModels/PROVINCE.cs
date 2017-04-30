@@ -23,8 +23,8 @@ namespace VietTravel.DBModels
         [System.ComponentModel.DataAnnotations.Key]
         public short provinceID { get; set; }
         public string provinceName { get; set; }
-        public Nullable<decimal> longtitude { get; set; }
-        public Nullable<decimal> latitude { get; set; }
+        public Nullable<float> longtitude { get; set; }
+        public Nullable<float> latitude { get; set; }
         public Nullable<float> totalArea { get; set; }
         public Nullable<float> populationProvince { get; set; }
         public Nullable<short> regionID { get; set; }
