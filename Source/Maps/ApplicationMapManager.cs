@@ -38,14 +38,44 @@ namespace Source.Maps
 
             // Add the MapIcon to the map.
             myMap.MapElements.Add(mapIcon1);
-            myMap.MapElementClick += MyMap_MapElementClick;
-            // Center the map over the POI.
-            myMap.Center = location;
+
+
+
         }
 
-        private static void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
+        public static void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
         {
             Utilities.Dialog.ShowDialog("Map Element Click");
+            MapIcon myClickedIcon = args.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
+        }
+        public static void MyMap_MapElementPointerEntered(MapControl sender, MapElementPointerEnteredEventArgs args)
+        {
+            MapIcon myClickedIcon = sender.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
+
+            // Get Accent Color
+            // For more information, visit: https://docs.microsoft.com/en-us/windows/uwp/style/color
+            var uiSettings = new Windows.UI.ViewManagement.UISettings();
+            Windows.UI.Color color = uiSettings.GetColorValue(Windows.UI.ViewManagement.UIColorType.Accent);
+
+            Windows.UI.Xaml.Controls.Border border = new Windows.UI.Xaml.Controls.Border
+            {
+                Height = 66,
+                Width = 66,
+                BorderBrush = new Windows.UI.Xaml.Media.SolidColorBrush(color),
+                BorderThickness = new Windows.UI.Xaml.Thickness(2),
+                Opacity = 0.4
+            };
+
+            //Add XAML above to the map
+            sender.Children.Add(border);
+            Geopoint pointClicked = args.Location;
+            MapControl.SetLocation(border, myClickedIcon.Location);
+            MapControl.SetNormalizedAnchorPoint(border, new Point(0.5, 0.5));
+            
+        }
+        public static void MyMap_MapElementPointerExited(MapControl sender, MapElementPointerExitedEventArgs args)
+        {
+
         }
 
 

@@ -14,6 +14,11 @@ namespace Source.Maps
     /// </summary>
     public static class GeoCoding
     {
+        /// <summary>
+        /// Turn Geopoint into human-friendly addresses.
+        /// </summary>
+        /// <param name="pointToReverseGeocode">Geopoint to be reversed into human-address.</param>
+        /// <returns></returns>
         public static async Task<string> ConvertGeopointToAddress(Geopoint pointToReverseGeocode)
         {
             // Reverse geocode the specified geographic location.
@@ -72,8 +77,7 @@ namespace Source.Maps
             else
             {
                 //Say that we cannot find the location
-                var dialog = new MessageDialog("Sorry. Cannot find your location.");
-                await dialog.ShowAsync();
+                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.");
                 return GeopointResult;
             }
         }

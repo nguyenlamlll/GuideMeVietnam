@@ -49,7 +49,6 @@
                                 SuggestionChosen="MapSearchSuggestBox_SuggestionChosen"
                                 QuerySubmitted="MapSearchSuggestBox_QuerySubmitted"/>
             </RelativePanel>
-            
 
             <RelativePanel Grid.Row="1">
                 <Image x:Name="PinImage" 

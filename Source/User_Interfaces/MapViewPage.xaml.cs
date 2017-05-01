@@ -45,9 +45,16 @@ namespace Source.User_Interfaces
         /// </summary>
         private void MyMap_Loaded(object sender, RoutedEventArgs e)
         {
+            myMap.MapElementClick += ApplicationMapManager.MyMap_MapElementClick;
+            myMap.MapElementPointerEntered += ApplicationMapManager.MyMap_MapElementPointerEntered;
+            myMap.MapElementPointerExited += ApplicationMapManager.MyMap_MapElementPointerExited;
+
             myMap.Center = DefinedGeopoints.DaNangGeoPoint;
             myMap.ZoomLevel = 6;
+            
         }
+
+
         private void addXamlChildrenButton_Click(object sender, RoutedEventArgs e)
         {
 
