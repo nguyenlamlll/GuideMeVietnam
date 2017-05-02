@@ -51,17 +51,6 @@
             </RelativePanel>
 
             <RelativePanel Grid.Row="1">
-                <Image x:Name="PinImage" 
-                       Width="30" Height="30"
-                       Source="ms-appx:///Assets/Icons/push-pin.png" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" 
-                       RelativePanel.AlignLeftWithPanel="True"
-                       Tapped="PinImage_Tapped"/>
-                <Button x:Name="addXamlChildrenButton" 
-                        Content="Add A Pin On The Map" 
-                        RelativePanel.RightOf="PinImage"
-                        Click="addXamlChildrenButton_Click"/>
                 <Button x:Name="DownloadMapButton" 
                         Content="Downloaded Maps" 
                         HorizontalAlignment="Right"
@@ -101,7 +90,7 @@
                 </FlyoutBase.AttachedFlyout>
             </maps:MapControl>
 
-            <StackPanel x:Name="MapButtonsStackPanel" 
+            <StackPanel x:Name="MapButtonsStackPanel" Margin="0,0,30,0"
                         Background="{ThemeResource ButtonBackground}" 
                         Opacity="60"
                         Orientation="Vertical"
@@ -109,7 +98,21 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Width="40">
+                <Button x:Name="MapSettingButton" 
+                        Foreground="{ThemeResource SystemAltHighColor}"
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="20"
+                        Content="&#xE158;"
+                        HorizontalAlignment="Center"
+                        Click="MapSettingButton_Click">
+                    <FlyoutBase.AttachedFlyout>
+                        <MenuFlyout>
+                            <ToggleMenuFlyoutItem>Traffic</ToggleMenuFlyoutItem>
+                        </MenuFlyout>
+                    </FlyoutBase.AttachedFlyout>
+                </Button>
                 <Button x:Name="ZoomInButton" 
+                        Foreground="{ThemeResource SystemAltHighColor}"
                         FontFamily="Segoe MDL2 Assets"
                         FontSize="20"
                         Content="&#xE109;"
@@ -117,6 +120,7 @@
                         Click="ZoomInButton_Click">
                 </Button>
                 <Button x:Name="ZoomOutButton" 
+                        Foreground="{ThemeResource SystemAltHighColor}"
                         FontFamily="Segoe MDL2 Assets"
                         FontSize="20"
                         Content="&#xE108;"

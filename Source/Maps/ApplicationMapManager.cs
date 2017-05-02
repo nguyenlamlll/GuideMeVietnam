@@ -8,6 +8,7 @@ using Windows.Foundation;
 using Windows.Services.Maps;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Controls.Maps;
+using Windows.UI.Xaml.Shapes;
 
 namespace Source.Maps
 {
@@ -50,13 +51,14 @@ namespace Source.Maps
         }
         public static void MyMap_MapElementPointerEntered(MapControl sender, MapElementPointerEnteredEventArgs args)
         {
+            //Get the MapIcon that user's pointer entered
             MapIcon myClickedIcon = sender.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
 
             // Get Accent Color
             // For more information, visit: https://docs.microsoft.com/en-us/windows/uwp/style/color
             var uiSettings = new Windows.UI.ViewManagement.UISettings();
             Windows.UI.Color color = uiSettings.GetColorValue(Windows.UI.ViewManagement.UIColorType.Accent);
-
+            /*
             Windows.UI.Xaml.Controls.Border border = new Windows.UI.Xaml.Controls.Border
             {
                 Height = 66,
@@ -65,17 +67,37 @@ namespace Source.Maps
                 BorderThickness = new Windows.UI.Xaml.Thickness(2),
                 Opacity = 0.4
             };
+            */
+            Rectangle rect = new Rectangle
+            {
+                Height = 100,
+                Width = 100,
+                Fill = new Windows.UI.Xaml.Media.SolidColorBrush(color),
+                Opacity = 0.5
+            };
 
             //Add XAML above to the map
-            sender.Children.Add(border);
+            sender.Children.Add(rect);
             Geopoint pointClicked = args.Location;
-            MapControl.SetLocation(border, myClickedIcon.Location);
-            MapControl.SetNormalizedAnchorPoint(border, new Point(0.5, 0.5));
+            MapControl.SetLocation(rect, myClickedIcon.Location);
+            MapControl.SetNormalizedAnchorPoint(rect, new Point(0.5, 0.5));
             
         }
         public static void MyMap_MapElementPointerExited(MapControl sender, MapElementPointerExitedEventArgs args)
         {
+            //Get the MapIcon that user's pointer entered
+            MapIcon myClickedIcon = sender.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
 
+            var rectangles = sender.Children.OfType<Rectangle>().ToList();
+            if (rectangles != null)
+            {
+                foreach (Rectangle rect in rectangles)
+                {
+                    sender.Children.Remove(rect);
+                }
+                return;
+            }
+            return;
         }
 
 

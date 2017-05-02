@@ -55,10 +55,7 @@ namespace Source.User_Interfaces
         }
 
 
-        private void addXamlChildrenButton_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void mapItemButton_Click(object sender, RoutedEventArgs e)
         {
@@ -143,6 +140,12 @@ namespace Source.User_Interfaces
         private void PinDrop_MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
         {
             ApplicationMapManager.AddStaticMapIcon(myMap, tappedLocation);
+        }
+
+        private void MapSettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            var attachedFlyout = (MenuFlyout)FlyoutBase.GetAttachedFlyout(MapSettingButton);
+            attachedFlyout.ShowAt(MapSettingButton);
         }
     }
 }
