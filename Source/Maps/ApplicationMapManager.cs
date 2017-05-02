@@ -70,6 +70,7 @@ namespace Source.Maps
         }
         public static void MyMap_MapElementPointerEntered(MapControl sender, MapElementPointerEnteredEventArgs args)
         {
+            /*
             //Get the MapIcon that user's pointer entered
             MapIcon myClickedIcon = sender.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
 
@@ -88,10 +89,11 @@ namespace Source.Maps
             Geopoint pointClicked = args.Location;
             MapControl.SetLocation(rect, myClickedIcon.Location);
             MapControl.SetNormalizedAnchorPoint(rect, new Point(0.5, 0.5));
-
+            */
         }
         public static void MyMap_MapElementPointerExited(MapControl sender, MapElementPointerExitedEventArgs args)
         {
+            /*
             //Get the MapIcon that user's pointer entered
             MapIcon myClickedIcon = sender.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
 
@@ -105,6 +107,7 @@ namespace Source.Maps
                 return;
             }
             return;
+            */
         }
 
 
