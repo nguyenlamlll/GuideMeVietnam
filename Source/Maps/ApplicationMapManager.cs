@@ -66,11 +66,11 @@ namespace Source.Maps
 
             BasicGeoposition displayPoint = myClickedIcon.Location.Position;
             //displayPoint.Latitude -= 0.05;
-            displayPoint.Longitude -= 0.05;
+            displayPoint.Longitude -= 0.0015;
             Geopoint displayGeopoint = new Geopoint(displayPoint);
             
             MapControl.SetLocation(pinDialog, displayGeopoint);
-            MapControl.SetNormalizedAnchorPoint(pinDialog, new Point(0.5, 0.5));
+            MapControl.SetNormalizedAnchorPoint(pinDialog, new Point(0, 0));
 
         }
 

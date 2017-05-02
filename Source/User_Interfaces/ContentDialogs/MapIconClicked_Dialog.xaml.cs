@@ -26,15 +26,11 @@ namespace Source.User_Interfaces.ContentDialogs
         public MapIconClicked_Dialog()
         {
             this.InitializeComponent();
-            TitleRectangle.Fill = new SolidColorBrush(Utilities.Color.GetAccentColor());
+
         }
         public MapIconClicked_Dialog(string Title, string fullAddress)
         {
             this.InitializeComponent();
-
-            TitleRectangle.Fill = new SolidColorBrush(Utilities.Color.GetAccentColor());
-            TitleRectangle.Height = ExitButton.Height;
-            TitleRectangle.Width = this.Width;
 
             FillComponents(Title, fullAddress);
             this.Width = AddressTextBlock.Width;
@@ -50,5 +46,7 @@ namespace Source.User_Interfaces.ContentDialogs
         {
             this.Visibility = Visibility.Collapsed;
         }
+
+
     }
 }

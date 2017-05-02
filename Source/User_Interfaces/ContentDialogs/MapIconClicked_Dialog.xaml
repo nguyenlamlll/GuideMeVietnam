@@ -17,35 +17,37 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-          Opacity="0.6">
+          Opacity="0.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        <RelativePanel>
-            <Rectangle x:Name="TitleRectangle" RelativePanel.AlignTopWithPanel="True"
-                       Fill="Blue" Width="250" Height="40"/>
-
+        <RelativePanel x:Name="TopRelativePanel" Background="{ThemeResource AccentColor}">
             <TextBlock x:Name="AddressTitleTextBlock"
                            Foreground="{StaticResource AltHighColor}"
                            Style="{StaticResource TitleTextBlockStyle}"
                            RelativePanel.AlignLeftWithPanel="True">
                 Title of address
             </TextBlock>
-            
             <Button x:Name="ExitButton" 
-                    Height="33"
-                    RelativePanel.AlignRightWithPanel="True"
-                    RelativePanel.AlignTopWithPanel="True"
-                    FontFamily="Segoe MDL2 Assets"
-                    Content="&#xE10A;"
-                    Click="ExitButton_Click"/>
+                        Height="33"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.AlignTopWithPanel="True"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE10A;"
+                        Click="ExitButton_Click"/>
+        </RelativePanel>
 
+        <RelativePanel Grid.Row="1">
 
             <RelativePanel x:Name="FullAddressRelativePanel" 
-                           RelativePanel.Below="AddressTitleTextBlock" Margin="10,10,0,0">
-                <VariableSizedWrapGrid>
+                           Margin="10,5,0,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <TextBlock x:Name="AddressTextBlock">
                     Some sample text <LineBreak/>Some sample text
                     </TextBlock>
-                </VariableSizedWrapGrid>
+                </ScrollViewer>
             </RelativePanel>
 
             <Button Height="33"
@@ -53,7 +55,7 @@
                     Content="&#xE105;"
                     Margin="10"
                     RelativePanel.Below="FullAddressRelativePanel"
-                    RelativePanel.AlignHorizontalCenterWith="FullAddressRelativePanel"/>
+                    RelativePanel.AlignHorizontalCenterWithPanel="True"/>
         </RelativePanel>
     </Grid>
 </Page>
