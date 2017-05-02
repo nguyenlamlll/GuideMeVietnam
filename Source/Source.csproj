@@ -121,6 +121,7 @@
     <Compile Include="User_Interfaces\MapViewPage.xaml.cs">
       <DependentUpon>MapViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\DialogEnum.cs" />
   </ItemGroup>

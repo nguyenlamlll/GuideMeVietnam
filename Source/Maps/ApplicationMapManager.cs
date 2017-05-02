@@ -7,7 +7,10 @@ using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Services.Maps;
 using Windows.Storage.Streams;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
 
 namespace Source.Maps
@@ -44,30 +47,34 @@ namespace Source.Maps
 
         }
 
-        public static void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
+        public static async void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
         {
-            Utilities.Dialog.ShowDialog("Map Element Click");
+            //Utilities.Dialog.ShowDialog("Map Element Click");
             MapIcon myClickedIcon = args.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
+            Grid MyGrid = new Grid();
+
+            MyGrid.Background = new SolidColorBrush(Utilities.Color.GetBackgroundColor());
+            TextBlock text = new TextBlock();
+            text.Width = 200;
+            MyGrid.Children.Add(text);
+
+            MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(myClickedIcon.Location);
+            if (result.Status == MapLocationFinderStatus.Success)
+            {
+                text.Text = result.Locations[0].Address.FormattedAddress;
+            }
+            sender.Children.Add(MyGrid);
+            Geopoint pointClicked = args.Location;
+            MapControl.SetLocation(MyGrid, myClickedIcon.Location);
+            MapControl.SetNormalizedAnchorPoint(MyGrid, new Point(0.5, 0.5));
         }
         public static void MyMap_MapElementPointerEntered(MapControl sender, MapElementPointerEnteredEventArgs args)
         {
             //Get the MapIcon that user's pointer entered
             MapIcon myClickedIcon = sender.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
 
-            // Get Accent Color
-            // For more information, visit: https://docs.microsoft.com/en-us/windows/uwp/style/color
-            var uiSettings = new Windows.UI.ViewManagement.UISettings();
-            Windows.UI.Color color = uiSettings.GetColorValue(Windows.UI.ViewManagement.UIColorType.Accent);
-            /*
-            Windows.UI.Xaml.Controls.Border border = new Windows.UI.Xaml.Controls.Border
-            {
-                Height = 66,
-                Width = 66,
-                BorderBrush = new Windows.UI.Xaml.Media.SolidColorBrush(color),
-                BorderThickness = new Windows.UI.Xaml.Thickness(2),
-                Opacity = 0.4
-            };
-            */
+            Windows.UI.Color color = Utilities.Color.GetAccentColor();
+
             Rectangle rect = new Rectangle
             {
                 Height = 100,
@@ -81,7 +88,7 @@ namespace Source.Maps
             Geopoint pointClicked = args.Location;
             MapControl.SetLocation(rect, myClickedIcon.Location);
             MapControl.SetNormalizedAnchorPoint(rect, new Point(0.5, 0.5));
-            
+
         }
         public static void MyMap_MapElementPointerExited(MapControl sender, MapElementPointerExitedEventArgs args)
         {
