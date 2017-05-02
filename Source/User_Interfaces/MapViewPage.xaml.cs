@@ -147,5 +147,7 @@ namespace Source.User_Interfaces
             var attachedFlyout = (MenuFlyout)FlyoutBase.GetAttachedFlyout(MapSettingButton);
             attachedFlyout.ShowAt(MapSettingButton);
         }
+
+
     }
 }

@@ -29,6 +29,7 @@ namespace Source.Maps
             // Create a MapIcon.
             MapIcon mapIcon1 = new MapIcon();
 
+
             //Set Image for the MapIcon
             //mapIcon1.Title = GeoCoding.
             mapIcon1.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/Icons/push-pin-64.png"));
@@ -49,25 +50,30 @@ namespace Source.Maps
 
         public static async void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
         {
-            //Utilities.Dialog.ShowDialog("Map Element Click");
             MapIcon myClickedIcon = args.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
-            Grid MyGrid = new Grid();
-
-            MyGrid.Background = new SolidColorBrush(Utilities.Color.GetBackgroundColor());
-            TextBlock text = new TextBlock();
-            text.Width = 200;
-            MyGrid.Children.Add(text);
 
             MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(myClickedIcon.Location);
+
+            string address = null;
             if (result.Status == MapLocationFinderStatus.Success)
             {
-                text.Text = result.Locations[0].Address.FormattedAddress;
+                address = result.Locations[0].Address.FormattedAddress;
             }
-            sender.Children.Add(MyGrid);
+            User_Interfaces.ContentDialogs.MapIconClicked_Dialog pinDialog = new User_Interfaces.ContentDialogs.MapIconClicked_Dialog("Push Pin", address);
+
+            sender.Children.Add(pinDialog);
             Geopoint pointClicked = args.Location;
-            MapControl.SetLocation(MyGrid, myClickedIcon.Location);
-            MapControl.SetNormalizedAnchorPoint(MyGrid, new Point(0.5, 0.5));
+
+            BasicGeoposition displayPoint = myClickedIcon.Location.Position;
+            //displayPoint.Latitude -= 0.05;
+            displayPoint.Longitude -= 0.05;
+            Geopoint displayGeopoint = new Geopoint(displayPoint);
+            
+            MapControl.SetLocation(pinDialog, displayGeopoint);
+            MapControl.SetNormalizedAnchorPoint(pinDialog, new Point(0.5, 0.5));
+
         }
+
         public static void MyMap_MapElementPointerEntered(MapControl sender, MapElementPointerEnteredEventArgs args)
         {
             /*

@@ -35,5 +35,10 @@ namespace Source.Utilities
 
             var result = await dialog.ShowAsync();
         }
+
+        public static void GetMapIconDialog()
+        {
+
+        }
     }
 }

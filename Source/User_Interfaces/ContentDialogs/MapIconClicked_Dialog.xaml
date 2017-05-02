@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="Source.User_Interfaces.ContentDialogs.MapIconClicked_Dialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Source.User_Interfaces.ContentDialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="150" Width="250">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Article-Styles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Styles/GenericStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Opacity="0.6">
+
+        <RelativePanel>
+            <Rectangle x:Name="TitleRectangle" RelativePanel.AlignTopWithPanel="True"
+                       Fill="Blue" Width="250" Height="40"/>
+
+            <TextBlock x:Name="AddressTitleTextBlock"
+                           Foreground="{StaticResource AltHighColor}"
+                           Style="{StaticResource TitleTextBlockStyle}"
+                           RelativePanel.AlignLeftWithPanel="True">
+                Title of address
+            </TextBlock>
+            
+            <Button x:Name="ExitButton" 
+                    Height="33"
+                    RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.AlignTopWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE10A;"
+                    Click="ExitButton_Click"/>
+
+
+            <RelativePanel x:Name="FullAddressRelativePanel" 
+                           RelativePanel.Below="AddressTitleTextBlock" Margin="10,10,0,0">
+                <VariableSizedWrapGrid>
+                    <TextBlock x:Name="AddressTextBlock">
+                    Some sample text <LineBreak/>Some sample text
+                    </TextBlock>
+                </VariableSizedWrapGrid>
+            </RelativePanel>
+
+            <Button Height="33"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE105;"
+                    Margin="10"
+                    RelativePanel.Below="FullAddressRelativePanel"
+                    RelativePanel.AlignHorizontalCenterWith="FullAddressRelativePanel"/>
+        </RelativePanel>
+    </Grid>
+</Page>

@@ -108,6 +108,9 @@
     <Compile Include="User_Interfaces\BlankPage2.xaml.cs">
       <DependentUpon>BlankPage2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interfaces\ContentDialogs\MapIconClicked_Dialog.xaml.cs">
+      <DependentUpon>MapIconClicked_Dialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User_Interfaces\DownloadedMap.xaml.cs">
       <DependentUpon>DownloadedMap.xaml</DependentUpon>
     </Compile>
@@ -215,6 +218,11 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Styles\GenericStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="Styles\ImageDisplayStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User_Interfaces\BlankPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\ContentDialogs\MapIconClicked_Dialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
