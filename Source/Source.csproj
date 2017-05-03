@@ -124,6 +124,9 @@
     <Compile Include="User_Interfaces\MapViewPage.xaml.cs">
       <DependentUpon>MapViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interfaces\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\DialogEnum.cs" />
@@ -253,6 +256,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interfaces\MapViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

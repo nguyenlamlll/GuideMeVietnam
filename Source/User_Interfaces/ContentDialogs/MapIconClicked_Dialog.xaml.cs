@@ -41,7 +41,7 @@ namespace Source.User_Interfaces.ContentDialogs
             AddressTitleTextBlock.Text = Title;
             AddressTextBlock.Text = fullAddress;
         }
-
+        
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
