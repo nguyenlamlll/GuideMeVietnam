@@ -61,7 +61,7 @@
                 <TextBlock Style="{StaticResource DescriptionTextBlock}">
                     Windows, apps, and services can use this location to personalize your experiences.
                 </TextBlock>
-                <Button x:Name="DefaultLocationpButton"
+                <Button x:Name="DefaultLocationButton"
                         Style="{StaticResource SectionButton}">
                     Change default location
                 </Button>
@@ -77,7 +77,6 @@
                 </TextBlock>
                 <ComboBox x:Name="LocationPrivacyButton"
                           Style="{StaticResource SectionComboBox}">
-                    Change default location
                     <ComboBoxItem>
                         Light
                     </ComboBoxItem>

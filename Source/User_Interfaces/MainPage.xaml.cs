@@ -84,10 +84,11 @@ namespace Source
             //Title.Text = itemClicked;
             //Button button = sender as Button;
             //MenuItem item = button.DataContext as MenuItem;
-
+            
             //ListView listview = sender as ListView;
             //MenuItem item = listvi as MenuItem;
             var menuItem = (MenuItem)e.ClickedItem;
+
             switch (menuItem.Category)
             {
                 case MenuItemCategory.Homepage:
@@ -119,7 +120,8 @@ namespace Source
                     }
                 case MenuItemCategory.Settings:
                     {
-                        this.EnableSearchBox();
+                        this.DisableSearchBox();
+                        FirstFrame.Navigate(typeof(User_Interfaces.SettingsPage));
                         break;
                     }
                 default:
