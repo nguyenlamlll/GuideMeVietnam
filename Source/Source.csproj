@@ -124,15 +124,16 @@
     <Compile Include="Models\EnumTypes\ProvincesEnum.cs" />
     <Compile Include="Models\FeaturedImage.cs" />
     <Compile Include="Models\FeaturedImageManager.cs" />
+    <Compile Include="Models\LocationViewModel.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="User_Interfaces\BlankPage1.xaml.cs">
       <DependentUpon>BlankPage1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="User_Interfaces\BlankPage2.xaml.cs">
-      <DependentUpon>BlankPage2.xaml</DependentUpon>
-    </Compile>
     <Compile Include="User_Interfaces\DownloadedMap.xaml.cs">
       <DependentUpon>DownloadedMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Interfaces\HoChiMinh.xaml.cs">
+      <DependentUpon>HoChiMinh.xaml</DependentUpon>
     </Compile>
     <Compile Include="User_Interfaces\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -159,6 +160,69 @@
     <Content Include="Assets\Icons\push-pin.png" />
     <Content Include="Assets\Icons\substract.png" />
     <Content Include="Assets\Images\Cities\Saigon.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\BenThanh0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\BenThanh1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\BenThanh2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\BitexcoTower0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\BitexcoTower1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\BitexcoTower2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\DamSen0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\DamSen1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\DamSen2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\HangDuongRestaurant0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\HangDuongRestaurant1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\HangDuongRestaurant2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\IndependencePalace0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\IndependencePalace1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\IndependencePalace2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Intercontinental0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Intercontinental1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Intercontinental2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\LovEat0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\LovEat1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\LovEat2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Monsoon0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Monsoon1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Monsoon2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\NguyenHueSt0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\NguyenHueSt1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\NguyenHueSt2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\NotreDameCathedral0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\NotreDameCathedral1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\NotreDameCathedral2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Pancakes0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Pancakes1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Pancakes2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\ParkHyatt0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\ParkHyatt1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\ParkHyatt2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Pendolasco0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Pendolasco1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\Pendolasco2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\rexhotel0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\rexhotel1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\rexhotel2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\RomBBQ0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\RomBBQ1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\RomBBQ2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\saigonGrill0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\saigonGrill1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\saigonGrill2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\StarlightBridge0.png" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\StarlightBridge1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\StarlightBridge2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TanCangRestaurant0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TanCangRestaurant1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TanCangRestaurant2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TheReverieSaigon0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TheReverieSaiGon1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TheReverieSaiGon2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TurtleLake0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TurtleLake1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\TurtleLake2.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\VillaSgRiver0.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\VillaSgRiver1.jpg" />
+    <Content Include="Assets\Images\Locations\InHoChiMinh\VillaSgRiver2.jpg" />
     <Content Include="Assets\Images\Provinces\DaLat\dalat.jpg" />
     <Content Include="Assets\Images\Provinces\DaLat\dalat2.gif" />
     <Content Include="Assets\Images\Provinces\DaNang\danang.jpg" />
@@ -246,11 +310,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="User_Interfaces\BlankPage2.xaml">
+    <Page Include="User_Interfaces\DownloadedMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="User_Interfaces\DownloadedMap.xaml">
+    <Page Include="User_Interfaces\HoChiMinh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -269,7 +333,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Audio\" />
-    <Folder Include="Assets\Images\Locations\" />
+    <Folder Include="Assets\Images\Provinces\HoChiMinh\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

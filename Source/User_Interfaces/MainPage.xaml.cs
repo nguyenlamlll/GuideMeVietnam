@@ -114,7 +114,8 @@ namespace Source
                     }
                 case MenuItemCategory.Posts:
                     {
-                        this.EnableSearchBox();
+                        this.DisableSearchBox(); //HCM
+                        FirstFrame.Navigate(typeof(User_Interfaces.HoChiMinh));
                         break;
                     }
                 case MenuItemCategory.Settings:
