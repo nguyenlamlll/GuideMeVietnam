@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Services.Maps;
+using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -97,6 +98,7 @@ namespace Source.Maps
             MapControl.SetNormalizedAnchorPoint(rect, new Point(0.5, 0.5));
             */
         }
+
         public static void MyMap_MapElementPointerExited(MapControl sender, MapElementPointerExitedEventArgs args)
         {
             /*
@@ -115,7 +117,6 @@ namespace Source.Maps
             return;
             */
         }
-
 
         /// <summary>
         /// Increase ZoomLevel of a MapControl.
@@ -149,5 +150,33 @@ namespace Source.Maps
             }
             return false;
         }
+
+
+        public static async Task<List<PlaceInfo>> LoadPlaceInfo(string fileName = "default.txt")
+        {
+            List<PlaceInfo> places = new List<PlaceInfo>();
+
+            Uri dataUri = new Uri("ms-appx:///" + fileName);
+
+            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
+            if (file == null) return null;
+
+            IList<string> lines = await FileIO.ReadLinesAsync(file);
+
+            // In the places.txt file, each place is represented by three lines:
+            // Place name, latitude, and longitude.
+            for (int i = 0; i < lines.Count; i += 3)
+            {
+                PlaceInfo place = new PlaceInfo
+                {
+                    Name = lines[i],
+                    Location = new PlaceLocation(double.Parse(lines[i + 1]), double.Parse(lines[i + 2]))
+                };
+
+                places.Add(place);
+            }
+            return places;
+        }
+
     }
 }
