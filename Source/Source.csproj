@@ -130,6 +130,7 @@
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\DialogEnum.cs" />
+    <Compile Include="Utilities\LocalDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

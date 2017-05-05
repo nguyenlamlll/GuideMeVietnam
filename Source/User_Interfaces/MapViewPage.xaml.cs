@@ -29,6 +29,7 @@ namespace Source.User_Interfaces
     /// </summary>
     public sealed partial class MapViewPage : Page
     {
+
         public MapViewPage()
         {
             this.InitializeComponent();
