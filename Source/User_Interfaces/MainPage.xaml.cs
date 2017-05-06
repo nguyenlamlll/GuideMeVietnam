@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Source.Models;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,18 +24,49 @@ namespace Source
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static int LogInTimes = 0;
+
         private List<MenuItem> MenuItems;
         public MainPage()
         {
             this.InitializeComponent();
+            
+
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
 
             //MenuItems = new List<MenuItem>();
             MenuItems = MenuItemManager.GetMenuItems();
 
 
+            
 
         }
+
+        private void WriteLoginTimes()
+        {
+            LogInTimes += 1;
+            Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserActivities, LogInTimes.ToString());
+        }
+        private async Task ReadLoginTimes()
+        {
+            try
+            {
+                string text = await Utilities.LocalDataAccess.ReadLineFromLocalFolder(DefaultFile.UserActivities);
+                LogInTimes = int.Parse(text);
+            }
+            catch
+            {
+                return;
+            }
+
+
+        }
+        private async void UpdateLoginTimes()
+        {
+            await ReadLoginTimes();
+            WriteLoginTimes();
+        }
+
         /// <summary>
         /// Disable Mainpage's search box.
         /// </summary>
@@ -52,7 +84,7 @@ namespace Source
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -84,7 +116,7 @@ namespace Source
             //Title.Text = itemClicked;
             //Button button = sender as Button;
             //MenuItem item = button.DataContext as MenuItem;
-            
+
             //ListView listview = sender as ListView;
             //MenuItem item = listvi as MenuItem;
             var menuItem = (MenuItem)e.ClickedItem;
@@ -135,7 +167,35 @@ namespace Source
         {
             //ItemClickEventArgs eventArg = new ItemClickEventArgs();
             //MenuItemsListView_ItemClick(this, eventArg);
-           
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LogInTimes == 1)
+            {
+                // Create user's settings for the first time launched
+                this.CreateUserSettings();
+                Utilities.Dialog.ShowDialog("Created 1st-time settings", "Settings Created");
+            }
+        }
+
+        /// <summary>
+        /// Only used when 1st launched the application.
+        /// </summary>
+        private async void CreateUserSettings()
+        {
+            if (!await Utilities.LocalDataAccess.IsExisted(DefaultFile.UserActivities))
+            {
+                Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserActivities, LogInTimes.ToString());
+            }
+            //bool x = await Utilities.LocalDataAccess.IsExisted("UserPlaces.txt");
+            //Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
+        }
+
+        private void Page_Loading(FrameworkElement sender, object args)
+        {
+           UpdateLoginTimes();
         }
     }
 }

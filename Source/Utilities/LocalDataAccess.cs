@@ -18,8 +18,29 @@ namespace Source.Utilities
         private static StorageFolder localCacheFolder = ApplicationData.Current.LocalCacheFolder;
       
         private static StorageFolder roamingFolder = ApplicationData.Current.RoamingFolder;
-  
+
+        private static ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+        /// <summary>
+        /// Temporary Folder is subject to change when the application is not in use. Use with caution!
+        /// Don't save anything valuable here.
+        /// </summary>
         private static StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;
+
+        public static async Task<bool> IsExisted(string fileName = "")
+        {
+            try
+            {
+                StorageFile stream = await localFolder.GetFileAsync(fileName);
+                if (stream != null) return true;
+            }
+            catch
+            {
+                return false;
+            }
+            return false;
+        }
+
 
         /// <summary>
         /// Write a new file to Local Folder. Will replace existing file.
@@ -40,6 +61,18 @@ namespace Source.Utilities
         }
 
         /// <summary>
+        /// Read first line from a file in Local Folder.
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static async Task<string> ReadLineFromLocalFolder(string fileName = "default.txt")
+        {
+            StorageFile sampleFile = await localFolder.GetFileAsync(fileName);
+            string fileContent = await FileIO.ReadTextAsync(sampleFile);
+            return fileContent;
+        }
+
+        /// <summary>
         /// Append a line of text into a file in Application's LocalFolder
         /// </summary>
         /// <param name="fileName"></param>
@@ -49,7 +82,7 @@ namespace Source.Utilities
             try
             {
                 StorageFile stream = await localFolder.GetFileAsync(fileName);
-                await FileIO.AppendTextAsync(stream, text);
+                if (stream != null) await FileIO.AppendTextAsync(stream, text);
             }
             catch (Exception ex)
             {
@@ -77,6 +110,7 @@ namespace Source.Utilities
             try
             {
                 await localFolder.DeleteAsync();
+                localFolder = ApplicationData.Current.LocalFolder;
             }
             catch (Exception ex)
             {
@@ -85,5 +119,50 @@ namespace Source.Utilities
             }
         }
 
+        public static bool IsLocalsettingsExist(string settingName = "")
+        {
+            var value = localSettings.Values[settingName];
+            if (value != null) return true;
+            return false;
+        }
+
+
+        /// <summary>
+        /// Write an integer to a setting slot in Local.
+        /// </summary>
+        /// <param name="valueToWrite"></param>
+        /// <param name="settingName"></param>
+        public static void WriteToLocalSettings(int valueToWrite, string settingName = "")
+        {
+            var value = localSettings.Values[settingName];
+            if (value == null)
+            {
+                localSettings.Values[settingName] = valueToWrite;
+            }
+        }
+
+        /// <summary>
+        /// If Setting Slot has a value, return that number. If not, return -1.
+        /// </summary>
+        /// <param name="settingName"></param>
+        /// <returns></returns>
+        public static int ReadFromLocalSettings(string settingName = "")
+        {
+            var value = localSettings.Values[settingName];
+            if (value != null)
+            {
+                return (int)value;
+            }
+            return -1;
+        }
+
+        /*
+        public static async void DeleteAllLocalSettings()
+        {
+            //await ApplicationData.Current.ClearAsync(ApplicationDataLocality.Local);
+            localSettings.DeleteContainer("");
+            localSettings = ApplicationData.Current.LocalSettings;
+        }
+        */
     }
 }

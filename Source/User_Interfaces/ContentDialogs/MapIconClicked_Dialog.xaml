@@ -50,11 +50,26 @@
                 </ScrollViewer>
             </RelativePanel>
 
-            <Button Height="33"
+            <StackPanel x:Name="GeopointStackPanel" RelativePanel.Below="FullAddressRelativePanel"
+                        Margin="10,5,0,0" Orientation="Horizontal">
+                <TextBlock x:Name="Longitude" 
+                           Margin="0,0,5,0">
+                10.0050505
+                </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1,0,0,0"/>
+                <TextBlock x:Name="Latitude"  
+                           Margin="5,0,0,0">
+                106.59808
+                </TextBlock>
+            </StackPanel>
+
+
+            <Button x:Name="SaveButton" Height="33"
+                    Click="SaveButton_Click"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE105;"
                     Margin="10"
-                    RelativePanel.Below="FullAddressRelativePanel"
+                    RelativePanel.Below="GeopointStackPanel"
                     RelativePanel.AlignHorizontalCenterWithPanel="True"/>
         </RelativePanel>
     </Grid>

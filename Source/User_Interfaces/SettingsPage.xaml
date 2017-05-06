@@ -28,14 +28,14 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Style="{StaticResource HeaderTextBlockStyle}"
                            Margin="25,10,0,0">
                     Settings
         </TextBlock>
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" VerticalScrollMode="Enabled">
             <StackPanel Orientation="Vertical"
                     Margin="25,0,0,0">
 
@@ -87,8 +87,27 @@
                 
                 
                 <!--#endregion-->
-                
 
+                <!--#region Reset settings-->
+                <TextBlock Style="{StaticResource SectionTextBlock}">
+                    Settings
+                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionTextBlock}">
+                    Reset all settings within this application. User data won't be affected.
+                </TextBlock>
+                <Button x:Name="ResetButton"
+                        Click="ResetButton_Click"
+                        Style="{StaticResource SectionButton}">
+                    Reset Settings
+                </Button>
+                <!--#endregion-->
+                
+                <TextBlock Style="{StaticResource SectionTextBlock}">
+                    Dummy 1
+                </TextBlock>
+                <TextBlock Style="{StaticResource SectionTextBlock}">
+                    Dummy 2
+                </TextBlock>
             </StackPanel>
         </ScrollViewer>
     </Grid>

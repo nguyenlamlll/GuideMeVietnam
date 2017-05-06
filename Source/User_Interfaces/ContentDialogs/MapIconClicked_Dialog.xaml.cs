@@ -30,10 +30,11 @@ namespace Source.User_Interfaces.ContentDialogs
         }
         public MapIconClicked_Dialog(string Title, string fullAddress)
         {
+            this.Width = AddressTextBlock.Width;
             this.InitializeComponent();
 
             FillComponents(Title, fullAddress);
-            this.Width = AddressTextBlock.Width;
+
         }
 
         public void FillComponents(string Title, string fullAddress)
@@ -47,6 +48,10 @@ namespace Source.User_Interfaces.ContentDialogs
             this.Visibility = Visibility.Collapsed;
         }
 
-
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            string stringToAppend = AddressTitleTextBlock.Text + "\n";
+            Utilities.LocalDataAccess.Append(Models.DefaultFile.UserPlaces, AddressTitleTextBlock.Text);
+        }
     }
 }

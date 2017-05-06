@@ -26,5 +26,11 @@ namespace Source.User_Interfaces
         {
             this.InitializeComponent();
         }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            Utilities.LocalDataAccess.DeleteAllFiles();
+            Utilities.Dialog.ShowDialog("Local Settings Reset! Please restart the application to make new settings apply.");
+        }
     }
 }
