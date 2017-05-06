@@ -138,6 +138,12 @@ namespace Source.Maps
             return false;
         }
 
+        /// <summary>
+        /// Decrease ZoomLevel of a MapControl.
+        /// </summary>
+        /// <param name="myMap">The map to be set ZoomLevel.</param>
+        /// <param name="level">The decreasing amount of ZoomLevel.</param>
+        /// <returns></returns>
         public static bool ZoomOut(MapControl myMap, double level)
         {
             try
