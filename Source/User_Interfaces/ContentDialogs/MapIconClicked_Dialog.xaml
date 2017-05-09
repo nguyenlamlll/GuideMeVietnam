@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Height="150" Width="250">
+    Height="175" Width="260">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -17,10 +17,10 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-          Opacity="0.5">
+          Opacity="0.7">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <RelativePanel x:Name="TopRelativePanel" Background="{ThemeResource AccentColor}">
@@ -40,24 +40,24 @@
         </RelativePanel>
 
         <RelativePanel Grid.Row="1">
-
             <RelativePanel x:Name="FullAddressRelativePanel" 
                            Margin="10,5,0,0">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <TextBlock x:Name="AddressTextBlock">
+
+                <TextBlock x:Name="AddressTextBlock" TextWrapping="NoWrap">
                     Some sample text <LineBreak/>Some sample text
-                    </TextBlock>
-                </ScrollViewer>
+
+                </TextBlock>
+
             </RelativePanel>
 
             <StackPanel x:Name="GeopointStackPanel" RelativePanel.Below="FullAddressRelativePanel"
                         Margin="10,5,0,0" Orientation="Horizontal">
-                <TextBlock x:Name="Longitude" 
+                <TextBlock x:Name="LongitudeTextBlock" 
                            Margin="0,0,5,0">
                 10.0050505
                 </TextBlock>
                 <Border BorderBrush="Black" BorderThickness="1,0,0,0"/>
-                <TextBlock x:Name="Latitude"  
+                <TextBlock x:Name="LatitudeTextBlock"  
                            Margin="5,0,0,0">
                 106.59808
                 </TextBlock>

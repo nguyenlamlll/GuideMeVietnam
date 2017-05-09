@@ -30,7 +30,7 @@ namespace Source
         public MainPage()
         {
             this.InitializeComponent();
-            
+
 
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
 
@@ -38,34 +38,11 @@ namespace Source
             MenuItems = MenuItemManager.GetMenuItems();
 
 
-            
-
-        }
-
-        private void WriteLoginTimes()
-        {
-            LogInTimes += 1;
-            Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserActivities, LogInTimes.ToString());
-        }
-        private async Task ReadLoginTimes()
-        {
-            try
-            {
-                string text = await Utilities.LocalDataAccess.ReadLineFromLocalFolder(DefaultFile.UserActivities);
-                LogInTimes = int.Parse(text);
-            }
-            catch
-            {
-                return;
-            }
 
 
         }
-        private async void UpdateLoginTimes()
-        {
-            await ReadLoginTimes();
-            WriteLoginTimes();
-        }
+
+
 
         /// <summary>
         /// Disable Mainpage's search box.
@@ -183,19 +160,50 @@ namespace Source
         /// <summary>
         /// Only used when 1st launched the application.
         /// </summary>
-        private async void CreateUserSettings()
+        private void CreateUserSettings()
         {
-            if (!await Utilities.LocalDataAccess.IsExisted(DefaultFile.UserActivities))
+            try
             {
                 Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserActivities, LogInTimes.ToString());
+                Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
             }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+
             //bool x = await Utilities.LocalDataAccess.IsExisted("UserPlaces.txt");
             //Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
         }
 
         private void Page_Loading(FrameworkElement sender, object args)
         {
-           UpdateLoginTimes();
+            UpdateLoginTimes();
+        }
+
+        private void WriteLoginTimes()
+        {
+            LogInTimes += 1;
+            Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserActivities, LogInTimes.ToString());
+        }
+        private async Task ReadLoginTimes()
+        {
+            try
+            {
+                string text = await Utilities.LocalDataAccess.ReadLineFromLocalFolder(DefaultFile.UserActivities);
+                LogInTimes = int.Parse(text);
+            }
+            catch
+            {
+                return;
+            }
+
+
+        }
+        private async void UpdateLoginTimes()
+        {
+            await ReadLoginTimes();
+            WriteLoginTimes();
         }
     }
 }

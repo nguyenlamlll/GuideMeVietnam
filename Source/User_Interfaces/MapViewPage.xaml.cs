@@ -91,14 +91,30 @@ namespace Source.User_Interfaces
 
         private async void MapSearchSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-            Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, sender.Text);
-            if (result != null)
+            try
             {
-                myMap.Center = result;
-                myMap.ZoomLevel = 14;
+                Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, sender.Text);
+                if (result != null)
+                {
+                    myMap.Center = result;
+                    myMap.ZoomLevel = 14;
+                }
+
+                // Clear submitted query in Autosuggest Box
+                sender.Text = "";
+
+                //Place a MapIcon at result.
+                ApplicationMapManager.AddStaticMapIcon(myMap, result);
             }
-            sender.Text = "";
-            //Place a MapIcon at result.
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Utilities.Dialog.ShowDialog("Please try again.\n" + ex.ToString(), "Error");
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+
         }
 
         /// <summary>

@@ -56,11 +56,13 @@ namespace Source.Maps
             MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(myClickedIcon.Location);
 
             string address = null;
+            string title = null;
             if (result.Status == MapLocationFinderStatus.Success)
             {
                 address = result.Locations[0].Address.FormattedAddress;
+                title = result.Locations[0].DisplayName;
             }
-            User_Interfaces.ContentDialogs.MapIconClicked_Dialog pinDialog = new User_Interfaces.ContentDialogs.MapIconClicked_Dialog("Push Pin", address);
+            User_Interfaces.ContentDialogs.MapIconClicked_Dialog pinDialog = new User_Interfaces.ContentDialogs.MapIconClicked_Dialog("Push Pin", address, myClickedIcon.Location);
 
             sender.Children.Add(pinDialog);
             Geopoint pointClicked = args.Location;

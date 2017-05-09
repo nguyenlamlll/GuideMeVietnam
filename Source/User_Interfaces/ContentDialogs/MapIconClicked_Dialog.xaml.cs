@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -28,13 +29,23 @@ namespace Source.User_Interfaces.ContentDialogs
             this.InitializeComponent();
 
         }
-        public MapIconClicked_Dialog(string Title, string fullAddress)
+        public MapIconClicked_Dialog(string Title, string fullAddress, Geopoint point)
         {
-            this.Width = AddressTextBlock.Width;
+            //this.Width = AddressTextBlock.Width;
             this.InitializeComponent();
 
+            // Fill title of location and its address.
             FillComponents(Title, fullAddress);
 
+            // Update its GeoLocation
+            FillGeopointLocation(point);
+
+        }
+
+        private void FillGeopointLocation(Geopoint point)
+        {
+            LongitudeTextBlock.Text = point.Position.Longitude.ToString();
+            LatitudeTextBlock.Text = point.Position.Latitude.ToString();
         }
 
         public void FillComponents(string Title, string fullAddress)
@@ -51,7 +62,19 @@ namespace Source.User_Interfaces.ContentDialogs
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string stringToAppend = AddressTitleTextBlock.Text + "\n";
-            Utilities.LocalDataAccess.Append(Models.DefaultFile.UserPlaces, AddressTitleTextBlock.Text);
+            try
+            {
+                Utilities.LocalDataAccess.Append(Models.DefaultFile.UserPlaces, AddressTitleTextBlock.Text);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Utilities.Dialog.ShowDialog("Setting File Not Found. Please reset the settings and try again.\n" + ex.ToString(), "Error");
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+           
         }
     }
 }
