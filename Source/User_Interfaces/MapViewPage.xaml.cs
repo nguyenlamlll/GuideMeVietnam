@@ -50,10 +50,10 @@ namespace Source.User_Interfaces
             myMap.MapElementPointerEntered += ApplicationMapManager.MyMap_MapElementPointerEntered;
             myMap.MapElementPointerExited += ApplicationMapManager.MyMap_MapElementPointerExited;
 
-            myMap.Center = DefinedGeopoints.DaNangGeoPoint;
-            myMap.ZoomLevel = 6;
-            
+            ApplicationMapManager.SetDefaultMapSettings(this.myMap);
+
         }
+
 
 
 

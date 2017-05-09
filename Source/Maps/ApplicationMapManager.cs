@@ -159,6 +159,11 @@ namespace Source.Maps
             return false;
         }
 
+        public static void SetDefaultMapSettings(MapControl map)
+        {
+            map.Center = DefinedGeopoints.DaNangGeoPoint;
+            map.ZoomLevel = 6;
+        }
 
         public static async Task<List<PlaceInfo>> LoadPlaceInfo(string fileName = "default.txt")
         {
