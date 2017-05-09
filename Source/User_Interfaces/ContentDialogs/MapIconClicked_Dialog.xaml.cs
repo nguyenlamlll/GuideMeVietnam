@@ -31,8 +31,8 @@ namespace Source.User_Interfaces.ContentDialogs
         }
         public MapIconClicked_Dialog(string Title, string fullAddress, Geopoint point)
         {
-            //this.Width = AddressTextBlock.Width;
             this.InitializeComponent();
+            this.Width = AddressTextBlock.Width;
 
             // Fill title of location and its address.
             FillComponents(Title, fullAddress);
