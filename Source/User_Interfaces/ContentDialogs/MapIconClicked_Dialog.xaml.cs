@@ -44,8 +44,14 @@ namespace Source.User_Interfaces.ContentDialogs
 
         private void FillGeopointLocation(Geopoint point)
         {
-            LongitudeTextBlock.Text = point.Position.Longitude.ToString();
-            LatitudeTextBlock.Text = point.Position.Latitude.ToString();
+            decimal longitude = (decimal)point.Position.Longitude;
+            longitude = Math.Round(longitude, 4, MidpointRounding.AwayFromZero);
+
+            decimal latitude = (decimal)point.Position.Latitude;
+            longitude = Math.Round(latitude, 4, MidpointRounding.AwayFromZero);
+
+            LongitudeTextBlock.Text = longitude.ToString();
+            LatitudeTextBlock.Text = latitude.ToString();
         }
 
         public void FillComponents(string Title, string fullAddress)
