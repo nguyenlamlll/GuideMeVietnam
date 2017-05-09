@@ -95,6 +95,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Maps\DefinedGeopoints.cs" />
+    <Compile Include="Maps\GeoCoding.cs" />
+    <Compile Include="Maps\ApplicationMapManager.cs" />
+    <Compile Include="Maps\Place.cs" />
+    <Compile Include="Models\DefaultFile.cs" />
+    <Compile Include="Models\DefaultSetting.cs" />
     <Compile Include="Models\EnumTypes\ProvincesEnum.cs" />
     <Compile Include="Models\FeaturedImage.cs" />
     <Compile Include="Models\FeaturedImageManager.cs" />
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="User_Interfaces\BlankPage2.xaml.cs">
       <DependentUpon>BlankPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Interfaces\ContentDialogs\MapIconClicked_Dialog.xaml.cs">
+      <DependentUpon>MapIconClicked_Dialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="User_Interfaces\DownloadedMap.xaml.cs">
       <DependentUpon>DownloadedMap.xaml</DependentUpon>
@@ -118,6 +127,13 @@
     <Compile Include="User_Interfaces\MapViewPage.xaml.cs">
       <DependentUpon>MapViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interfaces\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Color.cs" />
+    <Compile Include="Utilities\Dialog.cs" />
+    <Compile Include="Utilities\DialogEnum.cs" />
+    <Compile Include="Utilities\LocalDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -126,7 +142,10 @@
     <None Include="Source_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\add.png" />
+    <Content Include="Assets\Icons\push-pin-64.png" />
     <Content Include="Assets\Icons\push-pin.png" />
+    <Content Include="Assets\Icons\substract.png" />
     <Content Include="Assets\Images\Cities\Saigon.jpg" />
     <Content Include="Assets\Images\Provinces\DaLat\dalat.jpg" />
     <Content Include="Assets\Images\Provinces\DaLat\dalat2.gif" />
@@ -206,6 +225,11 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Styles\GenericStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="Styles\ImageDisplayStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User_Interfaces\BlankPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\ContentDialogs\MapIconClicked_Dialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +260,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interfaces\MapViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

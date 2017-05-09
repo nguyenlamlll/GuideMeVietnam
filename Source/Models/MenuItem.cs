@@ -21,7 +21,7 @@ namespace Source.Models
         Posts,
         Photos,
         About,
-
+        Lists,
         //MenuItems for Menu "About"
         Help,
         Credits,
@@ -35,6 +35,7 @@ namespace Source.Models
             items.Add(new MenuItem { IconFile = "\uE10F", Category = MenuItemCategory.Homepage });
             items.Add(new MenuItem { IconFile = "\uE909", Category = MenuItemCategory.Map });
             items.Add(new MenuItem { IconFile = "\uE115", Category = MenuItemCategory.Settings });
+            items.Add(new MenuItem { IconFile = "\uE14C", Category = MenuItemCategory.Lists });
             return items;
         }
         public static List<MenuItem> GetAboutMenuItems()

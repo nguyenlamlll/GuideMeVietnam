@@ -27,10 +27,10 @@
                 <StackPanel Margin="0,0,0,10"
                             RelativePanel.AlignLeftWithPanel="True"
                             RelativePanel.AlignVerticalCenterWithPanel="True">
-                    <TextBlock x:Name="description" 
+                    <TextBlock x:Name="description" Visibility="Collapsed"
                            Text="Mapview"
-                           FontSize="25"/>
-                    <TextBlock TextWrapping="Wrap" FontStyle="Italic">
+                           FontSize="30"/>
+                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Visibility="Collapsed">
                     Use your mouse to move and scrollwheel to zoom in or out.
                     </TextBlock>
                 </StackPanel>
@@ -38,28 +38,26 @@
                                  RelativePanel.AlignRightWithPanel="True"
                                  RelativePanel.AlignBottomWithPanel="True"
                                  NavigateUri="https://www.microsoft.com/maps/assets/docs/terms.aspx" Content="Terms of Use"/>
+                <AutoSuggestBox x:Name="MapSearchSuggestBox"
+                                PlaceholderText="Search for a place..."
+                                Width="250"
+                                QueryIcon="Find"
+                                RelativePanel.AlignRightWithPanel="True"
+                                RelativePanel.AlignTopWithPanel="True"
+                                RelativePanel.Above="BingMapsTOU"
+                                TextChanged="MapSearchSuggestBox_TextChanged"
+                                SuggestionChosen="MapSearchSuggestBox_SuggestionChosen"
+                                QuerySubmitted="MapSearchSuggestBox_QuerySubmitted"/>
             </RelativePanel>
-            
 
             <RelativePanel Grid.Row="1">
-                <Image x:Name="PinImage" 
-                       Width="30" Height="30"
-                       Source="ms-appx:///Assets/Icons/push-pin.png" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" 
-                       RelativePanel.AlignLeftWithPanel="True"
-                       Tapped="PinImage_Tapped"/>
-                <Button x:Name="addXamlChildrenButton" 
-                        Content="Add A Pin On The Map" 
-                        RelativePanel.RightOf="PinImage"
-                        Click="addXamlChildrenButton_Click"/>
                 <Button x:Name="DownloadMapButton" 
                         Content="Downloaded Maps" 
                         HorizontalAlignment="Right"
-                        RelativePanel.AlignRightWithPanel="True"/>
+                        RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" Click="DownloadMapButton_Click"/>
             </RelativePanel>
 
-            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2">
+            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2" MapTapped="myMap_MapTapped" MapRightTapped="myMap_MapRightTapped">
                 <maps:MapItemsControl x:Name="MapItems">
                     <maps:MapItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -82,7 +80,55 @@
                         </DataTemplate>
                     </maps:MapItemsControl.ItemTemplate>
                 </maps:MapItemsControl>
+                <FlyoutBase.AttachedFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:Name="FromDirection_MenuFlyoutItem" Text="Direction from here"/>
+                        <MenuFlyoutItem x:Name="ToDirection_MenuFlyoutItem" Text="Direction to here"/>
+                        <MenuFlyoutSeparator/>
+                        <MenuFlyoutItem x:Name="PinDrop_MenuFlyoutItem" Text="Drop a pin" Click="PinDrop_MenuFlyoutItem_Click"/>
+                    </MenuFlyout>
+                </FlyoutBase.AttachedFlyout>
             </maps:MapControl>
+
+            <StackPanel x:Name="MapButtonsStackPanel" Margin="0,0,30,0"
+                        Background="{ThemeResource ButtonBackground}" 
+                        Opacity="60"
+                        Orientation="Vertical"
+                        Grid.Row="2"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="40">
+                <Button x:Name="MapSettingButton" 
+                        Foreground="{ThemeResource SystemAltHighColor}"
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="20"
+                        Content="&#xE158;"
+                        HorizontalAlignment="Center"
+                        Click="MapSettingButton_Click">
+                    <FlyoutBase.AttachedFlyout>
+                        <MenuFlyout>
+                            <ToggleMenuFlyoutItem>Traffic</ToggleMenuFlyoutItem>
+                        </MenuFlyout>
+                    </FlyoutBase.AttachedFlyout>
+                </Button>
+                <Button x:Name="ZoomInButton" 
+                        Foreground="{ThemeResource SystemAltHighColor}"
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="20"
+                        Content="&#xE109;"
+                        HorizontalAlignment="Center"
+                        Click="ZoomInButton_Click">
+                </Button>
+                <Button x:Name="ZoomOutButton" 
+                        Foreground="{ThemeResource SystemAltHighColor}"
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="20"
+                        Content="&#xE108;"
+                        HorizontalAlignment="Center"
+                        Click="ZoomOutButton_Click">
+                </Button>
+            </StackPanel>
         </Grid>
+        
     </Grid>
 </Page>
