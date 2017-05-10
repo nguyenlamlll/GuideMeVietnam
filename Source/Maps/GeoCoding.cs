@@ -63,21 +63,24 @@ namespace Source.Maps
             // of the first result.
             if (result.Status == MapLocationFinderStatus.Success)
             {
-                //Pass the result into a retriever-method
-                var dialog = new MessageDialog("Found it!");
-                await dialog.ShowAsync();
-
-                GeopointResult = new Geopoint(new BasicGeoposition
+                if (result.Locations.Any())
                 {
-                    Latitude = result.Locations[0].Point.Position.Latitude,
-                    Longitude = result.Locations[0].Point.Position.Longitude
-                });
+                    GeopointResult = new Geopoint(new BasicGeoposition
+                    {
+                        Latitude = result.Locations[0].Point.Position.Latitude,
+                        Longitude = result.Locations[0].Point.Position.Longitude
+                    });
+                    return GeopointResult;
+                }
+                // Search is succeed, but yields no result.
+                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.\nPlease try again with more details.");
                 return GeopointResult;
             }
+            // Search is failed. (maybe due to input faults, or connection errors)
             else
             {
                 //Say that we cannot find the location
-                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.");
+                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.\nPlease check your internet connection and try again.");
                 return GeopointResult;
             }
         }

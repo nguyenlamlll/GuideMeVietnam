@@ -52,6 +52,7 @@ namespace Source.User_Interfaces
 
             ApplicationMapManager.SetDefaultMapSettings(this.myMap);
 
+            LoadingIndicator.IsActive = false;
         }
 
 
@@ -93,6 +94,8 @@ namespace Source.User_Interfaces
         {
             try
             {
+                LoadingIndicator.IsActive = true;
+                await Task.Delay(1000);
                 Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, sender.Text);
                 if (result != null)
                 {
@@ -106,15 +109,18 @@ namespace Source.User_Interfaces
                 //Place a MapIcon at result.
                 ApplicationMapManager.AddStaticMapIcon(myMap, result);
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException)
             {
-                Utilities.Dialog.ShowDialog("Please try again.\n" + ex.ToString(), "Error");
+                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.\nPlease try again with more details.", "Error");
             }
             catch (Exception ex)
             {
                 Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
             }
-
+            finally
+            {
+                LoadingIndicator.IsActive = false;
+            }
         }
 
         /// <summary>
@@ -165,6 +171,9 @@ namespace Source.User_Interfaces
             attachedFlyout.ShowAt(MapSettingButton);
         }
 
-
+        private void myMap_Loading(FrameworkElement sender, object args)
+        {
+            LoadingIndicator.IsActive = true;
+        }
     }
 }

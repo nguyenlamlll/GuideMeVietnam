@@ -31,7 +31,7 @@ namespace Source
         public MainPage()
         {
             this.InitializeComponent();
-            
+
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
 
             MenuItems = MenuItemManager.GetMenuItems();
@@ -108,7 +108,9 @@ namespace Source
                 case MenuItemCategory.Map:
                     {
                         this.DisableSearchBox(); //MapViewPage has its own Search Box for places, addresses.
+
                         FirstFrame.Navigate(typeof(User_Interfaces.MapViewPage));
+
                         break;
                     }
                 case MenuItemCategory.About:
