@@ -67,14 +67,22 @@ namespace Source.User_Interfaces.ContentDialogs
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            string stringToAppend = AddressTitleTextBlock.Text + "\n";
+            List<string> stringToAppend = new List<string>
+            {
+                AddressTitleTextBlock.Text + "\n",
+                LatitudeTextBlock.Text + "\n",
+                LongitudeTextBlock.Text + "\n"
+            };
             try
             {
-                Utilities.LocalDataAccess.Append(Models.DefaultFile.UserPlaces, AddressTitleTextBlock.Text);
+                foreach (string str in stringToAppend)
+                {
+                    Utilities.LocalDataAccess.Append(Models.DefaultFile.UserPlaces, str);
+                }
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
-                Utilities.Dialog.ShowDialog("Setting File Not Found. Please reset the settings and try again.\n" + ex.ToString(), "Error");
+                Utilities.Dialog.ShowDialog("Setting File Not Found. Please reset the settings and try again.\n", "Error");
             }
             catch (Exception ex)
             {

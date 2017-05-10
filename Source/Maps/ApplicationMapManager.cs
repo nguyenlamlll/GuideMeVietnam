@@ -165,7 +165,7 @@ namespace Source.Maps
             map.ZoomLevel = 6;
         }
 
-        public static async Task<List<PlaceInfo>> LoadPlaceInfo(string fileName = "default.txt")
+        public static async Task<List<PlaceInfo>> LoadPlaceInfo(string fileName)
         {
             List<PlaceInfo> places = new List<PlaceInfo>();
 

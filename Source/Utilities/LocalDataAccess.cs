@@ -13,8 +13,14 @@ namespace Source.Utilities
     /// </summary>
     public static class LocalDataAccess
     {
+        /// <summary>
+        /// App data that survives through application's sessions. Can be backed up by the system.
+        /// </summary>
         private static StorageFolder localFolder = ApplicationData.Current.LocalFolder;
 
+        /// <summary>
+        /// App data that you want persisted across app sessions, but that should not be backed up by the system.
+        /// </summary>
         private static StorageFolder localCacheFolder = ApplicationData.Current.LocalCacheFolder;
       
         private static StorageFolder roamingFolder = ApplicationData.Current.RoamingFolder;
@@ -109,8 +115,26 @@ namespace Source.Utilities
         {
             try
             {
-                await localFolder.DeleteAsync();
-                localFolder = ApplicationData.Current.LocalFolder;
+                foreach (StorageFile file in await localFolder.GetFilesAsync())
+                {
+                    if (file.Name == Models.DefaultFile.UserActivities) continue;
+                    await file.DeleteAsync();
+                }
+                //await localFolder.DeleteAsync();
+                //localFolder = ApplicationData.Current.LocalFolder;
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Unable to clear settings. This can happen when files are in use.\n"
+                    + ex.ToString(), "Error");
+            }
+        }
+        public static async void DeleteAllLocalCacheFolder()
+        {
+            try
+            {
+                await localCacheFolder.DeleteAsync();
+                localCacheFolder = ApplicationData.Current.LocalCacheFolder;
             }
             catch (Exception ex)
             {

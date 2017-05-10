@@ -36,6 +36,12 @@ namespace Source
 
             MenuItems = MenuItemManager.GetMenuItems();
 
+            User_Interfaces.SettingsPage.ResetDataEvent += SettingsPage_ResetDataEvent_CreateDefaultSettings;
+        }
+
+        private void SettingsPage_ResetDataEvent_CreateDefaultSettings(object sender, EventArgs e)
+        {
+            CreateUserPlacesFile();
         }
 
 
@@ -174,6 +180,18 @@ namespace Source
                 Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
             }
         }
+        private void CreateUserPlacesFile()
+        {
+            try
+            {
+                Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+        }
+
 
         private void Page_Loading(FrameworkElement sender, object args)
         {

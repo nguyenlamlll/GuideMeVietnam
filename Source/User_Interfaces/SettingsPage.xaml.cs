@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Utilities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,8 +30,19 @@ namespace Source.User_Interfaces
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
-            Utilities.LocalDataAccess.DeleteAllFiles();
-            Utilities.Dialog.ShowDialog("Local Settings Reset! Please restart the application to make new settings apply.");
+            LocalDataAccess.DeleteAllFiles();
+            Dialog.ShowDialog("Local Settings Reset! Please restart the application to make new settings apply.");
+        }
+        public static event EventHandler ResetDataEvent;
+        private void ResetDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Delete all files except for UserActivities.txt
+            LocalDataAccess.DeleteAllLocalFolderFiles();
+            Dialog.ShowDialog("Local Data Reset.");
+
+            // Create all default files.
+            ResetDataEvent?.Invoke(this, null);
+
         }
     }
 }

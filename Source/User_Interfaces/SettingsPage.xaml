@@ -100,6 +100,15 @@
                         Style="{StaticResource SectionButton}">
                     Reset Settings
                 </Button>
+
+                <TextBlock Style="{StaticResource DescriptionTextBlock}">
+                    Reset all data stored within this application. Be cautious as you can't retrieve any of them back afterward.
+                </TextBlock>
+                <Button x:Name="ResetDataButton"
+                        Click="ResetDataButton_Click"
+                        Style="{StaticResource SectionButton}">
+                    Reset Data
+                </Button>
                 <!--#endregion-->
                 
                 <TextBlock Style="{StaticResource SectionTextBlock}">
