@@ -45,9 +45,17 @@
 
                 <TextBlock x:Name="AddressTextBlock" TextWrapping="NoWrap">
                     Some sample text <LineBreak/>Some sample text
-
                 </TextBlock>
-
+                <Button x:Name="CopyAddressButton"
+                        FontSize="10"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xEF2F;" Margin="10,0,0,0" 
+                        RelativePanel.RightOf="AddressTextBlock"
+                        RelativePanel.AlignVerticalCenterWithPanel="True">
+                    <ToolTipService.ToolTip>
+                        Click to submit
+                    </ToolTipService.ToolTip>
+                </Button>
             </RelativePanel>
 
             <StackPanel x:Name="GeopointStackPanel" RelativePanel.Below="FullAddressRelativePanel"
@@ -63,14 +71,22 @@
                 </TextBlock>
             </StackPanel>
 
-
-            <Button x:Name="SaveButton" Height="33"
+            <StackPanel Orientation="Horizontal" 
+                        Margin="0,5,0,0"
+                        RelativePanel.Below="GeopointStackPanel"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True">
+                <Button x:Name="SaveButton" Height="33"
                     Click="SaveButton_Click"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE105;"
                     Margin="10"
-                    RelativePanel.Below="GeopointStackPanel"
-                    RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+/>
+                <Button x:Name="DeleteIconButton" Height="33"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE107;"
+                    Margin="10"/>
+            </StackPanel>
+
         </RelativePanel>
     </Grid>
 </Page>
