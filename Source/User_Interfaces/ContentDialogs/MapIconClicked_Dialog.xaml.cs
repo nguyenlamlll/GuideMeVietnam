@@ -23,7 +23,7 @@ namespace Source.User_Interfaces.ContentDialogs
     /// </summary>
     public sealed partial class MapIconClicked_Dialog : Page
     {
-        
+
         public MapIconClicked_Dialog()
         {
             this.InitializeComponent();
@@ -56,10 +56,13 @@ namespace Source.User_Interfaces.ContentDialogs
 
         public void FillComponents(string Title, string fullAddress)
         {
-            AddressTitleTextBlock.Text = Title;
-            AddressTextBlock.Text = fullAddress;
+            if (Title != "" && fullAddress != "")
+            {
+                AddressTitleTextBlock.Text = Title;
+                AddressTextBlock.Text = fullAddress;
+            }
         }
-        
+
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
@@ -67,18 +70,15 @@ namespace Source.User_Interfaces.ContentDialogs
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            List<string> stringToAppend = new List<string>
-            {
-                AddressTitleTextBlock.Text + "\n",
-                LatitudeTextBlock.Text + "\n",
-                LongitudeTextBlock.Text + "\n"
-            };
+            string stringToAppend =
+                AddressTitleTextBlock.Text + "\n" +
+                LatitudeTextBlock.Text + "\n" +
+                LongitudeTextBlock.Text + "\n";
             try
             {
-                foreach (string str in stringToAppend)
-                {
-                    Utilities.LocalDataAccess.Append(Models.DefaultFile.UserPlaces, str);
-                }
+                Utilities.LocalDataAccess.Append(stringToAppend, Models.DefaultFile.UserPlaces);
+             
+
             }
             catch (FileNotFoundException)
             {
@@ -88,7 +88,7 @@ namespace Source.User_Interfaces.ContentDialogs
             {
                 Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
             }
-           
+
         }
     }
 }

@@ -59,8 +59,11 @@ namespace Source.Maps
             string title = null;
             if (result.Status == MapLocationFinderStatus.Success)
             {
-                address = result.Locations[0].Address.FormattedAddress;
-                title = result.Locations[0].DisplayName;
+                if (result.Locations.Any())
+                {
+                    address = result.Locations[0].Address.FormattedAddress;
+                    title = result.Locations[0].DisplayName;
+                }
             }
             User_Interfaces.ContentDialogs.MapIconClicked_Dialog pinDialog = new User_Interfaces.ContentDialogs.MapIconClicked_Dialog("Push Pin", address, myClickedIcon.Location);
 
