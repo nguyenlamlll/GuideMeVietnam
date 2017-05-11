@@ -42,25 +42,33 @@ namespace Source.User_Interfaces.ContentDialogs
 
         }
 
+        /// <summary>
+        /// Fill Longitude and Latitude into their own text blocks
+        /// </summary>
+        /// <param name="point"></param>
         private void FillGeopointLocation(Geopoint point)
         {
+            if (point == null) return;
+
             decimal longitude = (decimal)point.Position.Longitude;
             longitude = Math.Round(longitude, 4, MidpointRounding.AwayFromZero);
 
             decimal latitude = (decimal)point.Position.Latitude;
-            longitude = Math.Round(latitude, 4, MidpointRounding.AwayFromZero);
+            latitude = Math.Round(latitude, 4, MidpointRounding.AwayFromZero);
 
             LongitudeTextBlock.Text = longitude.ToString();
             LatitudeTextBlock.Text = latitude.ToString();
         }
 
+        /// <summary>
+        /// Fill in text blocks of the title and its address.
+        /// </summary>
+        /// <param name="Title"></param>
+        /// <param name="fullAddress"></param>
         public void FillComponents(string Title, string fullAddress)
         {
-            if (Title != "" && fullAddress != "")
-            {
-                AddressTitleTextBlock.Text = Title;
-                AddressTextBlock.Text = fullAddress;
-            }
+            if (Title != "") AddressTitleTextBlock.Text = Title;
+            if (fullAddress != "") AddressTextBlock.Text = fullAddress;
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -77,12 +85,12 @@ namespace Source.User_Interfaces.ContentDialogs
             try
             {
                 Utilities.LocalDataAccess.Append(stringToAppend, Models.DefaultFile.UserPlaces);
-             
+
 
             }
             catch (FileNotFoundException)
             {
-                Utilities.Dialog.ShowDialog("Setting File Not Found. Please reset the settings and try again.\n", "Error");
+                Utilities.Dialog.ShowDialog("Setting Files Not Found.\nPlease reset the settings and try again.", "Error");
             }
             catch (Exception ex)
             {

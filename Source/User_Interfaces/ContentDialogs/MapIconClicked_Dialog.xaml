@@ -25,9 +25,10 @@
 
         <RelativePanel x:Name="TopRelativePanel" Background="{ThemeResource AccentColor}">
             <TextBlock x:Name="AddressTitleTextBlock"
-                           Foreground="{StaticResource AltHighColor}"
-                           Style="{StaticResource TitleTextBlockStyle}"
-                           RelativePanel.AlignLeftWithPanel="True">
+                       Margin="10,0,0,0"
+                       Foreground="{StaticResource AltHighColor}"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       RelativePanel.AlignLeftWithPanel="True">
                 Title of address
             </TextBlock>
             <Button x:Name="ExitButton" 
