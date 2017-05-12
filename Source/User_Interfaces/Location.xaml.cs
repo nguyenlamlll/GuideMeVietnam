@@ -42,7 +42,7 @@ namespace Source.User_Interfaces
                 listImage.Add(temp[i]);
             }
 
-            img.Source = new BitmapImage(new Uri("ms-appx://" + listImage[count]));
+            img.Source = new BitmapImage(new Uri("ms-appx://" + listImage[0]));
         }
 
 
@@ -51,6 +51,7 @@ namespace Source.User_Interfaces
             locationDC = new LocationDataContext((short)e.Parameter);
             this.DataContext = locationDC;
 
+            count = 0;
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 5);
             timer.Tick += PlayListTimer_Tick;
@@ -61,12 +62,12 @@ namespace Source.User_Interfaces
         {
             if (listImage != null)
             {
-                if (count == listImage.Count)
-                    count = 0;
+                if (count == listImage.Count - 1)
+                    count = -1;
                 if (count < listImage.Count)
-                {                    
-                    ImageRotation();
+                {
                     count++;
+                    ImageRotation();                    
                 }
             }
         }

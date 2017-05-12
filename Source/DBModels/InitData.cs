@@ -196,70 +196,71 @@ namespace Source.DBModels
                 db.SaveChanges();
 
                 //Add values into IMAGE in Ha Noi../Assets/Images/Locations/HaNoi/abc.xyz
-                 db.IMAGES.Add(new IMAGE() { imageID =61 , imageSource = "TempleofLiterature0.jpg", articleID =21  });
-                 db.IMAGES.Add(new IMAGE() { imageID =62 , imageSource = "TempleofLiterature1.jpg", articleID =21  });
-                 db.IMAGES.Add(new IMAGE() { imageID =63 , imageSource = "TempleofLiterature2.jpg", articleID =21 });
-                 db.IMAGES.Add(new IMAGE() { imageID =64 , imageSource = "HoChiMinhMausoleum0.jpg", articleID =22  });
-                 db.IMAGES.Add(new IMAGE() { imageID =65 , imageSource = "HoChiMinhMausoleum1.jpg", articleID =22  });
-                 db.IMAGES.Add(new IMAGE() { imageID =66 , imageSource = "HoChiMinhMausoleum2.jpg", articleID =22  });
-                 db.IMAGES.Add(new IMAGE() { imageID =67 , imageSource = "HoanKiemLake0.jpg", articleID =23  });
-                 db.IMAGES.Add(new IMAGE() { imageID =68 , imageSource = "HoanKiemLake1.jpg", articleID =23  });
-                 db.IMAGES.Add(new IMAGE() { imageID =69 , imageSource = "HoanKiemLake2.jpg", articleID =23  });
-                 db.IMAGES.Add(new IMAGE() { imageID =70 , imageSource = "TheImperialCitadel0.jpg", articleID =24  });
-                 db.IMAGES.Add(new IMAGE() { imageID =71 , imageSource = "TheImperialCitadel1.jpg", articleID =24  });
-                 db.IMAGES.Add(new IMAGE() { imageID =72 , imageSource = "TheImperialCitadel2.jpg", articleID =24  });
-                 db.IMAGES.Add(new IMAGE() { imageID =73 , imageSource = "HanoiOldQuarter0.jpg", articleID =25  });
-                 db.IMAGES.Add(new IMAGE() { imageID =74 , imageSource = "HanoiOldQuarter1.jpg", articleID =25  });
-                 db.IMAGES.Add(new IMAGE() { imageID =75 , imageSource = "HanoiOldQuarter2.jpg", articleID =25  });
-                 db.IMAGES.Add(new IMAGE() { imageID =76 , imageSource = "GrilledNem0.jpg", articleID =26  });
-                 db.IMAGES.Add(new IMAGE() { imageID =77 , imageSource = "GrilledNem1.jpg", articleID =26  });
-                 db.IMAGES.Add(new IMAGE() { imageID =78 , imageSource = "GrilledNem2.jpg", articleID =26  });
-                 db.IMAGES.Add(new IMAGE() { imageID =79 , imageSource = "Sausagefish0.jpg", articleID =27  });
-                 db.IMAGES.Add(new IMAGE() { imageID =80 , imageSource = "Sausagefish1.jpg", articleID =27  });
-                 db.IMAGES.Add(new IMAGE() { imageID =81 , imageSource = "Sausagefish2.jpg", articleID =27  });
-                 db.IMAGES.Add(new IMAGE() { imageID =82 , imageSource = "Vietnamesenoodles0.jpg", articleID =28  });
-                 db.IMAGES.Add(new IMAGE() { imageID =83 , imageSource = "Vietnamesenoodles1.jpg", articleID =28  });
-                 db.IMAGES.Add(new IMAGE() { imageID =84 , imageSource = "Vietnamesenoodles2.jpg", articleID =28  });
-                 db.IMAGES.Add(new IMAGE() { imageID =85 , imageSource = "Pho0.jpg", articleID =29  });
-                 db.IMAGES.Add(new IMAGE() { imageID =86 , imageSource = "Pho1.jpg", articleID =29  });
-                 db.IMAGES.Add(new IMAGE() { imageID =87 , imageSource = "Pho2.jpg", articleID =29  });
-                 db.IMAGES.Add(new IMAGE() { imageID =88 , imageSource = "RolledCake0.jpg", articleID =30  });
-                 db.IMAGES.Add(new IMAGE() { imageID =89 , imageSource = "RolledCake1.jpg", articleID =30  });
-                 db.IMAGES.Add(new IMAGE() { imageID =90 , imageSource = "RolledCake2.jpg", articleID =30  });
-                 db.IMAGES.Add(new IMAGE() { imageID =91 , imageSource = "RegalHotel0.jpg", articleID =31  });
-                 db.IMAGES.Add(new IMAGE() { imageID =92 , imageSource = "RegalHotel1.jpg", articleID =31  });
-                 db.IMAGES.Add(new IMAGE() { imageID =93 , imageSource = "RegalHotel2.jpg", articleID =31  });
-                 db.IMAGES.Add(new IMAGE() { imageID =94 , imageSource = "HaVihotel0.jpg", articleID =32  });
-                 db.IMAGES.Add(new IMAGE() { imageID =95 , imageSource = "HaVihotel1.jpg", articleID =32  });
-                 db.IMAGES.Add(new IMAGE() { imageID =96 , imageSource = "HaVihotel2.jpg", articleID =32  });
-                 db.IMAGES.Add(new IMAGE() { imageID =97 , imageSource = "HanoiLaSiesta0.jpg", articleID =33  });
-                 db.IMAGES.Add(new IMAGE() { imageID =98 , imageSource = "HanoiLaSiesta1.jpg", articleID =33  });
-                 db.IMAGES.Add(new IMAGE() { imageID =99 , imageSource = "HanoiLaSiesta2.jpg", articleID =33  });
-                 db.IMAGES.Add(new IMAGE() { imageID =100 , imageSource = "HanoiDaewoo0.jpg", articleID =34  });
-                 db.IMAGES.Add(new IMAGE() { imageID =101 , imageSource = "HanoiDaewoo1.jpg", articleID =34  });
-                 db.IMAGES.Add(new IMAGE() { imageID =102 , imageSource = "HanoiDaewoo2.jpg", articleID =34  });
-                 db.IMAGES.Add(new IMAGE() { imageID =103 , imageSource = "IDCWhiteHouse0.jpg", articleID =35  });
-                 db.IMAGES.Add(new IMAGE() { imageID =104 , imageSource = "IDCWhiteHouse1.jpg", articleID =35  });
-                 db.IMAGES.Add(new IMAGE() { imageID =105 , imageSource = "IDCWhiteHouse2.jpg", articleID =35  });
-                 db.SaveChanges();
+                db.IMAGES.Add(new IMAGE() { imageID =61 , imageSource = "TempleofLiterature0.jpg", articleID =21  });
+                db.IMAGES.Add(new IMAGE() { imageID =62 , imageSource = "TempleofLiterature1.jpg", articleID =21  });
+                db.IMAGES.Add(new IMAGE() { imageID =63 , imageSource = "TempleofLiterature2.jpg", articleID =21 });
+                db.IMAGES.Add(new IMAGE() { imageID =64 , imageSource = "HoChiMinhMausoleum0.jpg", articleID =22  });
+                db.IMAGES.Add(new IMAGE() { imageID =65 , imageSource = "HoChiMinhMausoleum1.jpg", articleID =22  });
+                db.IMAGES.Add(new IMAGE() { imageID =66 , imageSource = "HoChiMinhMausoleum2.jpg", articleID =22  });
+                db.IMAGES.Add(new IMAGE() { imageID =67 , imageSource = "HoanKiemLake0.jpg", articleID =23  });
+                db.IMAGES.Add(new IMAGE() { imageID =68 , imageSource = "HoanKiemLake1.jpg", articleID =23  });
+                db.IMAGES.Add(new IMAGE() { imageID =69 , imageSource = "HoanKiemLake2.jpg", articleID =23  });
+                db.IMAGES.Add(new IMAGE() { imageID =70 , imageSource = "TheImperialCitadel0.jpg", articleID =24  });
+                db.IMAGES.Add(new IMAGE() { imageID =71 , imageSource = "TheImperialCitadel1.jpg", articleID =24  });
+                db.IMAGES.Add(new IMAGE() { imageID =72 , imageSource = "TheImperialCitadel2.jpg", articleID =24  });
+                db.IMAGES.Add(new IMAGE() { imageID =73 , imageSource = "HanoiOldQuarter0.jpg", articleID =25  });
+                db.IMAGES.Add(new IMAGE() { imageID =74 , imageSource = "HanoiOldQuarter1.jpg", articleID =25  });
+                db.IMAGES.Add(new IMAGE() { imageID =75 , imageSource = "HanoiOldQuarter2.jpg", articleID =25  });
+                db.IMAGES.Add(new IMAGE() { imageID =76 , imageSource = "GrilledNem0.jpg", articleID =26  });
+                db.IMAGES.Add(new IMAGE() { imageID =77 , imageSource = "GrilledNem1.jpg", articleID =26  });
+                db.IMAGES.Add(new IMAGE() { imageID =78 , imageSource = "GrilledNem2.jpg", articleID =26  });
+                db.IMAGES.Add(new IMAGE() { imageID =79 , imageSource = "Sausagefish0.jpg", articleID =27  });
+                db.IMAGES.Add(new IMAGE() { imageID =80 , imageSource = "Sausagefish1.jpg", articleID =27  });
+                db.IMAGES.Add(new IMAGE() { imageID =81 , imageSource = "Sausagefish2.jpg", articleID =27  });
+                db.IMAGES.Add(new IMAGE() { imageID =82 , imageSource = "Vietnamesenoodles0.jpg", articleID =28  });
+                db.IMAGES.Add(new IMAGE() { imageID =83 , imageSource = "Vietnamesenoodles1.jpg", articleID =28  });
+                db.IMAGES.Add(new IMAGE() { imageID =84 , imageSource = "Vietnamesenoodles2.jpg", articleID =28  });
+                db.IMAGES.Add(new IMAGE() { imageID =85 , imageSource = "Pho0.jpg", articleID =29  });
+                db.IMAGES.Add(new IMAGE() { imageID =86 , imageSource = "Pho1.jpg", articleID =29  });
+                db.IMAGES.Add(new IMAGE() { imageID =87 , imageSource = "Pho2.jpg", articleID =29  });
+                db.IMAGES.Add(new IMAGE() { imageID =88 , imageSource = "RolledCake0.jpg", articleID =30  });
+                db.IMAGES.Add(new IMAGE() { imageID =89 , imageSource = "RolledCake1.jpg", articleID =30  });
+                db.IMAGES.Add(new IMAGE() { imageID =90 , imageSource = "RolledCake2.jpg", articleID =30  });
+                db.IMAGES.Add(new IMAGE() { imageID =91 , imageSource = "RegalHotel0.jpg", articleID =31  });
+                db.IMAGES.Add(new IMAGE() { imageID =92 , imageSource = "RegalHotel1.jpg", articleID =31  });
+                db.IMAGES.Add(new IMAGE() { imageID =93 , imageSource = "RegalHotel2.jpg", articleID =31  });
+                db.IMAGES.Add(new IMAGE() { imageID =94 , imageSource = "HaVihotel0.jpg", articleID =32  });
+                db.IMAGES.Add(new IMAGE() { imageID =95 , imageSource = "HaVihotel1.jpg", articleID =32  });
+                db.IMAGES.Add(new IMAGE() { imageID =96 , imageSource = "HaVihotel2.jpg", articleID =32  });
+                db.IMAGES.Add(new IMAGE() { imageID =97 , imageSource = "HanoiLaSiesta0.jpg", articleID =33  });
+                db.IMAGES.Add(new IMAGE() { imageID =98 , imageSource = "HanoiLaSiesta1.jpg", articleID =33  });
+                db.IMAGES.Add(new IMAGE() { imageID =99 , imageSource = "HanoiLaSiesta2.jpg", articleID =33  });
+                db.IMAGES.Add(new IMAGE() { imageID =100 , imageSource = "HanoiDaewoo0.jpg", articleID =34  });
+                db.IMAGES.Add(new IMAGE() { imageID =101 , imageSource = "HanoiDaewoo1.jpg", articleID =34  });
+                db.IMAGES.Add(new IMAGE() { imageID =102 , imageSource = "HanoiDaewoo2.jpg", articleID =34  });
+                db.IMAGES.Add(new IMAGE() { imageID =103 , imageSource = "IDCWhiteHouse0.jpg", articleID =35  });
+                db.IMAGES.Add(new IMAGE() { imageID =104 , imageSource = "IDCWhiteHouse1.jpg", articleID =35  });
+                db.IMAGES.Add(new IMAGE() { imageID =105 , imageSource = "IDCWhiteHouse2.jpg", articleID =35  });
+                db.SaveChanges();
 
-                 //Add values into LOCATION in Quang Ninh
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 36, typeID = 1, locationName = "Ha Long Bay", locationAddress = "Ha Long City - Cam Pha City - Van Don District, Quang Ninh Province", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 37, typeID = 1, locationName = "The relics of Yen Tu Mountain", locationAddress = "Dong Trieu - Uong Bi, Quang Ninh Province", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 38, typeID = 1, locationName = "Co To Island", locationAddress = "Co To Island", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 39, typeID = 1, locationName = "Yen Giang Communal House", locationAddress = "Luu Khe village, Lien Hoa commune, Yen Hung district, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 40, typeID = 1, locationName = "Tra Co Beach", locationAddress = "Mong Cai City, Quang Ninh Province", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 41, typeID = 2, locationName = "Cua Vang Restaurant", locationAddress = "32 Phan Chu Trinh, Bai Chay, Ha Long, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 42, typeID = 2, locationName = "Yolo Beer Club", locationAddress = "14 Tuan Chau Ship Terminal, Bai Chay, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 43, typeID = 2, locationName = "Hong Hanh Restaurant", locationAddress = "442 Nguyen Van Cu, Ha Long, Hong Ha, Ha Long, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 44, typeID = 2, locationName = "Chicken Restaurant Manh Hoach", locationAddress = "Alley 6 Hai Thinh, Hong Hai Ward, Ha Long City, Quang Ninh Province", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 45, typeID = 2, locationName = "My way sport café & beer", locationAddress = "30/10 street, Hong Hai, Ha Long, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 46, typeID = 3, locationName = "Robinson Ecolodge Minh Chau", locationAddress = "Robinson beach, Minh Chau commune, Van Don district, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 47, typeID = 3, locationName = "Long Hai Hotel", locationAddress = "Vinh Hong Area, Mao Khe Ward, Dong Trieu Town, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 48, typeID = 3, locationName = "Majestic - Mong Cai Hotel", locationAddress = "5 Hoa Binh, Tran Phu Ward, Mong Cai City, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 49, typeID = 3, locationName = "Tuan Ngoc Hotel", locationAddress = "Area 9, Cai Rong Town, Van Don District, Quang Ninh", provinceID = 2});
-                 db.LOCATIONS.Add(new LOCATION() { locationID = 50, typeID = 3, locationName = "Thanh Lich Hotel", locationAddress = "48A, Trung Vuong Ward, Uong Bi City, Quang Ninh", provinceID = 2});
-                
+                //Add values into LOCATION in Quang Ninh
+                db.LOCATIONS.Add(new LOCATION() { locationID = 36, typeID = 1, locationName = "Ha Long Bay", locationAddress = "Ha Long City - Cam Pha City - Van Don District, Quang Ninh Province", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 37, typeID = 1, locationName = "The relics of Yen Tu Mountain", locationAddress = "Dong Trieu - Uong Bi, Quang Ninh Province", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 38, typeID = 1, locationName = "Co To Island", locationAddress = "Co To Island", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 39, typeID = 1, locationName = "Yen Giang Communal House", locationAddress = "Luu Khe village, Lien Hoa commune, Yen Hung district, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 40, typeID = 1, locationName = "Tra Co Beach", locationAddress = "Mong Cai City, Quang Ninh Province", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 41, typeID = 2, locationName = "Cua Vang Restaurant", locationAddress = "32 Phan Chu Trinh, Bai Chay, Ha Long, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 42, typeID = 2, locationName = "Yolo Beer Club", locationAddress = "14 Tuan Chau Ship Terminal, Bai Chay, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 43, typeID = 2, locationName = "Hong Hanh Restaurant", locationAddress = "442 Nguyen Van Cu, Ha Long, Hong Ha, Ha Long, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 44, typeID = 2, locationName = "Chicken Restaurant Manh Hoach", locationAddress = "Alley 6 Hai Thinh, Hong Hai Ward, Ha Long City, Quang Ninh Province", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 45, typeID = 2, locationName = "My way sport café & beer", locationAddress = "30/10 street, Hong Hai, Ha Long, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 46, typeID = 3, locationName = "Robinson Ecolodge Minh Chau", locationAddress = "Robinson beach, Minh Chau commune, Van Don district, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 47, typeID = 3, locationName = "Long Hai Hotel", locationAddress = "Vinh Hong Area, Mao Khe Ward, Dong Trieu Town, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 48, typeID = 3, locationName = "Majestic - Mong Cai Hotel", locationAddress = "5 Hoa Binh, Tran Phu Ward, Mong Cai City, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 49, typeID = 3, locationName = "Tuan Ngoc Hotel", locationAddress = "Area 9, Cai Rong Town, Van Don District, Quang Ninh", provinceID = 2});
+                db.LOCATIONS.Add(new LOCATION() { locationID = 50, typeID = 3, locationName = "Thanh Lich Hotel", locationAddress = "48A, Trung Vuong Ward, Uong Bi City, Quang Ninh", provinceID = 2});
+                db.SaveChanges();
+
                 //Add values into ARTICLE in Quang Ninh
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 36, locationID = 36, content = "Traveling to Quang Ninh, no one did not go to Ha Long Bay - one of the world heritages recognized by UNESCO. This place has beautiful scenery from land island, cave to the beach. When cruising the bay, you will be stunned into a world of petrified rock for hundreds of years. Ga Choi is a symbol of Halong Bay and Lu Huong Island printed on a 200,000 VND note. The most attractive cave system is Thien Cung cave, Dau Go cave, Sung Sot cave, Trinh Nu cave, Tam Cung cave, ... Halong Bay is not only of great tourist value but also of special cultural, aesthetic, geological, biological and economic value. This is one of the destinations you can not ignore in the journey of conquering Vietnam." });
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 37, locationID = 37, content = "On the top of the mountain covered with clouds all year round, so in front of Yen Tu Mountain is also called Bach Van Son. This place was dubbed the land of Buddhist Vietnam when King Tran Nhan Tong decided to abandon the throne, put on a Buddhist monk robe and founded the Zen Buddhist Truc Lam Yen Tu. On Yen Tu Mountain there are many large and small works that he built to be places for spiritual practice and teaching, teaching. There are two ways to mount Yen Tu Mountain: Walk or Take the cable car" });
@@ -276,7 +277,8 @@ namespace Source.DBModels
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 48, locationID = 48, content = "Majestic - Mong Cai Hotel, located in the Mong Cai area, Mong Cai, is a popular choice for tourists. With its location just 0.1 km from the city center and 200 km from the airport, this 5-star hotel attracts numerous travelers each year. With the city's main attractions such as Majestic - Mong Cai Hotel, Majestic - Mong Cai Hotel within close reach, visitors to the hotel will just love its location and facilities. The combination will bring you a comfortable stay as comfortable as possible. When taking a break in this wonderful hotel, guests can enjoy free Wi-fi in all rooms, 24-hour security, daily room service, fax, fireplace. Fully equipped for comfort and convenience. In some rooms, guests can find towels, flat screen TVs, mirrors, wireless internet access (free). The hotel's outdoor pool, gym, steamroom, golf course (on site), gym are ideal places to relax and unwind after a busy day. Majestic - Mong Cai Hotel is a smart choice for travelers to Mong Cai, offering a relaxed and hassle-free stay every time." });
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 49, locationID = 49, content = "With free Wi-Fi and a terrace, Tuan Ngoc Hotel offers rooms that can be eaten at the on-site restaurant. Private parking is free on site. Each room has a flat-screen TV. Some rooms have a seating area for your convenience. Guests can enjoy a cup of tea while watching the sea / mountain. Each room is also equipped with a private bathroom with shower. Slippers and free toiletries are also provided. The hotel has a 24-hour front desk." });
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 50, locationID = 50, content = "If what you're looking for is a conveniently located hotel in Quang Ninh, look no further than Thanh Lich Hotel. Just about the fun activities in the downtown area. With the city's must-be-see destinations within easy reach, Take advantage of a wealth of unrivaled services and amenities at this Quang Ninh hotel. For the comfort and convenience of guests, the hotel is fully equipped. Free Wi-fi is available in all rooms, 24-hour security, private check-in / out, fast check in / out, luggage storage. Experience superior room facilities throughout your stay. Some of the rooms are equipped with a bathrobe, dressing table, flat screen TV, mirror, and wireless internet access. In addition, the hotel's recreational facilities, which include golf course (on site) are ideal places to relax and unwind after a busy day. Thanh Lich Hotel is a smart choice for travelers to Quang Ninh Province, offering a relaxed and comfortable stay." });
-                
+                db.SaveChanges();
+
                 //Add values into IMAGE in Quang Ninh../Assets/Images/Locations/QuangNinh/abc.xyz
                 db.IMAGES.Add(new IMAGE() { imageID = 106, imageSource = "HaLong0.jpg", articleID = 36});
                 db.IMAGES.Add(new IMAGE() { imageID = 107, imageSource = "HaLong1.jpg", articleID = 36});
@@ -323,7 +325,8 @@ namespace Source.DBModels
                 db.IMAGES.Add(new IMAGE() { imageID = 148, imageSource = "ThanhLich0.jpg", articleID = 50});
                 db.IMAGES.Add(new IMAGE() { imageID = 149, imageSource = "ThanhLich1.jpg", articleID = 50});
                 db.IMAGES.Add(new IMAGE() { imageID = 150, imageSource = "ThanhLich2.jpg", articleID = 50});
-                
+                db.SaveChanges();
+
                 //Add values into LOCATION in Hai Phong
                 db.LOCATIONS.Add(new LOCATION() { locationID = 51, typeID = 1, locationName = "Do Son Beach", locationAddress = "Do Son, Hai Phong", provinceID = 3 });
                 db.LOCATIONS.Add(new LOCATION() { locationID = 52, typeID = 1, locationName = "Bach Long Vi Island", locationAddress = "Bach Long Vy District, Hai Phong City", provinceID = 3 });
@@ -340,7 +343,7 @@ namespace Source.DBModels
                 db.LOCATIONS.Add(new LOCATION() { locationID = 63, typeID = 3, locationName = "Do Son Villa", locationAddress = "Zone 2 Beach, Do Son Tourist Area, Van Huong, Do Son District, Hai Phong", provinceID = 3 });
                 db.LOCATIONS.Add(new LOCATION() { locationID = 64, typeID = 3, locationName = "Camela Hotel & Resort", locationAddress = "515 Hung Vuong, Hong Bang, Hai Phong", provinceID = 3 });
                 db.LOCATIONS.Add(new LOCATION() { locationID = 65, typeID = 3, locationName = "Diamond Hotel", locationAddress = "82 Phuong Luu, Dong Khe, Ngo Quyen, Hai Phong", provinceID = 3 });
-                
+                db.SaveChanges();
 
                 //Add values into ARTICLE in Hai Phong
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 51, locationID = 51, content = "With the charming landscape and unique mountainous terrain dragging dragon and immense sea, Do Son beach is one of the interesting summer destinations in the North. The sea is beautiful, famous throughout Vietnam and the world, not only by nature, but also contains many historical values from the French time, such as Ho Chi Minh at sea, I am in the water smooth, cool, dispel all summer sultry in the sea Do Son is nothing more interesting. Seafood and cuisine are also extremely diverse, rich. However, because the sea is famous, visitors are very crowded, the situation is quite complicated. Before you go you should choose the restaurant, restaurant safe to avoid being hacked." });
@@ -358,7 +361,8 @@ namespace Source.DBModels
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 63, locationID = 63, content = "Free Wi-Fi is available throughout the accommodation and rooms at Do Son, 42 km from Halong. Private parking is available on site. Each room has cable TV. Some rooms also come with a seating area where guests can relax. Guests will find a kettle in the room. Rooms also have en suite bathrooms. Slippers and free toiletries are also provided for your convenience. There is a 24-hour reception. Guests can play tennis as well as rent bicycles and cars at Do Son Villa. The property is 27 km from Cat Ba Island and 22 km from Hai Phong. Cat Bi International Airport is 17 km away." });
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 64, locationID = 64, content = "Camela Hotel & Resort offers an outdoor pool, spa and a range of leisure facilities. There are 2 dining options and free Wi-Fi in public areas. The cozy rooms feature modern décor and warm lighting. Guests will enjoy the convenience of in-room amenities like a TV, seating area and minibar. Some bathrooms have bathtubs while others have showers. Guests can play tennis, mini golf or karaoke. There is also a fitness center and sauna facilities. Staff at the 24-hour front desk can assist with car rentals and currency exchange services. Sao Mai and Pacific restaurants serve a variety of local seafood specialties, as well as Asian as well as European specialties. International cocktails and soft drinks are available at the Lobby Bar. Camela Resort is 2 km from Binh Chau Bridge and 10 km from Cat Bi Airport. 25 km from Do Son Beach and Bai Chay Ferry Port is 60 km away." });
                 db.ARTICLEs.Add(new ARTICLE() { articleID = 65, locationID = 65, content = "Diamond Hotel is located in Hai Phong City, a 5-minute drive from the city center and 3 km from Cat Bi International Airport. The hotel offers free WiFi access and public parking. Rooms come with a flat-screen TV with satellite channels, a minibar and a private bathroom with shower facilities and a hairdryer. Guests can make travel arrangements at the tour desk or to the 24-hour front desk for assistance with laundry, ironing, ticketing and airport pick-up services. Currency exchange and car rental services are also available." });
-                
+                db.SaveChanges();
+
                 ////Add values into IMAGE in Hai Phong../Assets/Images/Locations/HaiPhong/abc.xyz
                 //db.IMAGES.Add(new IMAGE() { imageID = , imageSource = "", articleID = });
                 //db.IMAGES.Add(new IMAGE() { imageID = , imageSource = "", articleID = });

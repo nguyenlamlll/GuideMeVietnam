@@ -13,6 +13,7 @@ namespace Source.Models
         public ProvinceDataViewModel(string sou) { source = sou; }
         public ProvinceDataViewModel(LOCATION loc)
         {
+            this.imageSource = "";
             this.provinceId = (short)loc.provinceID;
             this.locationId = (short)loc.locationID;
             this.locationName = loc.locationName;
