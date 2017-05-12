@@ -76,9 +76,9 @@ namespace Source.Migrations
 
                     b.Property<string>("cityName");
 
-                    b.Property<decimal?>("latitude");
+                    b.Property<float?>("latitude");
 
-                    b.Property<decimal?>("longitude");
+                    b.Property<float?>("longitude");
 
                     b.Property<float?>("populationCity");
 
@@ -126,13 +126,13 @@ namespace Source.Migrations
                     b.Property<short>("locationID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal?>("latitude");
+                    b.Property<float?>("latitude");
 
                     b.Property<string>("locationAddress");
 
                     b.Property<string>("locationName");
 
-                    b.Property<decimal?>("longitude");
+                    b.Property<float?>("longitude");
 
                     b.Property<string>("phoneNumber");
 
@@ -210,15 +210,21 @@ namespace Source.Migrations
                     b.Property<short>("provinceID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal?>("latitude");
+                    b.Property<string>("imageSource");
 
-                    b.Property<decimal?>("longtitude");
+                    b.Property<string>("intro");
+
+                    b.Property<float?>("latitude");
+
+                    b.Property<float?>("longtitude");
 
                     b.Property<float?>("populationProvince");
 
                     b.Property<string>("provinceName");
 
                     b.Property<short?>("regionID");
+
+                    b.Property<string>("suggestSentence");
 
                     b.Property<float?>("totalArea");
 

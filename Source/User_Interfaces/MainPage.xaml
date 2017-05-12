@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:Source.Models"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="Page_Loaded" Loading="Page_Loading">
     <Page.Resources>
         <SolidColorBrush x:Key="AccentColor" Color="{ThemeResource SystemAccentColor}"/>
         <SolidColorBrush x:Key="AltHighColor" Color="{ThemeResource SystemAltHighColor}"/>
@@ -103,6 +103,7 @@
                                RelativePanel.AlignRightWithPanel="True" 
                                RelativePanel.AlignLeftWithPanel="True"/>
                     <StackPanel x:Name="FrameStatusBar" 
+                                Visibility="Collapsed"
                                 RelativePanel.AlignBottomWithPanel="True" 
                                 RelativePanel.AlignRightWithPanel="True" 
                                 RelativePanel.AlignLeftWithPanel="True">

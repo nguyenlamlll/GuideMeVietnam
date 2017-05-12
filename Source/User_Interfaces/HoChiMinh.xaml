@@ -63,7 +63,7 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <ListView ItemsSource="{Binding GetLocation}" 
+            <ListView ItemsSource="{Binding GetListLocation}" 
                       ScrollViewer.HorizontalScrollMode="Enabled"
                       ScrollViewer.HorizontalScrollBarVisibility="Visible"
                       ScrollViewer.IsHorizontalRailEnabled="True"

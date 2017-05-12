@@ -1,0 +1,29 @@
+Tan Son Nhat International Airport
+10.817471
+106.654428
+Tan Son Nhat Golf Course
+10.830802
+106.649761
+Van Thanh Park
+10.797780
+106.715400
+The Independence Palace
+10.777202
+106.695536
+Ho Chi Minh Museum (Nha Rong Harbor)
+10.768328
+106.706686
+Le Thi Rieng Park
+10.785699
+106.665237
+Artinus 3D Art Gallery
+10.742864
+106.694956
+Vietopia
+10.741973
+106.694535
+Buu Long Pagoda
+10.878966
+106.835173
+War Remnants Museum
+10.779500, 106.692163

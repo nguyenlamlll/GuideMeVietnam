@@ -26,7 +26,7 @@ namespace Source.User_Interfaces
         public HoChiMinh()
         {
             this.InitializeComponent();
-            this.DataContext = new LocationDAL();
+            this.DataContext = new ProvinceDataContext();
         }
     }
 }

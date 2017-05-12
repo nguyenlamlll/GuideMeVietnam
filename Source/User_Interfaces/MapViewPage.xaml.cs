@@ -29,6 +29,7 @@ namespace Source.User_Interfaces
     /// </summary>
     public sealed partial class MapViewPage : Page
     {
+
         public MapViewPage()
         {
             this.InitializeComponent();
@@ -45,13 +46,17 @@ namespace Source.User_Interfaces
         /// </summary>
         private void MyMap_Loaded(object sender, RoutedEventArgs e)
         {
-            myMap.Center = DefinedGeopoints.DaNangGeoPoint;
-            myMap.ZoomLevel = 6;
-        }
-        private void addXamlChildrenButton_Click(object sender, RoutedEventArgs e)
-        {
+            myMap.MapElementClick += ApplicationMapManager.MyMap_MapElementClick;
+            myMap.MapElementPointerEntered += ApplicationMapManager.MyMap_MapElementPointerEntered;
+            myMap.MapElementPointerExited += ApplicationMapManager.MyMap_MapElementPointerExited;
+
+            ApplicationMapManager.SetDefaultMapSettings(this.myMap);
 
         }
+
+
+
+
 
         private void mapItemButton_Click(object sender, RoutedEventArgs e)
         {
@@ -86,14 +91,30 @@ namespace Source.User_Interfaces
 
         private async void MapSearchSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-            Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, sender.Text);
-            if (result != null)
+            try
             {
-                myMap.Center = result;
-                myMap.ZoomLevel = 14;
+                Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, sender.Text);
+                if (result != null)
+                {
+                    myMap.Center = result;
+                    myMap.ZoomLevel = 14;
+                }
+
+                // Clear submitted query in Autosuggest Box
+                sender.Text = "";
+
+                //Place a MapIcon at result.
+                ApplicationMapManager.AddStaticMapIcon(myMap, result);
             }
-            sender.Text = "";
-            //Place a MapIcon at result.
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Utilities.Dialog.ShowDialog("Please try again.\n" + ex.ToString(), "Error");
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+
         }
 
         /// <summary>
@@ -112,20 +133,7 @@ namespace Source.User_Interfaces
             ApplicationMapManager.ZoomOut(myMap, 0.5);
         }
 
-        private async void myMap_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            /*
-            Bing.Maps.Location l = new Bing.Maps.Location();
-            this.MyMap.TryPixelToLocation(e.GetCurrentPoint(this.MyMap).Position, out l);
-            Bing.Maps.Pushpin pushpin = new Bing.Maps.Pushpin();
-            pushpin.SetValue(Bing.Maps.MapLayer.PositionProperty, l);
-            this.MyMap.Children.Add(pushpin);
-            */
-            //string pointer = e.Pointer.ToString();
-            //var dialog = new MessageDialog("Pin Added!" + pointer);
-            //await dialog.ShowAsync();
 
-        }
 
         private void myMap_MapTapped(MapControl sender, MapInputEventArgs args)
         {
@@ -150,5 +158,13 @@ namespace Source.User_Interfaces
         {
             ApplicationMapManager.AddStaticMapIcon(myMap, tappedLocation);
         }
+
+        private void MapSettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            var attachedFlyout = (MenuFlyout)FlyoutBase.GetAttachedFlyout(MapSettingButton);
+            attachedFlyout.ShowAt(MapSettingButton);
+        }
+
+
     }
 }

@@ -12,6 +12,58 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///Styles/Article-Styles.xaml"/>
+                <ResourceDictionary>
+                    <DataTemplate x:Key="test">
+                        <Grid Grid.Row="1" Width="250" Height="200" HorizontalAlignment="Left" Margin="20">
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                                <Image Name="image" Stretch="Fill" Source="{Binding Path=source}"
+                                       PointerEntered="image_PointerEntered"
+                                       PointerExited="image_PointerExited">
+                                    <Image.Resources>
+                                        <!-- This storyboard will make the image grow to double its size in 0.2 seconds -->
+                                        <Storyboard x:Key="ExpandStoryboard" x:Name="expandStoryboard">
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.CenterX"
+                                                             Storyboard.TargetName="image"
+                                                             To="125"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.CenterY"
+                                                             Storyboard.TargetName="image"
+                                                             To="100"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.ScaleX"
+                                                             Storyboard.TargetName="image"
+                                                             To="1.2" Duration="0:0:0.2" />
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.ScaleY" 
+                                                             Storyboard.TargetName="image"
+                                                             To="1.2" Duration="0:0:0.2" />
+                                        </Storyboard>
+                                        <!-- This storyboard will make the image revert to its original size -->
+                                        <Storyboard x:Key="ShrinkStoryboard" x:Name="shrinkStoryboard">
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.CenterX"
+                                                             Storyboard.TargetName="image"
+                                                             To="125"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.CenterY"
+                                                             Storyboard.TargetName="image"
+                                                             To="100"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.ScaleX" 
+                                                             Storyboard.TargetName="image"
+                                                             To="1" Duration="0:0:0.2" />
+                                            <DoubleAnimation Storyboard.TargetProperty="Image.RenderTransform.ScaleY" 
+                                                             Storyboard.TargetName="image"
+                                                             To="1" Duration="0:0:0.2" />
+                                        </Storyboard>
+                                    </Image.Resources>
+                                    <Image.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    </Image.RenderTransform>
+                                </Image>
+                            </ScrollViewer>
+
+                            <StackPanel Margin="0,140,0,0" Background="White" Opacity="0.6">
+                                <TextBlock Text="VIET NAM" Margin="10,0,0,0" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" />
+                                <TextBlock Text="Su so nhiet doi" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -26,71 +78,12 @@
                    Style="{StaticResource ArticleTitleStyle}">
             HomePage
         </TextBlock>
-        <RelativePanel Grid.Row="1">
-            <ListView x:Name="FeaturedImagesListView" 
-                      Width="1500" Height="500" ItemsSource="{x:Bind FeaturedImages}"
-                      RelativePanel.AlignHorizontalCenterWithPanel="True" 
-                      ScrollViewer.HorizontalScrollMode="Enabled"
-                      ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                      ScrollViewer.IsHorizontalRailEnabled="True"
-                      ScrollViewer.IsVerticalRailEnabled="False"
-                      ScrollViewer.VerticalScrollMode="Disabled">
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" />
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="data:FeaturedImage">
-                        <Image Source="{x:Bind ImageFile}" 
-                               Style="{StaticResource ImageStyle}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <!--
-                <RelativePanel>
-                    
-                    <StackPanel Orientation="Horizontal">
-                        <Image x:Name="FeaturedImage1" 
-                               RelativePanel.AlignRightWithPanel="True" 
-                               Style="{StaticResource ImageStyle}" 
-                               Source="ms-appx:///Assets/Images/Provinces/HaNoi/District_TayHo/tayho4.JPG"/>
-                        <Image x:Name="FeaturedImage2" 
-                               RelativePanel.RightOf="FeaturedImage1" 
-                               Style="{StaticResource ImageStyle}" 
-                               Source="ms-appx:///Assets/Images/Provinces/HaNoi/hanoi.jpg"/>
-                        <Image x:Name="FeaturedImage3" 
-                               RelativePanel.RightOf="FeaturedImage2" 
-                               Style="{StaticResource ImageStyle}" 
-                               Source="ms-appx:///Assets/Images/Provinces/SaiGon/Dictrict_1/quan1.jpg" 
-                               />
-                    </StackPanel>
-                  
-                </RelativePanel>
-              -->
 
-  
-
-            <!--
-            <TextBlock x:Name="Content" 
-                       Style="{StaticResource ArticleSubtitleStyle}">
-                Vietnam is an amazing maze. Complex, unique but majestic.
-            </TextBlock>
-            <RichTextBlock RelativePanel.Below="Content"
-                           TextWrapping="Wrap"
-                           Style="{StaticResource ArticleRichTextBlockStyle}"
-                           Margin="150,20,0,0">
-                <Paragraph>
-                    This is some sample text to show the wrapping behavior. 
-                    This is some sample text to show the wrapping behavior.
-                </Paragraph>
-                <Paragraph>
-                    This is some sample text to show the wrapping behavior.
-                     This is some sample text to show the wrapping behavior.
-                </Paragraph>
-            </RichTextBlock>
-            -->
-        </RelativePanel>
+        <Grid>
+            <GridView ItemsSource="{Binding Test}"
+                      ItemTemplate="{StaticResource test}">
+            </GridView>
+        </Grid>
 
     </Grid>
 </Page>

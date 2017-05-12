@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Source.Models;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,10 +24,14 @@ namespace Source
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static int LogInTimes = 0;
+
         private List<MenuItem> MenuItems;
         public MainPage()
         {
             this.InitializeComponent();
+
+
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
 
             //MenuItems = new List<MenuItem>();
@@ -34,7 +39,11 @@ namespace Source
 
 
 
+
         }
+
+
+
         /// <summary>
         /// Disable Mainpage's search box.
         /// </summary>
@@ -52,7 +61,7 @@ namespace Source
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -88,12 +97,13 @@ namespace Source
             //ListView listview = sender as ListView;
             //MenuItem item = listvi as MenuItem;
             var menuItem = (MenuItem)e.ClickedItem;
+
             switch (menuItem.Category)
             {
                 case MenuItemCategory.Homepage:
                     {
                         this.EnableSearchBox();
-                        FirstFrame.Navigate(typeof(User_Interfaces.HomePage));
+                        FirstFrame.Navigate(typeof(User_Interfaces.Country));
                         break;
                     }
                 case MenuItemCategory.Map:
@@ -114,13 +124,18 @@ namespace Source
                     }
                 case MenuItemCategory.Posts:
                     {
-                        this.DisableSearchBox(); //HCM
-                        FirstFrame.Navigate(typeof(User_Interfaces.HoChiMinh));
+                        this.DisableSearchBox(); 
                         break;
                     }
                 case MenuItemCategory.Settings:
                     {
-                        this.EnableSearchBox();
+                        this.DisableSearchBox();
+                        FirstFrame.Navigate(typeof(User_Interfaces.SettingsPage));
+                        break;
+                    }
+                case MenuItemCategory.Lists:
+                    {
+                        this.DisableSearchBox();
                         break;
                     }
                 default:
@@ -134,7 +149,66 @@ namespace Source
         {
             //ItemClickEventArgs eventArg = new ItemClickEventArgs();
             //MenuItemsListView_ItemClick(this, eventArg);
-           
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LogInTimes == 1)
+            {
+                // Create user's settings for the first time launched
+                this.CreateUserSettings();
+                Utilities.Dialog.ShowDialog("Created 1st-time settings", "Settings Created");
+            }
+        }
+
+        /// <summary>
+        /// Only used when 1st launched the application.
+        /// </summary>
+        private void CreateUserSettings()
+        {
+            try
+            {
+                Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserActivities, LogInTimes.ToString());
+                Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+
+            //bool x = await Utilities.LocalDataAccess.IsExisted("UserPlaces.txt");
+            //Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
+        }
+
+        private void Page_Loading(FrameworkElement sender, object args)
+        {
+            UpdateLoginTimes();
+        }
+
+        private void WriteLoginTimes()
+        {
+            LogInTimes += 1;
+            Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserActivities, LogInTimes.ToString());
+        }
+        private async Task ReadLoginTimes()
+        {
+            try
+            {
+                string text = await Utilities.LocalDataAccess.ReadLineFromLocalFolder(DefaultFile.UserActivities);
+                LogInTimes = int.Parse(text);
+            }
+            catch
+            {
+                return;
+            }
+
+
+        }
+        private async void UpdateLoginTimes()
+        {
+            await ReadLoginTimes();
+            WriteLoginTimes();
         }
     }
 }

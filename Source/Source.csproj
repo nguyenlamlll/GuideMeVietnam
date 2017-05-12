@@ -116,18 +116,29 @@
     <Compile Include="Maps\DefinedGeopoints.cs" />
     <Compile Include="Maps\GeoCoding.cs" />
     <Compile Include="Maps\ApplicationMapManager.cs" />
-    <Compile Include="Migrations\20170429175453_MyFirstMigration.cs" />
-    <Compile Include="Migrations\20170429175453_MyFirstMigration.designer.cs">
-      <DependentUpon>20170429175453_MyFirstMigration.cs</DependentUpon>
+    <Compile Include="Maps\Place.cs" />
+    <Compile Include="Migrations\20170511173639_OhMyGhost.cs" />
+    <Compile Include="Migrations\20170511173639_OhMyGhost.designer.cs">
+      <DependentUpon>20170511173639_OhMyGhost.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VietTravelDBContextModelSnapshot.cs" />
+    <Compile Include="Models\DefaultFile.cs" />
+    <Compile Include="Models\DefaultSetting.cs" />
     <Compile Include="Models\EnumTypes\ProvincesEnum.cs" />
     <Compile Include="Models\FeaturedImage.cs" />
     <Compile Include="Models\FeaturedImageManager.cs" />
-    <Compile Include="Models\LocationViewModel.cs" />
+    <Compile Include="Models\LocationDataViewModel.cs" />
+    <Compile Include="Models\ProvinceDataViewModel.cs" />
     <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\CountryDataViewModel.cs" />
     <Compile Include="User_Interfaces\BlankPage1.xaml.cs">
       <DependentUpon>BlankPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Interfaces\ContentDialogs\MapIconClicked_Dialog.xaml.cs">
+      <DependentUpon>MapIconClicked_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Interfaces\Country.xaml.cs">
+      <DependentUpon>Country.xaml</DependentUpon>
     </Compile>
     <Compile Include="User_Interfaces\DownloadedMap.xaml.cs">
       <DependentUpon>DownloadedMap.xaml</DependentUpon>
@@ -138,6 +149,9 @@
     <Compile Include="User_Interfaces\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interfaces\Location.xaml.cs">
+      <DependentUpon>Location.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User_Interfaces\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -145,8 +159,16 @@
     <Compile Include="User_Interfaces\MapViewPage.xaml.cs">
       <DependentUpon>MapViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interfaces\Province.xaml.cs">
+      <DependentUpon>Province.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Interfaces\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\DialogEnum.cs" />
+    <Compile Include="Utilities\LocalDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -159,7 +181,52 @@
     <Content Include="Assets\Icons\push-pin-64.png" />
     <Content Include="Assets\Icons\push-pin.png" />
     <Content Include="Assets\Icons\substract.png" />
-    <Content Include="Assets\Images\Cities\Saigon.jpg" />
+    <Content Include="Assets\Images\Countries\VietNam.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\GrilledNem0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\GrilledNem1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\GrilledNem2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiDaewoo0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiDaewoo1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiDaewoo2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiLaSiesta0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiLaSiesta1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiLaSiesta2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiOldQuarter0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiOldQuarter1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HanoiOldQuarter2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HaVihotel0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HaVihotel1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HaVihotel2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HoanKiemLake0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HoanKiemLake1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HoanKiemLake2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HoChiMinhMausoleum0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HoChiMinhMausoleum1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\HoChiMinhMausoleum2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\IDCWhiteHouse0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\IDCWhiteHouse1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\IDCWhiteHouse2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Pho0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Pho1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Pho2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\RegalHotel0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\RegalHotel1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\RegalHotel2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\RolledCake0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\RolledCake1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\RolledCake2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Sausagefish0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Sausagefish1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Sausagefish2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\TempleofLiterature0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\TempleofLiterature1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\TempleofLiterature2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\TheImperialCitadel0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\TheImperialCitadel1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\TheImperialCitadel2.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Vietnamesenoodles0.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Vietnamesenoodles1.jpg" />
+    <Content Include="Assets\Images\Locations\InHaNoi\Vietnamesenoodles2.jpg" />
     <Content Include="Assets\Images\Locations\InHoChiMinh\BenThanh0.jpg" />
     <Content Include="Assets\Images\Locations\InHoChiMinh\BenThanh1.jpg" />
     <Content Include="Assets\Images\Locations\InHoChiMinh\BenThanh2.jpg" />
@@ -223,63 +290,60 @@
     <Content Include="Assets\Images\Locations\InHoChiMinh\VillaSgRiver0.jpg" />
     <Content Include="Assets\Images\Locations\InHoChiMinh\VillaSgRiver1.jpg" />
     <Content Include="Assets\Images\Locations\InHoChiMinh\VillaSgRiver2.jpg" />
-    <Content Include="Assets\Images\Provinces\DaLat\dalat.jpg" />
-    <Content Include="Assets\Images\Provinces\DaLat\dalat2.gif" />
-    <Content Include="Assets\Images\Provinces\DaNang\danang.jpg" />
-    <Content Include="Assets\Images\Provinces\HaGiang\hagiang1.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_CauGiay\caugiay1.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_CauGiay\caugiay2.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda1.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda2.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda3.JPG" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda4.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_DongDa\dongda5.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\DSC_0010-1038x576.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\DSC_0125-1038x576.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\IMG_0077-1038x576.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\IMG_0361-1038x576.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\Dictrict_HoanKiem\IMG_0508-683x1024.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh1.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh2.JPG" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh3.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh4.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh5.JPG" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh6.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_BaDinh\badinh7.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho1.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho2.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho3.JPG" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho4.JPG" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho5.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\District_TayHo\tayho6.jpg" />
-    <Content Include="Assets\Images\Provinces\HaNoi\hanoi.jpg" />
-    <Content Include="Assets\Images\Provinces\Hue\hue.jpg" />
-    <Content Include="Assets\Images\Provinces\KhanhHoa\khanhhoa.jpg" />
-    <Content Include="Assets\Images\Provinces\NamDinh\namdinh.jpg" />
-    <Content Include="Assets\Images\Provinces\NinhBinh\ninhbinh.jpg" />
-    <Content Include="Assets\Images\Provinces\PhuYen\phuyen.jpg" />
-    <Content Include="Assets\Images\Provinces\QuangNgai\quangngai.jpg" />
-    <Content Include="Assets\Images\Provinces\QuangNinh\quangninh1.jpeg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_10\quan10.JPG" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.1.JPG" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.3.JPG" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.4.JPG" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_1\quan1.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_3\quan3.1.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_3\quan3.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_4\quan4.JPG" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_5\quan5.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_BinhThanh\binhthanh.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_CuChi\cuchi.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_PhuNhuan\phunhuan.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_PhuNhuan\phunhuan1.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_PhuNhuan\phunhuan2.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\Dictrict_TanBinh\tanbinh.jpg" />
-    <Content Include="Assets\Images\Provinces\SaiGon\saigon.jpg" />
-    <Content Include="Assets\Images\Provinces\SaPa\sapa1.jpg" />
-    <Content Include="Assets\Images\Provinces\SaPa\sapa2.jpg" />
-    <Content Include="Assets\Images\Provinces\SaPa\sapa3.jpg" />
-    <Content Include="Assets\Images\Provinces\VungTau\VungTau.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\CoTo0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\CoTo1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\CoTo2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\CuaVang0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\CuaVang1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\CuaVang2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\HaLong0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\HaLong1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\HaLong2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\HongHanh0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\HongHanh1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\HongHanh2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\LongHai0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\LongHai1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\LongHai2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\ManhHoach0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\ManhHoach1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\ManhHoach2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MinhChau0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MinhChau1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MinhChau2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MongCai0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MongCai1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MongCai2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MyWaySport0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MyWaySport1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\MyWaySport2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\ThanhLich0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\ThanhLich1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\ThanhLich2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\TraCo0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\TraCo1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\TraCo2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\TuanNgoc0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\TuanNgoc1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\TuanNgoc2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YenGiang0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YenGiang1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YenGiang2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YenTu0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YenTu1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YenTu2.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YoloBeer0.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YoloBeer1.jpg" />
+    <Content Include="Assets\Images\Locations\InQuangNinh\YoloBeer2.jpg" />
+    <Content Include="Assets\Images\Provinces\BinhDinh.jpg" />
+    <Content Include="Assets\Images\Provinces\HaGiang.jpg" />
+    <Content Include="Assets\Images\Provinces\HaiPhong.jpg" />
+    <Content Include="Assets\Images\Provinces\HaNoi.jpg" />
+    <Content Include="Assets\Images\Provinces\HoChiMinh.jpg" />
+    <Content Include="Assets\Images\Provinces\NamDinh.jpg" />
+    <Content Include="Assets\Images\Provinces\NinhBinh.jpg" />
+    <Content Include="Assets\Images\Provinces\QuangNinh.jpeg" />
+    <Content Include="Assets\Images\Provinces\ThaiBinh.jpg" />
     <Content Include="Assets\Images\Vietnam_BlankMap.gif" />
     <Content Include="Assets\Images\Vietnam_Map.gif" />
     <Content Include="Properties\Default.rd.xml" />
@@ -301,6 +365,11 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Styles\GenericStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="Styles\ImageDisplayStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -310,15 +379,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="User_Interfaces\ContentDialogs\MapIconClicked_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\Country.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User_Interfaces\DownloadedMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User_Interfaces\HoChiMinh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Interfaces\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="User_Interfaces\HomePage.xaml">
+    <Page Include="User_Interfaces\Location.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -330,10 +411,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="User_Interfaces\Province.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Audio\" />
-    <Folder Include="Assets\Images\Provinces\HoChiMinh\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

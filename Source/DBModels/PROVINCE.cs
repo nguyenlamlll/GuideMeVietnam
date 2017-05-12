@@ -11,7 +11,7 @@ namespace VietTravel.DBModels
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class PROVINCE
     {
         public PROVINCE()
@@ -23,6 +23,9 @@ namespace VietTravel.DBModels
         [System.ComponentModel.DataAnnotations.Key]
         public short provinceID { get; set; }
         public string provinceName { get; set; }
+        public string imageSource { get; set; }
+        public string suggestSentence { get; set; }
+        public string intro { get; set; }
         public Nullable<float> longtitude { get; set; }
         public Nullable<float> latitude { get; set; }
         public Nullable<float> totalArea { get; set; }
