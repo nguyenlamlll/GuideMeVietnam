@@ -28,6 +28,7 @@ namespace VietTravel.DBModels
         public string locationName { get; set; }
         public string locationAddress { get; set; }
         public string phoneNumber { get; set; }
+        public string mapImageSource { get; set; }
         public Nullable<decimal> priceMin { get; set; }
         public Nullable<decimal> priceMax { get; set; }
         public string website { get; set; }

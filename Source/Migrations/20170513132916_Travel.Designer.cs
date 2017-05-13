@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using VietTravel;
 
-namespace Source.Migrations
+namespace GuideTravel.Migrations
 {
     [DbContext(typeof(VietTravelDBContext))]
-    [Migration("20170511173639_OhMyGhost")]
-    partial class OhMyGhost
+    [Migration("20170513132916_Travel")]
+    partial class Travel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -135,6 +135,8 @@ namespace Source.Migrations
 
                     b.Property<float?>("longitude");
 
+                    b.Property<string>("mapImageSource");
+
                     b.Property<string>("phoneNumber");
 
                     b.Property<decimal?>("priceMax");
@@ -218,6 +220,8 @@ namespace Source.Migrations
                     b.Property<float?>("latitude");
 
                     b.Property<float?>("longtitude");
+
+                    b.Property<string>("mapImageSource");
 
                     b.Property<float?>("populationProvince");
 

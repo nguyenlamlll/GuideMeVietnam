@@ -7,8 +7,8 @@
     <ProjectGuid>{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Source</RootNamespace>
-    <AssemblyName>Source</AssemblyName>
+    <RootNamespace>GuideTravel</RootNamespace>
+    <AssemblyName>Guide Travel</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
@@ -117,9 +117,9 @@
     <Compile Include="Maps\GeoCoding.cs" />
     <Compile Include="Maps\ApplicationMapManager.cs" />
     <Compile Include="Maps\Place.cs" />
-    <Compile Include="Migrations\20170511173639_OhMyGhost.cs" />
-    <Compile Include="Migrations\20170511173639_OhMyGhost.designer.cs">
-      <DependentUpon>20170511173639_OhMyGhost.cs</DependentUpon>
+    <Compile Include="Migrations\20170513132916_Travel.cs" />
+    <Compile Include="Migrations\20170513132916_Travel.designer.cs">
+      <DependentUpon>20170513132916_Travel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VietTravelDBContextModelSnapshot.cs" />
     <Compile Include="Models\DefaultFile.cs" />
@@ -142,9 +142,6 @@
     </Compile>
     <Compile Include="User_Interfaces\DownloadedMap.xaml.cs">
       <DependentUpon>DownloadedMap.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="User_Interfaces\HoChiMinh.xaml.cs">
-      <DependentUpon>HoChiMinh.xaml</DependentUpon>
     </Compile>
     <Compile Include="User_Interfaces\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -178,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\add.png" />
+    <Content Include="Assets\Icons\facebook.png" />
     <Content Include="Assets\Icons\push-pin-64.png" />
     <Content Include="Assets\Icons\push-pin.png" />
     <Content Include="Assets\Icons\substract.png" />
@@ -390,10 +388,6 @@
     <Page Include="User_Interfaces\DownloadedMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="User_Interfaces\HoChiMinh.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interfaces\HomePage.xaml">
       <SubType>Designer</SubType>

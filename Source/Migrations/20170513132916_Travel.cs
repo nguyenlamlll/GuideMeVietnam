@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Source.Migrations
+namespace GuideTravel.Migrations
 {
-    public partial class OhMyGhost : Migration
+    public partial class Travel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -114,6 +114,7 @@ namespace Source.Migrations
                     intro = table.Column<string>(nullable: true),
                     latitude = table.Column<float>(nullable: true),
                     longtitude = table.Column<float>(nullable: true),
+                    mapImageSource = table.Column<string>(nullable: true),
                     populationProvince = table.Column<float>(nullable: true),
                     provinceName = table.Column<string>(nullable: true),
                     regionID = table.Column<short>(nullable: true),
@@ -186,6 +187,7 @@ namespace Source.Migrations
                     locationAddress = table.Column<string>(nullable: true),
                     locationName = table.Column<string>(nullable: true),
                     longitude = table.Column<float>(nullable: true),
+                    mapImageSource = table.Column<string>(nullable: true),
                     phoneNumber = table.Column<string>(nullable: true),
                     priceMax = table.Column<decimal>(nullable: true),
                     priceMin = table.Column<decimal>(nullable: true),
