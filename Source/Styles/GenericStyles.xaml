@@ -8,7 +8,7 @@
     </Style>
     
     <SolidColorBrush x:Key="AccentColor" Color="{ThemeResource SystemAccentColor}"/>
-    
+
     <SolidColorBrush x:Key="AltHighColor" Color="{ThemeResource SystemAltHighColor}"/>
-    
+
 </ResourceDictionary>

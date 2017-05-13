@@ -15,6 +15,9 @@ using Windows.UI.Xaml.Navigation;
 using Source.Models;
 using Source.Models.EnumTypes;
 using System.Collections.ObjectModel;
+using Windows.UI.Core;
+using Windows.Devices.Input;
+using Windows.UI.Xaml.Media.Animation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,14 +28,32 @@ namespace Source.User_Interfaces
     /// </summary>
     public sealed partial class HomePage : Page
     {
-        private ObservableCollection<FeaturedImage> FeaturedImages;
+        //private ObservableCollection<FeaturedImage> FeaturedImages;
+        private Storyboard expand;
+        private Storyboard shrink;
+
         public HomePage()
         {
             this.InitializeComponent();
 
+            this.DataContext = new ProvinceDataContext();
+
             // Initialize FeaturedImages
-            FeaturedImages = new ObservableCollection<FeaturedImage>();
-            FeaturedImageManager.GetAllFeaturedImages(FeaturedImages);
+            //FeaturedImages = new ObservableCollection<FeaturedImage>();
+            //FeaturedImageManager.GetAllFeaturedImages(FeaturedImages);
+        }
+
+        private void image_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            expand = ((e.OriginalSource as Image).Resources.ElementAt(0).Value as Storyboard);
+            shrink = ((e.OriginalSource as Image).Resources.ElementAt(1).Value as Storyboard);
+
+            expand.Begin();
+        }
+
+        private void image_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            shrink.Begin();
         }
     }
    
