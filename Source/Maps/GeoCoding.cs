@@ -27,10 +27,46 @@ namespace Source.Maps
 
             // If the query returns results, display the name of the town
             // contained in the address of the first result.
+            string resultAddress = null;
             if (result.Status == MapLocationFinderStatus.Success)
             {
-                string resultAddress = result.Locations[0].Address.ToString();
+                if (result.Locations.Any()) resultAddress = result.Locations[0].Address.FormattedAddress;
                 return resultAddress;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Convert Geopoint into Country Name of that location.
+        /// </summary>
+        /// <param name="pointToReverseGeocode"></param>
+        /// <returns></returns>
+        public static async Task<string> ConvertGeopointToCountry(Geopoint pointToReverseGeocode)
+        {
+            // Reverse geocode the specified geographic location.
+            MapLocationFinderResult result =
+                  await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+
+            string resultCountry = null;
+            if (result.Status == MapLocationFinderStatus.Success)
+            {
+                if (result.Locations.Any()) resultCountry = result.Locations[0].Address.Country;
+                return resultCountry;
+            }
+            return null;
+        }
+
+        public static async Task<string> ConvertGeopointToCity(Geopoint pointToReverseGeocode)
+        {
+            // Reverse geocode the specified geographic location.
+            MapLocationFinderResult result =
+                  await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+
+            string resultCity = null;
+            if (result.Status == MapLocationFinderStatus.Success)
+            {
+                if (result.Locations.Any()) resultCity = result.Locations[0].Address.Country;
+                return resultCity;
             }
             return null;
         }
@@ -50,7 +86,7 @@ namespace Source.Maps
         public static async Task<Geopoint> ConvertAddressToGeoPoint(Geopoint queryHintPoint, string addressToGeocode)
         {
             Geopoint GeopointResult = null;
-    
+
             // Geocode the specified address, using the specified reference point
             // as a query hint. Return no more than 3 results.
             MapLocationFinderResult result =
@@ -89,6 +125,6 @@ namespace Source.Maps
         {
             var dialog = new MessageDialog("ShowMsgBox");
             await dialog.ShowAsync();
-        } 
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.User_Interfaces.ContentDialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
+
 
 namespace Source.Maps
 {
@@ -30,7 +32,6 @@ namespace Source.Maps
             // Create a MapIcon.
             MapIcon mapIcon1 = new MapIcon();
 
-
             //Set Image for the MapIcon
             //mapIcon1.Title = GeoCoding.
             mapIcon1.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/Icons/push-pin-64.png"));
@@ -44,15 +45,13 @@ namespace Source.Maps
 
             // Add the MapIcon to the map.
             myMap.MapElements.Add(mapIcon1);
-
-
-
         }
 
         public static async void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
         {
             MapIcon myClickedIcon = args.MapElements.FirstOrDefault(x => x is MapIcon) as MapIcon;
 
+            /*
             MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(myClickedIcon.Location);
 
             string address = null;
@@ -65,7 +64,15 @@ namespace Source.Maps
                     title = result.Locations[0].DisplayName;
                 }
             }
-            User_Interfaces.ContentDialogs.MapIconClicked_Dialog pinDialog = new User_Interfaces.ContentDialogs.MapIconClicked_Dialog("Push Pin", address, myClickedIcon.Location);
+            */
+
+            string address = await GeoCoding.ConvertGeopointToAddress(myClickedIcon.Location);
+            string city = await GeoCoding.ConvertGeopointToCity(myClickedIcon.Location);
+            string country = await GeoCoding.ConvertGeopointToCountry(myClickedIcon.Location);
+            string title = "Push Pin";
+            if (city == country) title = city;
+            if (city != null && country != null) title = city + ", " + country;
+            MapIconClicked_Dialog pinDialog = new MapIconClicked_Dialog(title, address, myClickedIcon.Location);
 
             sender.Children.Add(pinDialog);
             Geopoint pointClicked = args.Location;
