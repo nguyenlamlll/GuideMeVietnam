@@ -117,9 +117,13 @@
     <Compile Include="Maps\GeoCoding.cs" />
     <Compile Include="Maps\ApplicationMapManager.cs" />
     <Compile Include="Maps\Place.cs" />
-    <Compile Include="Migrations\20170513132916_Travel.cs" />
-    <Compile Include="Migrations\20170513132916_Travel.designer.cs">
-      <DependentUpon>20170513132916_Travel.cs</DependentUpon>
+    <Compile Include="Migrations\20170514165954_Init.cs" />
+    <Compile Include="Migrations\20170514165954_Init.designer.cs">
+      <DependentUpon>20170514165954_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170514182054_AddNumStarString.cs" />
+    <Compile Include="Migrations\20170514182054_AddNumStarString.designer.cs">
+      <DependentUpon>20170514182054_AddNumStarString.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VietTravelDBContextModelSnapshot.cs" />
     <Compile Include="Models\DefaultFile.cs" />
@@ -131,6 +135,7 @@
     <Compile Include="Models\ProvinceDataViewModel.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\CountryDataViewModel.cs" />
+    <Compile Include="Models\ReviewViewModel.cs" />
     <Compile Include="User_Interfaces\BlankPage1.xaml.cs">
       <DependentUpon>BlankPage1.xaml</DependentUpon>
     </Compile>

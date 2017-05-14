@@ -3,16 +3,49 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Source.User_Interfaces"
+    xmlns:fbsdk="using:winsdkfb"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" 
     Height="600" Width="1360"
     Loaded="Page_Loaded">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ReviewContent">
+                <Grid Margin="20" IsTapEnabled="False" Width="740">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
+                        <fbsdk:ProfilePictureControl Name="userProPic" UserId="{Binding Path=userFBID}" Width="80" Height="80" Margin="5" VerticalAlignment="Top"/>
+                        <StackPanel>
+                            <TextBlock Name="userName" Text="{Binding Path=userFBName}" Margin="0,0,0,10" Foreground="Green" FontWeight="SemiBold" FontSize="20" TextWrapping="WrapWholeWords"/>
+                            <TextBlock Text="{Binding Path=numStarString}" FontSize="20" Foreground="Green"/>
+                            <TextBlock Text="{Binding Path=date}" Opacity="0.5"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <RichTextBlock Grid.Column="1" IsTapEnabled="False" Margin="10,5,0,0"
+                                               ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <Paragraph Margin="0,0,0,5">
+                            <Run Text="{Binding Path=title}" FontWeight="Bold"/>
+                        </Paragraph>
+                        <Paragraph>
+                            <Run Text="{Binding Path=content}"/>
+                        </Paragraph>
+                    </RichTextBlock>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <GridView Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
               ScrollViewer.VerticalScrollBarVisibility="Hidden"
-              Width="1360">
+              Width="1360"
+              >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="400"/>
@@ -37,12 +70,11 @@
             </Image>
 
             <StackPanel Grid.Row="1" Width="1300">
-                <TextBlock Text="{Binding  Path=LocationName}" FontFamily="Segoe UI Black" FontSize="48" FontWeight="Bold"
-                           TextAlignment="Center" Margin="30"/>
+                <TextBlock Text="{Binding  Path=LocationName}" Margin="30" Style="{StaticResource TitleMainStyle}"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
                     <TextBlock Text="✪✪✪✪✪" FontSize="15" Margin="0,0,10,0" Foreground="Green"/>
                     <TextBlock Text="4" FontSize="15"/>
-                    <TextBlock Text=" đánh giá" FontSize="15"/>
+                    <TextBlock Text=" rating" FontSize="15"/>
                 </StackPanel>
                 <TextBlock Text="{Binding Path=Address}"
                            TextAlignment="Center" FontSize="20"/>
@@ -57,29 +89,60 @@
                 <Grid Grid.Column="0" Margin="0,0,50,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
+                        <RowDefinition Height="340"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Text="Describe the sights" FontSize="25"/>
-                    <RichTextBlock Grid.Row="1">
-                        <Paragraph>
-                            <Run Text="{Binding Path=Description}" />
-                        </Paragraph>
-                        <Paragraph>
-                            <Run Text="{Binding Path=Website}"/>
-                        </Paragraph>
-                    </RichTextBlock>
+                    <TextBlock Grid.Row="0" Text="Describe the sights" Style="{StaticResource SubtitleStyle}"/>
+                    <GridView Grid.Row="1">
+                        <RichTextBlock>
+                            <Paragraph>
+                                <Run Text="{Binding Path=Description}" />
+                            </Paragraph>
+                            <Paragraph>
+                                <Run Text="{Binding Path=Website}"/>
+                            </Paragraph>
+                        </RichTextBlock>
+                    </GridView>
+
+                    <Grid Grid.Row="2" Margin="0,20,0,0" IsTapEnabled="False" Width="780">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="Review" Style="{StaticResource SubtitleStyle}"/>
+
+                        <ListView Grid.Row="1"  IsTapEnabled="False" Name="lvReview"
+                                  ItemsSource="{Binding ListReview}"
+                                  ItemTemplate="{StaticResource ReviewContent}"
+                                  >
+                        </ListView>
+
+                    </Grid>
                 </Grid>
 
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="Map" FontSize="25" Margin="0,0,0,10"/>
-                    <Image Height="300" Source="ms-appx:///Assets/Images/Vietnam_Map.gif" Stretch="UniformToFill" Margin="0,0,0,10"/>
-                    <TextBlock Text="Rating" FontSize="25" Margin="0,0,0,10"/>
-                    <TextBlock Text="Very good" TextAlignment="Center"/>
-                    <TextBlock Text="✪✪✪✪✪" FontSize="20" Foreground="Green" TextAlignment="Center"/>
-                    <TextBox Margin="20" PlaceholderText="Title"/>
-                    <TextBox Margin="20,0" PlaceholderText="Review" Height="200" TextWrapping="Wrap"/>
-                    <Button Content="Submit" Margin="20" Background="Green" Foreground="White"/>
+                    <TextBlock Text="Map" Margin="0,0,0,10" Style="{StaticResource SubtitleStyle}"/>
+                    <Image Height="300" Source="ms-appx:///Assets/Images/Vietnam_Map.gif" Stretch="UniformToFill" Margin="0,0,0,50"/>
+                    <TextBlock Text="Rating" Margin="0,0,0,10" Style="{StaticResource SubtitleStyle}"/>
+                    <TextBlock Name="ratingStarName" Text="Very good" TextAlignment="Center" FontWeight="Bold" Opacity="0.5"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Name="star0" Text="✪" FontSize="30" PointerEntered="star0_PointerEntered"/>
+                        <TextBlock Name="star1" Text="✪" FontSize="30" PointerEntered="star1_PointerEntered"/>
+                        <TextBlock Name="star2" Text="✪" FontSize="30" PointerEntered="star2_PointerEntered"/>
+                        <TextBlock Name="star3" Text="✪" FontSize="30" PointerEntered="star3_PointerEntered"/>
+                        <TextBlock Name="star4" Text="✪" FontSize="30" PointerEntered="star4_PointerEntered"/>
+                    </StackPanel>
+                    <TextBox Name="txtTitle" Margin="20" PlaceholderText="Title"/>
+                    <TextBox Name="txtReview" Margin="20,0" PlaceholderText="Review" Height="200" TextWrapping="Wrap"/>
+                    <Button Name="btnSubmit" Content="Submit" Margin="20" Background="Green" Foreground="White" Click="btnSubmit_Click">
+                        <FlyoutBase.AttachedFlyout>
+                            <Flyout Placement="Right">
+                                <TextBlock Text="Please select stars to Submit!" Foreground="Red"/>
+                            </Flyout>
+                        </FlyoutBase.AttachedFlyout>
+                    </Button>
                 </StackPanel>
             </Grid>
 

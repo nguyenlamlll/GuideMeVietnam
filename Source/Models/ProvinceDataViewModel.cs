@@ -32,7 +32,10 @@ namespace Source.Models
 
                 string localImageSource = "/Assets/Images/Locations/In" + provinceName.Replace(" ", String.Empty) + "/";
 
-                this.imageSource = localImageSource + image.imageSource;
+                if (image == null)
+                    this.imageSource = "";
+                else
+                    this.imageSource = localImageSource + image.imageSource;
             }
         }
 

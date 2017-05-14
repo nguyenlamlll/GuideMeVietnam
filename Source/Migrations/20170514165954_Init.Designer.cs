@@ -8,8 +8,8 @@ using VietTravel;
 namespace GuideTravel.Migrations
 {
     [DbContext(typeof(VietTravelDBContext))]
-    [Migration("20170513132916_Travel")]
-    partial class Travel
+    [Migration("20170514165954_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,21 +35,23 @@ namespace GuideTravel.Migrations
                     b.Property<short>("appreciaID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("appreciaSubject");
-
                     b.Property<string>("content");
 
-                    b.Property<short?>("locationID");
+                    b.Property<DateTime>("date");
 
-                    b.Property<short?>("numStar");
+                    b.Property<short>("locationID");
 
-                    b.Property<short?>("userID");
+                    b.Property<short>("numStar");
+
+                    b.Property<string>("title");
+
+                    b.Property<string>("userFBID");
+
+                    b.Property<string>("userFBName");
 
                     b.HasKey("appreciaID");
 
                     b.HasIndex("locationID");
-
-                    b.HasIndex("userID");
 
                     b.ToTable("APPRECIATIONs");
                 });
@@ -328,11 +330,8 @@ namespace GuideTravel.Migrations
                 {
                     b.HasOne("VietTravel.DBModels.LOCATION", "LOCATION")
                         .WithMany("APPRECIATIONs")
-                        .HasForeignKey("locationID");
-
-                    b.HasOne("VietTravel.DBModels.USER", "USER")
-                        .WithMany("APPRECIATIONs")
-                        .HasForeignKey("userID");
+                        .HasForeignKey("locationID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("VietTravel.DBModels.ARTICLE", b =>

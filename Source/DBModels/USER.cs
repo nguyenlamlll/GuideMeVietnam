@@ -16,7 +16,6 @@ namespace VietTravel.DBModels
     {
         public USER()
         {
-            this.APPRECIATIONs = new HashSet<APPRECIATION>();
             this.PLAN_TRIP = new HashSet<PLAN_TRIP>();
         }
 
@@ -27,7 +26,6 @@ namespace VietTravel.DBModels
         public Nullable<short> accountID { get; set; }
     
         public virtual ACCOUNT ACCOUNT { get; set; }
-        public virtual ICollection<APPRECIATION> APPRECIATIONs { get; set; }
         public virtual ICollection<PLAN_TRIP> PLAN_TRIP { get; set; }
     }
 }

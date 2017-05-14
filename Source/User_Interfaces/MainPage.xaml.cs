@@ -167,7 +167,7 @@ namespace Source
 
             //Check LoggedIn facebook
             FBSession session = FBSession.ActiveSession;
-            FBResult result = await session.LoginAsync();
+            await session.LoginAsync();
 
             if (session.LoggedIn)
             {

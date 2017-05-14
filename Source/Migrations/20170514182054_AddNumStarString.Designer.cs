@@ -8,9 +8,10 @@ using VietTravel;
 namespace GuideTravel.Migrations
 {
     [DbContext(typeof(VietTravelDBContext))]
-    partial class VietTravelDBContextModelSnapshot : ModelSnapshot
+    [Migration("20170514182054_AddNumStarString")]
+    partial class AddNumStarString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");

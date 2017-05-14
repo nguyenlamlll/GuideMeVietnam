@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GuideTravel.Migrations
 {
-    public partial class Travel : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -218,11 +218,13 @@ namespace GuideTravel.Migrations
                 {
                     appreciaID = table.Column<short>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    appreciaSubject = table.Column<string>(nullable: true),
                     content = table.Column<string>(nullable: true),
-                    locationID = table.Column<short>(nullable: true),
-                    numStar = table.Column<short>(nullable: true),
-                    userID = table.Column<short>(nullable: true)
+                    date = table.Column<DateTime>(nullable: false),
+                    locationID = table.Column<short>(nullable: false),
+                    numStar = table.Column<short>(nullable: false),
+                    title = table.Column<string>(nullable: true),
+                    userFBID = table.Column<string>(nullable: true),
+                    userFBName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -232,13 +234,7 @@ namespace GuideTravel.Migrations
                         column: x => x.locationID,
                         principalTable: "LOCATIONS",
                         principalColumn: "locationID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_APPRECIATIONs_USERS_userID",
-                        column: x => x.userID,
-                        principalTable: "USERS",
-                        principalColumn: "userID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -348,11 +344,6 @@ namespace GuideTravel.Migrations
                 name: "IX_APPRECIATIONs_locationID",
                 table: "APPRECIATIONs",
                 column: "locationID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_APPRECIATIONs_userID",
-                table: "APPRECIATIONs",
-                column: "userID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ARTICLEs_locationID",

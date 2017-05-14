@@ -33,7 +33,7 @@ namespace Source
             this.Suspending += OnSuspending;
 
             using (var db = new VietTravel.VietTravelDBContext())
-            {
+            { 
                 db.Database.Migrate();
             }
         }
