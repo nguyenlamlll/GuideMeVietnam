@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Height="175" Width="260">
+    Height="180" Width="350">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -72,7 +72,7 @@
                 </TextBlock>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" 
+            <StackPanel x:Name="ButtonsStackPanel" Orientation="Horizontal" 
                         Margin="0,5,0,0"
                         RelativePanel.Below="GeopointStackPanel"
                         RelativePanel.AlignHorizontalCenterWithPanel="True">
@@ -80,14 +80,62 @@
                     Click="SaveButton_Click"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE105;"
-                    Margin="10"
-/>
+                    Margin="10"/>
+                <ToggleButton x:Name="AddJournalButton" Height="33"
+                              Checked="AddJournalButton_Checked"
+                              FontFamily="Segoe MDL2 Assets"
+                              Content="&#xE7E7;"
+                              Margin="10"/>
                 <Button x:Name="DeleteIconButton" Height="33"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE107;"
                     Margin="10"/>
             </StackPanel>
+            <RichEditBox x:Name="JournalEditBox"
+                         Width="200"
+                         Height="150"
+                         RelativePanel.Below="ButtonsStackPanel"
+                         RelativePanel.AlignHorizontalCenterWithPanel="True"
+                         Visibility="Collapsed">
+                
+            </RichEditBox>
+            
+            <RelativePanel x:Name="JournalRelativePanel" Margin="5" 
+                           Visibility="Collapsed"
+                           Width="320"
+                           HorizontalAlignment="Stretch"
+                           RelativePanel.Below="ButtonsStackPanel"
+                         RelativePanel.AlignHorizontalCenterWithPanel="True">
+                <RelativePanel.Resources>
+                    <Style TargetType="AppBarButton">
+                        <Setter Property="IsCompact" Value="True"/>
+                    </Style>
+                </RelativePanel.Resources>
 
+                <AppBarButton x:Name="openFileButton"
+                  Click="OpenButton_Click" ToolTipService.ToolTip="Open file"
+                              RelativePanel.AlignLeftWithPanel="True" Icon="OpenFile"/>
+                <AppBarButton Icon="Save" Click="SaveAppBarButton_Click"
+                  ToolTipService.ToolTip="Save file"
+                  RelativePanel.RightOf="openFileButton"/>
+
+                <AppBarButton Icon="Bold" 
+                              Click="BoldButton_Click" 
+                              ToolTipService.ToolTip="Bold"
+                              RelativePanel.LeftOf="italicButton"/>
+                <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click"
+                  ToolTipService.ToolTip="Italic" RelativePanel.LeftOf="underlineButton"/>
+                <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click"
+                  ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True"/>
+
+                <RichEditBox x:Name="editor" Height="200" 
+                             RelativePanel.Below="openFileButton"
+                             RelativePanel.AlignLeftWithPanel="True" 
+                             RelativePanel.AlignRightWithPanel="True" 
+                             InputScope="Text" 
+                             PlaceholderText="Begin writing your journal here..." KeyDown="editor_KeyDown"
+                             />
+            </RelativePanel>
         </RelativePanel>
     </Grid>
 </Page>

@@ -143,6 +143,7 @@ namespace Source
                 case MenuItemCategory.Lists:
                     {
                         this.DisableSearchBox();
+                        FirstFrame.Navigate(typeof(User_Interfaces.IconListViewPage));
                         break;
                     }
                 default:

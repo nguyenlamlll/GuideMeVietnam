@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Source.User_Interfaces.IconListViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Source.User_Interfaces"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="MapIcons">
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Text="{Binding Path=planID}" 
+                               Margin="10,0,0,0" 
+                               FontSize="20"/>
+                    
+                    <TextBlock Text="{Binding Path=planName}" 
+                               Margin="10,0,0,0" 
+                               FontSize="20" />
+
+                    <RichTextBlock DataContext="{Binding Path=detail}"/>
+
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <ListView x:Name="MapIconListView" 
+                  Margin="50,50,0,0"
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Top"
+                  ItemsSource="{Binding GetAll}"
+                  ItemTemplate="{StaticResource MapIcons}"
+                  ItemClick="MapIconListView_ItemClick">
+            <ListViewHeaderItem/>
+        </ListView>
+    </Grid>
+</Page>

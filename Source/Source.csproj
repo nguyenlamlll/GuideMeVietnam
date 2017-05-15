@@ -128,6 +128,7 @@
     <Compile Include="Models\FeaturedImage.cs" />
     <Compile Include="Models\FeaturedImageManager.cs" />
     <Compile Include="Models\LocationDataViewModel.cs" />
+    <Compile Include="Models\MapDataViewModel.cs" />
     <Compile Include="Models\ProvinceDataViewModel.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\CountryDataViewModel.cs" />
@@ -136,6 +137,9 @@
     </Compile>
     <Compile Include="User_Interfaces\ContentDialogs\MapIconClicked_Dialog.xaml.cs">
       <DependentUpon>MapIconClicked_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Interfaces\ContentDialogs\TextEditorPage.xaml.cs">
+      <DependentUpon>TextEditorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="User_Interfaces\Country.xaml.cs">
       <DependentUpon>Country.xaml</DependentUpon>
@@ -148,6 +152,9 @@
     </Compile>
     <Compile Include="User_Interfaces\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Interfaces\IconListViewPage.xaml.cs">
+      <DependentUpon>IconListViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="User_Interfaces\Location.xaml.cs">
       <DependentUpon>Location.xaml</DependentUpon>
@@ -170,6 +177,7 @@
     <Compile Include="Utilities\DialogEnum.cs" />
     <Compile Include="Utilities\ImagePicker.cs" />
     <Compile Include="Utilities\LocalDataAccess.cs" />
+    <Compile Include="Utilities\TextEditorLibrary.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -384,6 +392,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="User_Interfaces\ContentDialogs\TextEditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User_Interfaces\Country.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -397,6 +409,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interfaces\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interfaces\IconListViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

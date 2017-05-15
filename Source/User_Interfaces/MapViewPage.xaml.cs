@@ -38,7 +38,7 @@ namespace Source.User_Interfaces
             //DO NOT ADJUST!!!
             myMap.MapServiceToken = "hFGoiz2f7LfL3WGcHktx~3PNh4h7P9rbooQhDYm1P6g~AgQEVrfjHiWpJwYbSuW-65CUw_RRyCUTexdBwAJsxsRJ5bUTSQsQYRtD7TiHUZXv";
 
-
+           
         }
 
         /// <summary>
@@ -57,6 +57,17 @@ namespace Source.User_Interfaces
             SettingsPage.MapThemeChangedToDark += myMap_ChangeThemeToDark;
 
             LoadingIndicator.IsActive = false;
+
+            LoadSavedLocations();
+        }
+
+        private async void LoadSavedLocations()
+        {
+            List<PlaceInfo> places = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+            foreach (PlaceInfo place in places)
+            {
+                ApplicationMapManager.AddStaticMapIcon(myMap, place.Location.Geopoint, "Saved Location");
+            }
         }
 
         private void myMap_ChangeThemeToDark(object sender, EventArgs e)

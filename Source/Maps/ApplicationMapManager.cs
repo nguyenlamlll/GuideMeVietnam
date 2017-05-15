@@ -179,9 +179,11 @@ namespace Source.Maps
         {
             List<PlaceInfo> places = new List<PlaceInfo>();
 
-            Uri dataUri = new Uri("ms-appx:///" + fileName);
+            //Uri dataUri = new Uri("ms-appdata:///" + fileName);
 
-            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
+            //StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile file = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
             if (file == null) return null;
 
             IList<string> lines = await FileIO.ReadLinesAsync(file);

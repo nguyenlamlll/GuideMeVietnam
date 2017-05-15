@@ -21,8 +21,10 @@ namespace Source.Maps
         {
             Geoposition = new BasicGeoposition() { Latitude = latitude, Longitude = longitude };
             MapCoordinates = GetMapCoordinates(Geoposition);
+            Geopoint = new Geopoint(Geoposition);
         }
         public BasicGeoposition Geoposition { get; }
+        public Geopoint Geopoint { get; }
         public Point MapCoordinates { get; }
 
         static private Point GetMapCoordinates(BasicGeoposition geoposition)

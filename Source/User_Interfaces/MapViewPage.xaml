@@ -101,7 +101,8 @@
                         Grid.Row="2"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
-                        Width="40">
+                        Width="40"
+                        >
                 <Button x:Name="MapSettingButton" 
                         Foreground="{ThemeResource SystemAltHighColor}"
                         FontFamily="Segoe MDL2 Assets"
@@ -112,6 +113,7 @@
                     <FlyoutBase.AttachedFlyout>
                         <MenuFlyout>
                             <ToggleMenuFlyoutItem>Traffic</ToggleMenuFlyoutItem>
+                            <MenuFlyoutItem Text="Dummy"></MenuFlyoutItem>
                         </MenuFlyout>
                     </FlyoutBase.AttachedFlyout>
                 </Button>

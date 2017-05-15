@@ -51,7 +51,7 @@ namespace Source.Utilities
                 return bmp;
             }
         }
-
+        /*
         public static async Task SaveBitmapToFileAsync(WriteableBitmap image, string userId = "tempUser")
         {
             StorageFolder pictureFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync("ProfilePictures", CreationCollisionOption.OpenIfExists);
@@ -70,5 +70,6 @@ namespace Source.Utilities
                 await encoder.FlushAsync();
             }
         }
+        */
     }
 }

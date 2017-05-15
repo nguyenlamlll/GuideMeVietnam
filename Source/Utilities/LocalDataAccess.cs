@@ -95,7 +95,7 @@ namespace Source.Utilities
         }
 
         /// <summary>
-        /// Append a line of text into a file in Application's LocalFolder
+        /// Append a line of text into a file (create if the folder doesn't have the file) in Application's LocalFolder.
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="text"></param>
