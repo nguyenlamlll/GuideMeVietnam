@@ -52,12 +52,22 @@ namespace Source.User_Interfaces
 
             ApplicationMapManager.SetDefaultMapSettings(this.myMap);
 
+            // Change Map's theme.
+            SettingsPage.MapThemeChangedToLight += myMap_ChangeThemeToLight;
+            SettingsPage.MapThemeChangedToDark += myMap_ChangeThemeToDark;
+
             LoadingIndicator.IsActive = false;
         }
 
+        private void myMap_ChangeThemeToDark(object sender, EventArgs e)
+        {
+            myMap.ColorScheme = MapColorScheme.Dark;
+        }
 
-
-
+        private void myMap_ChangeThemeToLight(object sender, EventArgs e)
+        {
+            myMap.ColorScheme = MapColorScheme.Light;
+        }
 
         private void mapItemButton_Click(object sender, RoutedEventArgs e)
         {
@@ -175,5 +185,7 @@ namespace Source.User_Interfaces
         {
             LoadingIndicator.IsActive = true;
         }
+
+
     }
 }
