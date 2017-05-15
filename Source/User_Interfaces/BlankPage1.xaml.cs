@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using VietTravel.DBModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +26,12 @@ namespace Source.User_Interfaces
         public BlankPage1()
         {
             this.InitializeComponent();
+
+            using (var db = new VietTravel.VietTravelDBContext())
+            {
+                if (db.ACCOUNTs.Count() == 0)
+                    DBModels.InitData.Init();
+            }
         }
     }
 }

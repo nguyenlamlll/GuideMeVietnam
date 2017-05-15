@@ -107,8 +107,8 @@ namespace Source
             {
                 case MenuItemCategory.Homepage:
                     {
-                        this.DisableSearchBox();
-                        FirstFrame.Navigate(typeof(User_Interfaces.HomePage));
+                        this.EnableSearchBox();
+                        FirstFrame.Navigate(typeof(User_Interfaces.Country));
                         break;
                     }
                 case MenuItemCategory.Map:
@@ -138,6 +138,11 @@ namespace Source
                     {
                         this.DisableSearchBox();
                         FirstFrame.Navigate(typeof(User_Interfaces.SettingsPage));
+                        break;
+                    }
+                case MenuItemCategory.Lists:
+                    {
+                        this.DisableSearchBox();
                         break;
                     }
                 default:
