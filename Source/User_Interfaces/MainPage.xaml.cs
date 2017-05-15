@@ -171,12 +171,12 @@ namespace Source
 
             if (session.LoggedIn)
             {
-                profilePic.UserId = session.User.Id;
-                userProfilePic.UserId = profilePic.UserId;
+                profilePicToolbar.UserId = session.User.Id;
+                profilePicPopup.UserId = profilePicToolbar.UserId;
                 userNameFB.Text = sess.User.Name;
 
                 fbLogin.IsEnabled = false;
-                profilePic.IsEnabled = true;
+                profilePicToolbar.IsEnabled = true;
             }
         }
 
@@ -229,11 +229,12 @@ namespace Source
             WriteLoginTimes();
         }
 
+#region Some methods relating to Facebook
         // <! Some method related Facebook
         private async void fbLogin_Click(object sender, RoutedEventArgs e)
         {
             //Init Login to Facebook
-            sess.FBAppId = "479074892435352";
+            sess.FBAppId = "1898944270325861";
             string SID = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
             sess.WinAppId = SID;
 
@@ -241,16 +242,16 @@ namespace Source
             permissionList.Add("public_profile");
             FBPermissions permissions = new FBPermissions(permissionList);
 
-            // Login to Facebook
+            // Login to Facebook       
             FBResult result = await sess.LoginAsync(permissions, SessionLoginBehavior.WebView);
             if (result.Succeeded)
             {
                 FBUser user = sess.User;
-                profilePic.UserId = sess.User.Id;
-                userProfilePic.UserId = profilePic.UserId;
+                profilePicToolbar.UserId = sess.User.Id;
+                profilePicPopup.UserId = profilePicToolbar.UserId;
                 userNameFB.Text = sess.User.Name;
 
-                profilePic.IsEnabled = true;
+                profilePicToolbar.IsEnabled = true;
                 fbLogin.IsEnabled = false;
             }
             else
@@ -272,10 +273,10 @@ namespace Source
 
             await sess.LogoutAsync();
 
-            profilePic.UserId = "";
+            profilePicToolbar.UserId = "";
 
             fbLogin.IsEnabled = true;
-            profilePic.IsEnabled = false;
+            profilePicToolbar.IsEnabled = false;
         }
 
         private async void btnChangeFB_Click(object sender, RoutedEventArgs e)
@@ -314,8 +315,7 @@ namespace Source
             if (popupProfile.IsOpen)
                 popupProfile.IsOpen = false;
         }
-
-
         //Some method related Facebook !>
+#endregion
     }
 }
