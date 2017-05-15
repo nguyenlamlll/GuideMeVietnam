@@ -229,6 +229,7 @@ namespace Source
             WriteLoginTimes();
         }
 
+        #region Some methods relating to Facebook
         // <! Some method related Facebook
         private async void fbLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -236,7 +237,7 @@ namespace Source
             sess.FBAppId = "479074892435352";
             string SID = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
             sess.WinAppId = SID;
-
+            
             List<String> permissionList = new List<String>();
             permissionList.Add("public_profile");
             FBPermissions permissions = new FBPermissions(permissionList);
@@ -255,7 +256,7 @@ namespace Source
             }
             else
             {
-                //Login failed
+                // Log in failed
             }
         }
 
@@ -318,4 +319,5 @@ namespace Source
 
         //Some method related Facebook !>
     }
+    #endregion
 }
