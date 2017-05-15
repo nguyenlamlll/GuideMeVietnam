@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Source.DBModels;
 using Source.Models;
+using Source.Maps;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,12 +25,20 @@ namespace Source.User_Interfaces
     /// </summary>
     public sealed partial class IconListViewPage : Page
     {
-        MapDataContext dataContext = new MapDataContext();
+        private List<PlaceInfo> places;
         public IconListViewPage()
         {
             this.InitializeComponent();
-            MapIconListView.DataContext = dataContext;
+            
+            LoadSavedLocations();
         }
+
+        private async void LoadSavedLocations()
+        {
+            MapIconListView.ItemsSource = await PlaceInfoManager.GetAllPlaces();
+
+        }
+
 
         private void MapIconListView_ItemClick(object sender, ItemClickEventArgs e)
         {

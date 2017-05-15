@@ -5,26 +5,9 @@
     xmlns:local="using:Source.User_Interfaces"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Source.Maps"
     mc:Ignorable="d">
-    <Page.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="MapIcons">
-                <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Text="{Binding Path=planID}" 
-                               Margin="10,0,0,0" 
-                               FontSize="20"/>
-                    
-                    <TextBlock Text="{Binding Path=planName}" 
-                               Margin="10,0,0,0" 
-                               FontSize="20" />
-
-                    <RichTextBlock DataContext="{Binding Path=detail}"/>
-
-                </StackPanel>
-            </DataTemplate>
-        </ResourceDictionary>
-    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -34,10 +17,19 @@
                   Margin="50,50,0,0"
                   HorizontalAlignment="Left" 
                   VerticalAlignment="Top"
-                  ItemsSource="{Binding GetAll}"
-                  ItemTemplate="{StaticResource MapIcons}"
                   ItemClick="MapIconListView_ItemClick">
-            <ListViewHeaderItem/>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:PlaceInfo">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{x:Bind Name}"
+                                   Margin="10"/>
+                        <TextBlock Text="{x:Bind Location.Geopoint.Position.Latitude}"
+                                   Margin="10"/>
+                        <TextBlock Text="{x:Bind Location.Geopoint.Position.Longitude}"
+                                   Margin="10"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>

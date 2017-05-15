@@ -48,8 +48,17 @@ namespace Source.Maps
     {
         public string Name { get; set; }
         public PlaceLocation Location { get; set; }
+        //public double 
     }
 
+    public class PlaceInfoManager
+    {
+        public static async Task<List<PlaceInfo>> GetAllPlaces()
+        {
+            List<PlaceInfo> places = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+            return places;
+        }
+    }
 
     // A cluster is a group of places that are at almost the same location.
     public sealed class Cluster
