@@ -76,7 +76,6 @@ namespace Source.Models
         }
 
         //
-
         public PROVINCE GetProvince
         {
             get
@@ -109,6 +108,14 @@ namespace Source.Models
             get
             {
                 return GetProvince.intro;        
+            }
+        }
+
+        public string MapImageSource
+        {
+            get
+            {
+                return "/Assets/Images/Maps/" + GetProvince.mapImageSource;
             }
         }
 

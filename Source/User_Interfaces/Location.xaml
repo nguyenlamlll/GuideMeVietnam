@@ -15,16 +15,19 @@
             <DataTemplate x:Key="ReviewContent">
                 <Grid Margin="20" IsTapEnabled="False" Width="740">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
                         <fbsdk:ProfilePictureControl Name="userProPic" UserId="{Binding Path=userFBID}" Width="80" Height="80" Margin="5" VerticalAlignment="Top"/>
                         <StackPanel>
-                            <TextBlock Name="userName" Text="{Binding Path=userFBName}" Margin="0,0,0,10" Foreground="Green" FontWeight="SemiBold" FontSize="20" TextWrapping="WrapWholeWords"/>
-                            <TextBlock Text="{Binding Path=numStarString}" FontSize="20" Foreground="Green"/>
-                            <TextBlock Text="{Binding Path=date}" Opacity="0.5"/>
+                            <TextBlock Name="userName" Text="{Binding Path=userFBName}" Margin="0,0,0,10" 
+                                       Foreground="{ThemeResource SystemAccentColor}" 
+                                       FontWeight="SemiBold" FontSize="20"
+                                       TextWrapping="Wrap" Width="160"/>
+                            <TextBlock Text="{Binding Path=numStarString}" FontSize="20" Foreground="{ThemeResource SystemAccentColor}"/>
+                            <TextBlock Text="{Binding Path=date}" Name="txtDate" Opacity="0.5" Width="auto"/>
                         </StackPanel>
                     </StackPanel>
                     <RichTextBlock Grid.Column="1" IsTapEnabled="False" Margin="10,5,0,0"
@@ -72,9 +75,9 @@
             <StackPanel Grid.Row="1" Width="1300">
                 <TextBlock Text="{Binding  Path=LocationName}" Margin="30" Style="{StaticResource TitleMainStyle}"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
-                    <TextBlock Text="✪✪✪✪✪" FontSize="15" Margin="0,0,10,0" Foreground="Green"/>
-                    <TextBlock Text="4" FontSize="15"/>
-                    <TextBlock Text=" rating" FontSize="15"/>
+                    <TextBlock Text="✪✪✪✪✪" FontSize="15" Margin="0,0,10,0" Foreground="{ThemeResource SystemAccentColor}"/>
+                    <TextBlock Name="txtNumOfReview" Text="{Binding TotalNumberReview, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="15"/>
+                    <TextBlock Text=" ratings" FontSize="15"/>
                 </StackPanel>
                 <TextBlock Text="{Binding Path=Address}"
                            TextAlignment="Center" FontSize="20"/>
@@ -124,7 +127,32 @@
 
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="Map" Margin="0,0,0,10" Style="{StaticResource SubtitleStyle}"/>
-                    <Image Height="300" Source="ms-appx:///Assets/Images/Vietnam_Map.gif" Stretch="UniformToFill" Margin="0,0,0,50"/>
+                    <ScrollViewer Name = "scrollViewer_MAP" HorizontalScrollBarVisibility= "Disabled" VerticalScrollBarVisibility= "Hidden" 
+                                  Height="300" Margin="0,0,0,50"
+                                  PointerEntered="scrollViewer_MAP_PointerEntered"
+                                  DoubleTapped="scrollViewer_MAP_DoubleTapped"
+                                  IsDoubleTapEnabled="True">
+                        <Image Name = "mapImage" 
+                               Source="{Binding MapImageSource}"
+                               Stretch= "Fill"   
+                                             
+                               PointerWheelChanged = "mapImage_PointerWheelChanged"   
+                               
+                               ManipulationMode = "TranslateX, TranslateY, Scale"
+                               ManipulationStarted="mapImage_ManipulationStarted"
+                               ManipulationDelta="mapImage_ManipulationDelta"
+                               ManipulationCompleted="mapImage_ManipulationCompleted">
+                            <Image.RenderTransform>
+                                <CompositeTransform x:Name="mapImage_Transform"/>
+                            </Image.RenderTransform>
+                        </Image>
+                        
+                        <FlyoutBase.AttachedFlyout>
+                            <Flyout Placement="Bottom">
+                                <TextBlock Text="double tap to view DETAIL. You can zooming here!" Foreground="Silver"/>
+                            </Flyout>
+                        </FlyoutBase.AttachedFlyout>
+                    </ScrollViewer>
                     <TextBlock Text="Rating" Margin="0,0,0,10" Style="{StaticResource SubtitleStyle}"/>
                     <TextBlock Name="ratingStarName" Text="Very good" TextAlignment="Center" FontWeight="Bold" Opacity="0.5"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -136,7 +164,7 @@
                     </StackPanel>
                     <TextBox Name="txtTitle" Margin="20" PlaceholderText="Title"/>
                     <TextBox Name="txtReview" Margin="20,0" PlaceholderText="Review" Height="200" TextWrapping="Wrap"/>
-                    <Button Name="btnSubmit" Content="Submit" Margin="20" Background="Green" Foreground="White" Click="btnSubmit_Click">
+                    <Button Name="btnSubmit" Content="Submit" Margin="20" Background="{ThemeResource SystemAccentColor}" Foreground="{ThemeResource SystemAltHighColor}" Click="btnSubmit_Click">
                         <FlyoutBase.AttachedFlyout>
                             <Flyout Placement="Right">
                                 <TextBlock Text="Please select stars to Submit!" Foreground="Red"/>

@@ -29,7 +29,7 @@ namespace VietTravel
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source=DBTravel5.db");
+            optionsBuilder.UseSqlite(@"Data Source=DBTravel6.db");
         }
     }
 }

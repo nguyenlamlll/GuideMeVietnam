@@ -26,6 +26,7 @@ namespace Source.User_Interfaces
     {
         private Storyboard expand;
         private Storyboard shrink;
+        ProvinceDataContext dataContext;
 
         public Province()
         {
@@ -34,7 +35,8 @@ namespace Source.User_Interfaces
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.DataContext = new ProvinceDataContext((short)e.Parameter);
+            dataContext = new ProvinceDataContext((short)e.Parameter);
+            this.DataContext = dataContext;
         }
 
         private void image_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -54,5 +56,55 @@ namespace Source.User_Interfaces
         {
             this.Frame.Navigate(typeof(User_Interfaces.Location), (e.ClickedItem as ProvinceDataViewModel).locationId);
         }
+
+#region Transform MAP
+        private void mapImage_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
+        {
+            double dblDelta_Scroll = -1 * e.GetCurrentPoint(mapImage).Properties.MouseWheelDelta;
+
+            dblDelta_Scroll = (dblDelta_Scroll > 0) ? 1.2 : 0.8;
+
+            double new_ScaleX = this.mapImage_Transform.ScaleX * dblDelta_Scroll;
+            double new_ScaleY = this.mapImage_Transform.ScaleY * dblDelta_Scroll;
+
+            this.mapImage_Transform.CenterX = e.GetCurrentPoint(mapImage).Position.X;
+            this.mapImage_Transform.CenterY = e.GetCurrentPoint(mapImage).Position.Y;
+
+            this.mapImage_Transform.ScaleX = new_ScaleX;
+            this.mapImage_Transform.ScaleY = new_ScaleY;
+        }
+
+        private void mapImage_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
+        {
+            this.mapImage.Opacity = 0.4;
+        }
+
+        private void mapImage_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            this.mapImage_Transform.TranslateX += e.Delta.Translation.X;
+            this.mapImage_Transform.TranslateY += e.Delta.Translation.Y;
+        }
+
+        private void mapImage_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
+        {
+            this.mapImage.Opacity = 1;
+        }
+
+        int countShowNotif = 0;
+        private void scrollViewer_MAP_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            if (countShowNotif < 1)
+            {
+                FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+                countShowNotif++;
+            }
+        }
+
+        private void scrollViewer_MAP_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(User_Interfaces.MapViewPage), dataContext.GetProvince.provinceName);
+        }
+#endregion
+
     }
 }

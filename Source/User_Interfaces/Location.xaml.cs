@@ -29,6 +29,7 @@ namespace Source.User_Interfaces
         DispatcherTimer timer = null;
         List<string> listImage = new List<string>();
         LocationDataContext locationDC;
+        ReviewViewModel reviewDC;
         int count = 0;
 
         public Location()
@@ -85,7 +86,9 @@ namespace Source.User_Interfaces
             this.locationId = (short)e.Parameter;
             locationDC = new LocationDataContext(locationId);
             this.DataContext = locationDC;
-            lvReview.DataContext = new ReviewViewModel(locationId);
+            reviewDC = new ReviewViewModel(locationId);
+            lvReview.DataContext = reviewDC;
+            txtNumOfReview.DataContext = reviewDC;
 
             count = 0;
             timer = new DispatcherTimer();
@@ -114,10 +117,10 @@ namespace Source.User_Interfaces
             opaci.Begin();
         }
 
-
+#region Feature Rating
         // <! Feature Rating
         List<TextBlock> listStar = new List<TextBlock>();
-        SolidColorBrush colorStar = new SolidColorBrush(Colors.Green);
+        Brush colorStar = Application.Current.Resources["SystemControlHighlightAccentBrush"] as SolidColorBrush;
         SolidColorBrush colorDefaultStar = new SolidColorBrush(Colors.Black);
         int numberStarCurrent;
 
@@ -225,8 +228,12 @@ namespace Source.User_Interfaces
 
                     txtReview.Text = txtTitle.Text = "";
                     this.FillColorStar(listStar, -1);
+
+                    //Refresh DataContext
                     lvReview.DataContext = null;
-                    lvReview.DataContext = new ReviewViewModel(locationId);
+                    lvReview.DataContext = reviewDC;
+                    txtNumOfReview.DataContext = null;
+                    txtNumOfReview.DataContext = reviewDC;
                 }
                 else
                 {
@@ -240,5 +247,57 @@ namespace Source.User_Interfaces
             }
         }
         //Feature Rating !>
+#endregion Feature Rating
+
+#region Transform MAP
+        private void mapImage_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
+        {
+            double dblDelta_Scroll = -1 * e.GetCurrentPoint(mapImage).Properties.MouseWheelDelta;
+
+            dblDelta_Scroll = (dblDelta_Scroll > 0) ? 1.2 : 0.8;
+
+            double new_ScaleX = this.mapImage_Transform.ScaleX * dblDelta_Scroll;
+            double new_ScaleY = this.mapImage_Transform.ScaleY * dblDelta_Scroll;
+
+            this.mapImage_Transform.CenterX = e.GetCurrentPoint(mapImage).Position.X;
+            this.mapImage_Transform.CenterY = e.GetCurrentPoint(mapImage).Position.Y;
+
+            this.mapImage_Transform.ScaleX = new_ScaleX;
+            this.mapImage_Transform.ScaleY = new_ScaleY;
+        }
+
+        private void mapImage_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
+        {
+            this.mapImage.Opacity = 0.4;
+        }
+
+        private void mapImage_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            this.mapImage_Transform.TranslateX += e.Delta.Translation.X;
+            this.mapImage_Transform.TranslateY += e.Delta.Translation.Y;
+        }
+
+        private void mapImage_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
+        {
+            this.mapImage.Opacity = 1;
+        }
+
+        int countShowNotif = 0;
+        private void scrollViewer_MAP_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            if (countShowNotif < 1)
+            {
+                FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+                countShowNotif++;
+            }
+        }
+
+        private void scrollViewer_MAP_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(User_Interfaces.MapViewPage), this.locationDC.Address);
+        }
+
+        #endregion Transform MAP
+
     }
 }

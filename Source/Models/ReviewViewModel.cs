@@ -18,6 +18,21 @@ namespace GuideTravel.Models
             this.locationId = locationId;
         }
 
+        public string TotalNumberReview
+        {
+            get
+            {
+                using (var db = new VietTravelDBContext())
+                {
+                    var numOfReview = db.APPRECIATIONs
+                        .Where(b => b.locationID == this.locationId)
+                        .Count();
+
+                    return numOfReview.ToString();
+                }
+            }
+        }
+
         public List<APPRECIATION> ListReview
         {
             get
