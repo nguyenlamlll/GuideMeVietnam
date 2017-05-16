@@ -90,7 +90,7 @@ namespace Source
 
         }
 
-        private void MenuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void MenuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
 
             //string itemClicked = e.ClickedItem.ToString();
@@ -114,9 +114,20 @@ namespace Source
                 case MenuItemCategory.Map:
                     {
                         this.DisableSearchBox(); //MapViewPage has its own Search Box for places, addresses.
+                        LoadingIndicator.IsActive = true;
+                        await Task.Delay(1000);
+                        try
+                        {
+                            FirstFrame.Navigate(typeof(User_Interfaces.MapViewPage));
+                        }
+                        catch
+                        {
 
-                        FirstFrame.Navigate(typeof(User_Interfaces.MapViewPage));
-
+                        }
+                        finally
+                        {
+                            LoadingIndicator.IsActive = false;
+                        }
                         break;
                     }
                 case MenuItemCategory.About:
