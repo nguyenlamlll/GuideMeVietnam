@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="Source.User_Interfaces.IconListViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Source.User_Interfaces"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Source.Maps"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/GenericStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="MapIconListView" 
+                  Margin="50,50,0,0"
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Top"
+                  ItemClick="MapIconListView_ItemClick">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:PlaceInfo">
+                    <Border BorderThickness="1"
+                            BorderBrush="Gray">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="{x:Bind Name}"
+                                   Style="{StaticResource TitleTextBlockStyle}"
+                                   Margin="10"/>
+
+                            <StackPanel Orientation="Vertical"
+                                        Margin="10,0,0,0">
+                                <TextBlock Text="{x:Bind Location.Geopoint.Position.Latitude}"
+                                       Style="{StaticResource SubheaderTextBlockStyle}"
+                                       Margin="3"/>
+                                <TextBlock Text="{x:Bind Location.Geopoint.Position.Longitude}"
+                                       Style="{StaticResource SubheaderTextBlockStyle}"
+                                       Margin="3"/>
+                            </StackPanel>
+
+                            <AppBarButton x:Name="DeleteAppBarButton"
+                                          Icon="Delete"
+                                          Margin="0,0,20,0"
+                                          HorizontalAlignment="Right"
+                                          VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

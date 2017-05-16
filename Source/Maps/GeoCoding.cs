@@ -27,10 +27,46 @@ namespace Source.Maps
 
             // If the query returns results, display the name of the town
             // contained in the address of the first result.
+            string resultAddress = null;
             if (result.Status == MapLocationFinderStatus.Success)
             {
-                string resultAddress = result.Locations[0].Address.ToString();
+                if (result.Locations.Any()) resultAddress = result.Locations[0].Address.FormattedAddress;
                 return resultAddress;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Convert Geopoint into Country Name of that location.
+        /// </summary>
+        /// <param name="pointToReverseGeocode"></param>
+        /// <returns></returns>
+        public static async Task<string> ConvertGeopointToCountry(Geopoint pointToReverseGeocode)
+        {
+            // Reverse geocode the specified geographic location.
+            MapLocationFinderResult result =
+                  await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+
+            string resultCountry = null;
+            if (result.Status == MapLocationFinderStatus.Success)
+            {
+                if (result.Locations.Any()) resultCountry = result.Locations[0].Address.Country;
+                return resultCountry;
+            }
+            return null;
+        }
+
+        public static async Task<string> ConvertGeopointToCity(Geopoint pointToReverseGeocode)
+        {
+            // Reverse geocode the specified geographic location.
+            MapLocationFinderResult result =
+                  await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+
+            string resultCity = null;
+            if (result.Status == MapLocationFinderStatus.Success)
+            {
+                if (result.Locations.Any()) resultCity = result.Locations[0].Address.Country;
+                return resultCity;
             }
             return null;
         }
@@ -50,7 +86,7 @@ namespace Source.Maps
         public static async Task<Geopoint> ConvertAddressToGeoPoint(Geopoint queryHintPoint, string addressToGeocode)
         {
             Geopoint GeopointResult = null;
-    
+
             // Geocode the specified address, using the specified reference point
             // as a query hint. Return no more than 3 results.
             MapLocationFinderResult result =
@@ -63,21 +99,24 @@ namespace Source.Maps
             // of the first result.
             if (result.Status == MapLocationFinderStatus.Success)
             {
-                //Pass the result into a retriever-method
-                var dialog = new MessageDialog("Found it!");
-                await dialog.ShowAsync();
-
-                GeopointResult = new Geopoint(new BasicGeoposition
+                if (result.Locations.Any())
                 {
-                    Latitude = result.Locations[0].Point.Position.Latitude,
-                    Longitude = result.Locations[0].Point.Position.Longitude
-                });
+                    GeopointResult = new Geopoint(new BasicGeoposition
+                    {
+                        Latitude = result.Locations[0].Point.Position.Latitude,
+                        Longitude = result.Locations[0].Point.Position.Longitude
+                    });
+                    return GeopointResult;
+                }
+                // Search is succeed, but yields no result.
+                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.\nPlease try again with more details.");
                 return GeopointResult;
             }
+            // Search is failed. (maybe due to input faults, or connection errors)
             else
             {
                 //Say that we cannot find the location
-                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.");
+                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.\nPlease check your internet connection and try again.");
                 return GeopointResult;
             }
         }
@@ -86,6 +125,6 @@ namespace Source.Maps
         {
             var dialog = new MessageDialog("ShowMsgBox");
             await dialog.ShowAsync();
-        } 
+        }
     }
 }

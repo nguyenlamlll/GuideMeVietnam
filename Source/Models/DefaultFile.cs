@@ -18,7 +18,7 @@ namespace Source.Models
         /// </summary>
         public static readonly string UserActivities = "UserActivities.txt";
 
-
+        public static readonly string UserJournals = "UserJournals.txt";
 
     }
 }

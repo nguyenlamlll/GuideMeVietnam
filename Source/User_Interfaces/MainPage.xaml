@@ -181,5 +181,15 @@
             </RelativePanel>
         </Border>-->
 
+
+
+        <ProgressRing x:Name="LoadingIndicator" 
+                      Width="120" Height="120"
+                      Grid.Row="1"
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      IsActive="False"/>
+
+
     </Grid>
 </Page>

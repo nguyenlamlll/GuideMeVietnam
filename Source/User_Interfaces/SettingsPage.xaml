@@ -48,6 +48,7 @@
                     Download maps so you can search for places and directons without connecting to the Internet.
                 </TextBlock>
                 <Button x:Name="ChooseMapButton"
+                        Click="ChooseMapButton_Click"
                         Style="{StaticResource SectionButton}">
                     Choose maps
                 </Button>
@@ -62,6 +63,7 @@
                     Windows, apps, and services can use this location to personalize your experiences.
                 </TextBlock>
                 <Button x:Name="DefaultLocationButton"
+                        Click="DefaultLocationButton_Click"
                         Style="{StaticResource SectionButton}">
                     Change default location
                 </Button>
@@ -75,12 +77,13 @@
                 <TextBlock Style="{StaticResource DescriptionTextBlock}">
                     Map theme
                 </TextBlock>
-                <ComboBox x:Name="LocationPrivacyButton"
+                <ComboBox x:Name="MapThemeComboBox"
+                          SelectionChanged="MapThemeComboBox_SelectionChanged"
                           Style="{StaticResource SectionComboBox}">
-                    <ComboBoxItem>
+                    <ComboBoxItem x:Name="LightComboBoxItem">
                         Light
                     </ComboBoxItem>
-                    <ComboBoxItem>
+                    <ComboBoxItem x:Name="DarkComboBoxItem">
                         Dark
                     </ComboBoxItem>
                 </ComboBox>
@@ -99,6 +102,15 @@
                         Click="ResetButton_Click"
                         Style="{StaticResource SectionButton}">
                     Reset Settings
+                </Button>
+
+                <TextBlock Style="{StaticResource DescriptionTextBlock}">
+                    Reset all data stored within this application. Be cautious as you can't retrieve any of them back afterward.
+                </TextBlock>
+                <Button x:Name="ResetDataButton"
+                        Click="ResetDataButton_Click"
+                        Style="{StaticResource SectionButton}">
+                    Reset Data
                 </Button>
                 <!--#endregion-->
                 

@@ -23,7 +23,9 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
             <RelativePanel>
+                
                 <StackPanel Margin="0,0,0,10"
                             RelativePanel.AlignLeftWithPanel="True"
                             RelativePanel.AlignVerticalCenterWithPanel="True">
@@ -56,8 +58,10 @@
                         HorizontalAlignment="Right"
                         RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" Click="DownloadMapButton_Click"/>
             </RelativePanel>
+            
 
-            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2" MapTapped="myMap_MapTapped" MapRightTapped="myMap_MapRightTapped">
+            
+            <maps:MapControl x:Name="myMap" Loaded="MyMap_Loaded" Grid.Row="2" MapTapped="myMap_MapTapped" MapRightTapped="myMap_MapRightTapped" Loading="myMap_Loading">
                 <maps:MapItemsControl x:Name="MapItems">
                     <maps:MapItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -97,7 +101,8 @@
                         Grid.Row="2"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
-                        Width="40">
+                        Width="40"
+                        >
                 <Button x:Name="MapSettingButton" 
                         Foreground="{ThemeResource SystemAltHighColor}"
                         FontFamily="Segoe MDL2 Assets"
@@ -108,6 +113,7 @@
                     <FlyoutBase.AttachedFlyout>
                         <MenuFlyout>
                             <ToggleMenuFlyoutItem>Traffic</ToggleMenuFlyoutItem>
+                            <MenuFlyoutItem Text="Dummy"></MenuFlyoutItem>
                         </MenuFlyout>
                     </FlyoutBase.AttachedFlyout>
                 </Button>
@@ -128,6 +134,10 @@
                         Click="ZoomOutButton_Click">
                 </Button>
             </StackPanel>
+            <ProgressRing x:Name="LoadingIndicator" 
+                          Width="120" Height="120"
+                          Grid.Row="2"
+                          RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
         </Grid>
         
     </Grid>

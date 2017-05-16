@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="Source.User_Interfaces.Location"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -177,3 +177,4 @@
         </Grid>
     </GridView>
 </Page>
+

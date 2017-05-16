@@ -44,8 +44,16 @@ namespace Source
 
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
 
-            //MenuItems = new List<MenuItem>();
             MenuItems = MenuItemManager.GetMenuItems();
+
+
+            User_Interfaces.SettingsPage.ResetDataEvent += SettingsPage_ResetDataEvent_CreateDefaultSettings;
+        }
+
+        private void SettingsPage_ResetDataEvent_CreateDefaultSettings(object sender, EventArgs e)
+        {
+            CreateUserPlacesFile();
+
         }
 
 
@@ -57,6 +65,7 @@ namespace Source
         {
             SearchAutoSuggestBox.Visibility = Visibility.Collapsed;
         }
+
         /// <summary>
         /// Enable Mainpage's search box
         /// </summary>
@@ -93,8 +102,9 @@ namespace Source
 
         }
 
-        private void MenuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void MenuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
+
             //string itemClicked = e.ClickedItem.ToString();
             //Title.Text = itemClicked;
             //Button button = sender as Button;
@@ -102,6 +112,7 @@ namespace Source
 
             //ListView listview = sender as ListView;
             //MenuItem item = listvi as MenuItem;
+
             var menuItem = (MenuItem)e.ClickedItem;
 
             switch (menuItem.Category)
@@ -115,22 +126,35 @@ namespace Source
                 case MenuItemCategory.Map:
                     {
                         this.DisableSearchBox(); //MapViewPage has its own Search Box for places, addresses.
-                        FirstFrame.Navigate(typeof(User_Interfaces.MapViewPage));
+                        LoadingIndicator.IsActive = true;
+                        await Task.Delay(1000);
+                        try
+                        {
+                            FirstFrame.Navigate(typeof(User_Interfaces.MapViewPage));
+                        }
+                        catch
+                        {
+
+                        }
+                        finally
+                        {
+                            LoadingIndicator.IsActive = false;
+                        }
                         break;
                     }
                 case MenuItemCategory.About:
                     {
-                        this.EnableSearchBox();
+                        this.DisableSearchBox();
                         break;
                     }
                 case MenuItemCategory.Photos:
                     {
-                        this.EnableSearchBox();
+                        this.DisableSearchBox();
                         break;
                     }
                 case MenuItemCategory.Posts:
                     {
-                        this.DisableSearchBox(); 
+                        this.DisableSearchBox();
                         break;
                     }
                 case MenuItemCategory.Settings:
@@ -142,11 +166,13 @@ namespace Source
                 case MenuItemCategory.Lists:
                     {
                         this.DisableSearchBox();
+                        FirstFrame.Navigate(typeof(User_Interfaces.IconListViewPage));
                         break;
                     }
                 default:
                     {
-                        throw new Exception("Navigation Bar Message Unknown.");
+                        Utilities.Dialog.ShowDialog("Navigation Bar Message Unknown.\nPlease try again.", "Error");
+                        break;
                     }
             }
         }
@@ -196,10 +222,19 @@ namespace Source
             {
                 Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
             }
-
-            //bool x = await Utilities.LocalDataAccess.IsExisted("UserPlaces.txt");
-            //Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
         }
+        private void CreateUserPlacesFile()
+        {
+            try
+            {
+                Utilities.LocalDataAccess.WriteToLocalFolder(DefaultFile.UserPlaces, "");
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+        }
+
 
         private void Page_Loading(FrameworkElement sender, object args)
         {

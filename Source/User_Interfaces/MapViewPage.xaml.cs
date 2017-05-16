@@ -38,7 +38,7 @@ namespace Source.User_Interfaces
             //DO NOT ADJUST!!!
             myMap.MapServiceToken = "hFGoiz2f7LfL3WGcHktx~3PNh4h7P9rbooQhDYm1P6g~AgQEVrfjHiWpJwYbSuW-65CUw_RRyCUTexdBwAJsxsRJ5bUTSQsQYRtD7TiHUZXv";
 
-
+           
         }
 
         /// <summary>
@@ -70,11 +70,35 @@ namespace Source.User_Interfaces
             myMap.MapElementPointerExited += ApplicationMapManager.MyMap_MapElementPointerExited;
 
             ApplicationMapManager.SetDefaultMapSettings(this.myMap);
+
+            // Change Map's theme.
+            SettingsPage.MapThemeChangedToLight += myMap_ChangeThemeToLight;
+            SettingsPage.MapThemeChangedToDark += myMap_ChangeThemeToDark;
+
+
+            LoadingIndicator.IsActive = false;
+
+            LoadSavedLocations();
         }
 
+        private async void LoadSavedLocations()
+        {
+            List<PlaceInfo> places = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+            foreach (PlaceInfo place in places)
+            {
+                ApplicationMapManager.AddStaticMapIcon(myMap, place.Location.Geopoint, "Saved Location");
+            }
+        }
 
+        private void myMap_ChangeThemeToDark(object sender, EventArgs e)
+        {
+            myMap.ColorScheme = MapColorScheme.Dark;
+        }
 
-
+        private void myMap_ChangeThemeToLight(object sender, EventArgs e)
+        {
+            myMap.ColorScheme = MapColorScheme.Light;
+        }
 
         private void mapItemButton_Click(object sender, RoutedEventArgs e)
         {
@@ -111,6 +135,8 @@ namespace Source.User_Interfaces
         {
             try
             {
+                LoadingIndicator.IsActive = true;
+                await Task.Delay(1000);
                 Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, sender.Text);
                 if (result != null)
                 {
@@ -124,15 +150,18 @@ namespace Source.User_Interfaces
                 //Place a MapIcon at result.
                 ApplicationMapManager.AddStaticMapIcon(myMap, result);
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException)
             {
-                Utilities.Dialog.ShowDialog("Please try again.\n" + ex.ToString(), "Error");
+                Utilities.Dialog.ShowDialog("Sorry. Cannot find your location.\nPlease try again with more details.", "Error");
             }
             catch (Exception ex)
             {
                 Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
             }
-
+            finally
+            {
+                LoadingIndicator.IsActive = false;
+            }
         }
 
         /// <summary>
@@ -181,6 +210,11 @@ namespace Source.User_Interfaces
         {
             var attachedFlyout = (MenuFlyout)FlyoutBase.GetAttachedFlyout(MapSettingButton);
             attachedFlyout.ShowAt(MapSettingButton);
+        }
+
+        private void myMap_Loading(FrameworkElement sender, object args)
+        {
+            LoadingIndicator.IsActive = true;
         }
 
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -458,3 +458,4 @@ namespace GuideTravel.Migrations
         }
     }
 }
+
