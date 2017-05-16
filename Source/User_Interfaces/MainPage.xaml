@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:Source.Models"
+    xmlns:fbsdk="using:winsdkfb"
     mc:Ignorable="d" Loaded="Page_Loaded" Loading="Page_Loading">
     <Page.Resources>
         <SolidColorBrush x:Key="AccentColor" Color="{ThemeResource SystemAccentColor}"/>
@@ -54,6 +55,47 @@
                             TextChanged="SearchAutoSuggestBox_TextChanged"
                             QuerySubmitted="SearchAutoSuggestBox_QuerySubmitted"
                             RelativePanel.AlignRightWithPanel="True" />
+            <Button Name="fbLogin"
+                   Click="fbLogin_Click"
+                   Width="35" Height="30"
+                   Margin="0,5,220,0"
+                   RelativePanel.AlignRightWithPanel="True">
+                <Image Source="/Assets/Icons/Facebook.png" Margin="-10"/>
+            </Button>
+
+            <fbsdk:ProfilePictureControl Name="profilePicToolbar" 
+                                         RelativePanel.AlignRightWithPanel="True"
+                                         Margin="0,5,265,0"
+                                         Width="35" Height="30"
+                                         PointerEntered="profilePic_PointerEntered"
+                                         IsEnabled="False"/>
+            <Popup Name="popupProfile"
+                   Margin="0,45,500,0"
+                   RelativePanel.AlignRightWithPanel="True">
+                <Grid PointerExited="Grid_PointerExited" Background="WhiteSmoke">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <fbsdk:ProfilePictureControl Width="100" Height="100" Name="profilePicPopup" Margin="10"/>
+                            <StackPanel >
+                                <TextBlock Name="userNameFB" FontWeight="Bold" Margin="0,0,0,10" FontSize="30"/>
+                                <Button Name="btnToFB" Background="#2980b9" Foreground="White" 
+                                        Content="Go To Timeline" HorizontalContentAlignment="Center" 
+                                        HorizontalAlignment="Right"
+                                        Click="btnToFB_Click" 
+                                        Width="150" Margin="0,0,10,0"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,5,10,10">
+                                    <Button Name="btnLogoutFB" Click="btnLogoutFB_Click" Background="#7f8c8d" Width="80" Foreground="White" Margin="0,0,5,0"
+                                            Content="Logout"/>
+                                    <Button Name="btnChangeFB" Click="btnChangeFB_Click" Background="#34495e" Width="65" Foreground="White" 
+                                            Content="Switch"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Popup>
+            
+
         </RelativePanel>
 
         <SplitView x:Name="Splitter" Grid.Row="1"
@@ -124,7 +166,7 @@
 
 
         <!--A small Status Bar-->
-        <Border BorderThickness="3" Background="{ThemeResource AccentColor}" Grid.Row="2" BorderBrush="#FFD2D2D2">
+        <!--<Border BorderThickness="3" Background="{ThemeResource AccentColor}" Grid.Row="2" BorderBrush="#FFD2D2D2">
             <RelativePanel>
                 <Image x:Name="Logo" Source="Assets\Images\Saigon.jpg"></Image>
 
@@ -137,7 +179,7 @@
                 </StackPanel>
 
             </RelativePanel>
-        </Border>
+        </Border>-->
 
 
 
