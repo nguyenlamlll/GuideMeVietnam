@@ -64,7 +64,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <GridView Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
               ScrollViewer.VerticalScrollBarVisibility="Hidden"
               Width="1360"
@@ -199,7 +199,7 @@
             </Grid>
 
         </Grid>
-    </GridView>
+    </ScrollViewer>
 
 </Page>
 
