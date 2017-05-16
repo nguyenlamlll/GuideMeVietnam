@@ -80,6 +80,14 @@ namespace Source.Models
             }
         }
 
+        public string MapImageSource
+        {
+            get
+            {
+                return "/Assets/Images/Maps/MapLocations/" + GetLocation.mapImageSource;
+            }
+        }
+
         public List<string> ListImage
         {
             get

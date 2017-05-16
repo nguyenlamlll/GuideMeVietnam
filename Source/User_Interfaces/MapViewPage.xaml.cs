@@ -42,6 +42,25 @@ namespace Source.User_Interfaces
         }
 
         /// <summary>
+        /// Get Location in prev Page and show it
+        /// </summary>
+        /// <param name="e"></param>
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null)
+            {
+                Geopoint result = await GeoCoding.ConvertAddressToGeoPoint(myMap.Center, e.Parameter.ToString());
+
+                if (result != null)
+                {
+                    myMap.Center = result;
+                    myMap.ZoomLevel = 14;
+                }
+            }
+        }
+
+
+        /// <summary>
         /// Load default settings when the map is first loaded.
         /// </summary>
         private void MyMap_Loaded(object sender, RoutedEventArgs e)
@@ -51,7 +70,6 @@ namespace Source.User_Interfaces
             myMap.MapElementPointerExited += ApplicationMapManager.MyMap_MapElementPointerExited;
 
             ApplicationMapManager.SetDefaultMapSettings(this.myMap);
-
         }
 
 
