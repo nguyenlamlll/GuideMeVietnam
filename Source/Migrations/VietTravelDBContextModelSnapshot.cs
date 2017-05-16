@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using VietTravel;
 
-namespace Source.Migrations
+namespace GuideTravel.Migrations
 {
     [DbContext(typeof(VietTravelDBContext))]
     partial class VietTravelDBContextModelSnapshot : ModelSnapshot
@@ -34,21 +34,23 @@ namespace Source.Migrations
                     b.Property<short>("appreciaID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("appreciaSubject");
-
                     b.Property<string>("content");
 
-                    b.Property<short?>("locationID");
+                    b.Property<DateTime>("date");
 
-                    b.Property<short?>("numStar");
+                    b.Property<short>("locationID");
 
-                    b.Property<short?>("userID");
+                    b.Property<short>("numStar");
+
+                    b.Property<string>("title");
+
+                    b.Property<string>("userFBID");
+
+                    b.Property<string>("userFBName");
 
                     b.HasKey("appreciaID");
 
                     b.HasIndex("locationID");
-
-                    b.HasIndex("userID");
 
                     b.ToTable("APPRECIATIONs");
                 });
@@ -134,6 +136,8 @@ namespace Source.Migrations
 
                     b.Property<float?>("longitude");
 
+                    b.Property<string>("mapImageSource");
+
                     b.Property<string>("phoneNumber");
 
                     b.Property<decimal?>("priceMax");
@@ -217,6 +221,8 @@ namespace Source.Migrations
                     b.Property<float?>("latitude");
 
                     b.Property<float?>("longtitude");
+
+                    b.Property<string>("mapImageSource");
 
                     b.Property<float?>("populationProvince");
 
@@ -323,11 +329,8 @@ namespace Source.Migrations
                 {
                     b.HasOne("VietTravel.DBModels.LOCATION", "LOCATION")
                         .WithMany("APPRECIATIONs")
-                        .HasForeignKey("locationID");
-
-                    b.HasOne("VietTravel.DBModels.USER", "USER")
-                        .WithMany("APPRECIATIONs")
-                        .HasForeignKey("userID");
+                        .HasForeignKey("locationID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("VietTravel.DBModels.ARTICLE", b =>

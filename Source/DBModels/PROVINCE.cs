@@ -26,6 +26,7 @@ namespace VietTravel.DBModels
         public string imageSource { get; set; }
         public string suggestSentence { get; set; }
         public string intro { get; set; }
+        public string mapImageSource { get; set; }
         public Nullable<float> longtitude { get; set; }
         public Nullable<float> latitude { get; set; }
         public Nullable<float> totalArea { get; set; }

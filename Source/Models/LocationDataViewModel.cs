@@ -80,6 +80,14 @@ namespace Source.Models
             }
         }
 
+        public string MapImageSource
+        {
+            get
+            {
+                return "/Assets/Images/Maps/MapLocations/" + GetLocation.mapImageSource;
+            }
+        }
+
         public List<string> ListImage
         {
             get
@@ -96,9 +104,12 @@ namespace Source.Models
 
                     string localSource = "/Assets/Images/Locations/In" + provinName.Replace(" ", String.Empty) + "/";
 
-                    foreach (var img in listImage)
+                    if (listImage != null)
                     {
-                        listImageSource.Add(localSource + img.imageSource);
+                        foreach (var img in listImage)
+                        {
+                            listImageSource.Add(localSource + img.imageSource);
+                        }
                     }
 
                     return listImageSource;
