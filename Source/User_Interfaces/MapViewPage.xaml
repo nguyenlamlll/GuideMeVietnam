@@ -52,12 +52,7 @@
                                 QuerySubmitted="MapSearchSuggestBox_QuerySubmitted"/>
             </RelativePanel>
 
-            <RelativePanel Grid.Row="1">
-                <Button x:Name="DownloadMapButton" 
-                        Content="Downloaded Maps" 
-                        HorizontalAlignment="Right"
-                        RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" Click="DownloadMapButton_Click"/>
-            </RelativePanel>
+
             
 
             
@@ -88,6 +83,7 @@
                     <MenuFlyout>
                         <MenuFlyoutItem x:Name="FromDirection_MenuFlyoutItem" Text="Direction from here"/>
                         <MenuFlyoutItem x:Name="ToDirection_MenuFlyoutItem" Text="Direction to here"/>
+                        <MenuFlyoutItem x:Name="LoadCollection_MenuFlyoutItem" Text="Load save locations" Click="LoadCollection_MenuFlyoutItem_Click"/>
                         <MenuFlyoutSeparator/>
                         <MenuFlyoutItem x:Name="PinDrop_MenuFlyoutItem" Text="Drop a pin" Click="PinDrop_MenuFlyoutItem_Click"/>
                     </MenuFlyout>

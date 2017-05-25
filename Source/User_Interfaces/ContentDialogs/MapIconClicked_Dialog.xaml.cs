@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Maps;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -23,7 +25,7 @@ namespace Source.User_Interfaces.ContentDialogs
     /// </summary>
     public sealed partial class MapIconClicked_Dialog : Page
     {
-        private static Geopoint Location = null;
+        public static Geopoint Location = null;
         public MapIconClicked_Dialog()
         {
             this.InitializeComponent();
@@ -254,6 +256,19 @@ namespace Source.User_Interfaces.ContentDialogs
         }
         // Open text editor that allows user to write the location's journal.
         // Save in a separated file with 3 lines: Latitude, Longitude, and The journal itself.
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteIconButton_Click(object sender, RoutedEventArgs e)
+        {
+            MapIconDeleting?.Invoke(sender, Location);
+            
+        }
+
+        public static event TypedEventHandler<object, Geopoint> MapIconDeleting;
 
     }
 }

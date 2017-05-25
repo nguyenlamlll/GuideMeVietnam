@@ -79,17 +79,22 @@
                 <Button x:Name="SaveButton" Height="33"
                     Click="SaveButton_Click"
                     FontFamily="Segoe MDL2 Assets"
-                    Content="&#xE105;"
-                    Margin="10"/>
-                <ToggleButton x:Name="AddJournalButton" Height="33"
+                    Content="&#xE141;"
+                    Margin="10" ToolTipService.ToolTip="Save to collection"/>
+                <Button x:Name="DeleteLocationButton" Height="33"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE107;"
+                    Margin="10" ToolTipService.ToolTip="Delete from collection"/>
+                    <ToggleButton x:Name="AddJournalButton" Height="33"
                               Checked="AddJournalButton_Checked"
                               FontFamily="Segoe MDL2 Assets"
                               Content="&#xE7E7;"
-                              Margin="10"/>
+                              Margin="10" ToolTipService.ToolTip="Open journal editor"/>
                 <Button x:Name="DeleteIconButton" Height="33"
+                        Click="DeleteIconButton_Click"
                     FontFamily="Segoe MDL2 Assets"
-                    Content="&#xE107;"
-                    Margin="10"/>
+                    Content="&#xE10A;"
+                    Margin="10" ToolTipService.ToolTip="Remove this icon from the map"/>
             </StackPanel>
             <RichEditBox x:Name="JournalEditBox"
                          Width="200"

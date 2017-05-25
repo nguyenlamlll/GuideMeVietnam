@@ -267,7 +267,7 @@ namespace Source
         }
 
 
-#region Some methods relating to Facebook
+        #region Some methods relating to Facebook
         // <! Some method related Facebook
         private async void fbLogin_Click(object sender, RoutedEventArgs e)
         {

@@ -19,6 +19,7 @@ using Source.Maps;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls.Maps;
 using Windows.Storage.Streams;
+using Source.User_Interfaces.ContentDialogs;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -59,6 +60,7 @@ namespace Source.User_Interfaces
             }
         }
 
+        public bool IsMapIconDeleting = false;
 
         /// <summary>
         /// Load default settings when the map is first loaded.
@@ -68,6 +70,7 @@ namespace Source.User_Interfaces
             myMap.MapElementClick += ApplicationMapManager.MyMap_MapElementClick;
             myMap.MapElementPointerEntered += ApplicationMapManager.MyMap_MapElementPointerEntered;
             myMap.MapElementPointerExited += ApplicationMapManager.MyMap_MapElementPointerExited;
+            MapIconClicked_Dialog.MapIconDeleting += this.DeleteMapIcon;
 
             ApplicationMapManager.SetDefaultMapSettings(this.myMap);
 
@@ -111,14 +114,6 @@ namespace Source.User_Interfaces
             //var dialog = new MessageDialog("Pin Added!");
             //await dialog.ShowAsync();
 
-        }
-
-        /// <summary>
-        /// Check Downloaded Maps in Windows Settings.
-        /// </summary>
-        private void DownloadMapButton_Click(object sender, RoutedEventArgs e)
-        {
-            MapManager.ShowDownloadedMapsUI();
         }
 
         private void MapSearchSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -217,6 +212,31 @@ namespace Source.User_Interfaces
             LoadingIndicator.IsActive = true;
         }
 
+        /// <summary>
+        /// Will be called when user clicks Delete button in info box of each MapIcon.
+        /// This method deletes the MapIcon (where it is called).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="point">The MapIcon/Location that will be deleted.</param>
+        private void DeleteMapIcon(object sender, Geopoint point)
+        {
+            foreach (MapIcon icon in myMap.MapElements.Where(p => p is MapIcon))
+            {
+                if (icon.Location == point)
+                {
+                    myMap.MapElements.Remove(icon);
+                    foreach (MapIconClicked_Dialog infoDialog in myMap.Children.Where(p => p is MapIconClicked_Dialog))
+                    {
+                        myMap.Children.Remove(infoDialog);
+                    }
+                    break;
+                }
+            }
+        }
 
+        private void LoadCollection_MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
