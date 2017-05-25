@@ -39,7 +39,7 @@ namespace Source.User_Interfaces
             //DO NOT ADJUST!!!
             myMap.MapServiceToken = "hFGoiz2f7LfL3WGcHktx~3PNh4h7P9rbooQhDYm1P6g~AgQEVrfjHiWpJwYbSuW-65CUw_RRyCUTexdBwAJsxsRJ5bUTSQsQYRtD7TiHUZXv";
 
-           
+
         }
 
         /// <summary>
@@ -86,10 +86,22 @@ namespace Source.User_Interfaces
 
         private async void LoadSavedLocations()
         {
+            bool IsIconExisted = false;
             List<PlaceInfo> places = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
             foreach (PlaceInfo place in places)
             {
-                ApplicationMapManager.AddStaticMapIcon(myMap, place.Location.Geopoint, "Saved Location");
+                IsIconExisted = false;
+                foreach (MapIcon icon in myMap.MapElements.Where(p => p is MapIcon))
+                {
+                    if (place.Location.Geopoint.Position.Latitude == icon.Location.Position.Latitude
+                        && place.Location.Geopoint.Position.Longitude == icon.Location.Position.Longitude)
+                    {
+                        IsIconExisted = true;
+                        break;
+                    }
+                }
+                if (!IsIconExisted)
+                    ApplicationMapManager.AddStaticMapIcon(myMap, place.Location.Geopoint, "Saved Location");
             }
         }
 
@@ -234,9 +246,12 @@ namespace Source.User_Interfaces
             }
         }
 
+        /// <summary>
+        /// Load all saved location onto the map (if they are not already there).
+        /// </summary>
         private void LoadCollection_MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
         {
-
+            LoadSavedLocations();
         }
     }
 }
