@@ -116,6 +116,7 @@
     <Compile Include="Maps\DefinedGeopoints.cs" />
     <Compile Include="Maps\GeoCoding.cs" />
     <Compile Include="Maps\ApplicationMapManager.cs" />
+    <Compile Include="Maps\Location.cs" />
     <Compile Include="Maps\Place.cs" />
     <Compile Include="Migrations\20170514165954_Init.cs" />
     <Compile Include="Migrations\20170514165954_Init.designer.cs">

@@ -90,6 +90,7 @@
                 </FlyoutBase.AttachedFlyout>
             </maps:MapControl>
 
+            <!-- Map's buttons-->
             <StackPanel x:Name="MapButtonsStackPanel" Margin="0,0,30,0"
                         Background="{ThemeResource ButtonBackground}" 
                         Opacity="60"
@@ -112,6 +113,14 @@
                             <MenuFlyoutItem Text="Dummy"></MenuFlyoutItem>
                         </MenuFlyout>
                     </FlyoutBase.AttachedFlyout>
+                </Button>
+                <Button x:Name="GetLocationButton" 
+                        Foreground="{ThemeResource SystemAltHighColor}"
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="20"
+                        Content="&#xE1D2;"
+                        HorizontalAlignment="Center"
+                        Click="GetLocationButton_Click">
                 </Button>
                 <Button x:Name="ZoomInButton" 
                         Foreground="{ThemeResource SystemAltHighColor}"

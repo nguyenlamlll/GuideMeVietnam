@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls.Maps;
 using Windows.Storage.Streams;
 using Source.User_Interfaces.ContentDialogs;
+using System.Threading;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,6 +31,8 @@ namespace Source.User_Interfaces
     /// </summary>
     public sealed partial class MapViewPage : Page
     {
+        // A pointer to the main page
+        private Source.MainPage _rootPage = MainPage.Current;
 
         public MapViewPage()
         {
@@ -252,6 +255,105 @@ namespace Source.User_Interfaces
         private void LoadCollection_MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
         {
             LoadSavedLocations();
+        }
+
+
+
+        // Captures the value entered by user.
+        private uint _desireAccuracyInMetersValue = 0;
+        private CancellationTokenSource _cts = null;
+
+        /// <summary>
+        /// Invoked immediately before the Page is unloaded and is no longer the current source of a parent Frame.
+        /// </summary>
+        /// <param name="e">
+        /// Event data that can be examined by overriding code. The event data is representative
+        /// of the navigation that will unload the current Page unless canceled. The
+        /// navigation can potentially be canceled by setting e.Cancel to true.
+        /// </param>
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            if (_cts != null)
+            {
+                _cts.Cancel();
+                _cts = null;
+            }
+
+            base.OnNavigatingFrom(e);
+        }
+
+        private async void GetLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Request permission to access location
+                var accessStatus = await Geolocator.RequestAccessAsync();
+
+                switch (accessStatus)
+                {
+                    case GeolocationAccessStatus.Allowed:
+
+                        // Get cancellation token
+                        _cts = new CancellationTokenSource();
+                        CancellationToken token = _cts.Token;
+
+                        _rootPage.NotifyUser("Waiting for update...", NotifyType.StatusMessage);
+
+                        // If DesiredAccuracy or DesiredAccuracyInMeters are not set (or value is 0), DesiredAccuracy.Default is used.
+                        Geolocator geolocator = new Geolocator { DesiredAccuracyInMeters = _desireAccuracyInMetersValue };
+
+                        // Carry out the operation
+                        Geoposition pos = await geolocator.GetGeopositionAsync().AsTask(token);
+
+                        UpdateLocationData(pos);
+                        _rootPage.NotifyUser("Location updated.", NotifyType.StatusMessage);
+                        break;
+
+                    case GeolocationAccessStatus.Denied:
+                        _rootPage.NotifyUser("Access to location is denied.", NotifyType.ErrorMessage);
+                        UpdateLocationData(null);
+                        break;
+
+                    case GeolocationAccessStatus.Unspecified:
+                        _rootPage.NotifyUser("Unspecified error.", NotifyType.ErrorMessage);
+                        UpdateLocationData(null);
+                        break;
+                }
+            }
+            catch (TaskCanceledException)
+            {
+                _rootPage.NotifyUser("Canceled.", NotifyType.StatusMessage);
+            }
+            catch (Exception ex)
+            {
+                _rootPage.NotifyUser(ex.ToString(), NotifyType.ErrorMessage);
+            }
+            finally
+            {
+                _cts = null;
+                _rootPage.NotifyUser(string.Empty, NotifyType.StatusMessage);
+            }
+
+        }
+
+        /// <summary>
+        /// Updates the user interface with the Geoposition data provided
+        /// </summary>
+        /// <param name="position">Geoposition to display its details</param>
+        private void UpdateLocationData(Geoposition position)
+        {
+            if (position == null)
+            {
+                return;
+            }
+            else
+            {
+                BasicGeoposition point = new BasicGeoposition();
+                point.Latitude = position.Coordinate.Point.Position.Latitude;
+                point.Longitude = position.Coordinate.Point.Position.Longitude;
+                myMap.Center = new Geopoint(point);
+                myMap.ZoomLevel = 13;
+            }
         }
     }
 }
