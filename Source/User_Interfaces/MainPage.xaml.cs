@@ -408,7 +408,7 @@ namespace Source
             else
             {
                 StatusBorder.Visibility = Visibility.Collapsed;
-                StatusPanel.Visibility = Visibility.Collapsed;
+                //StatusPanel.Visibility = Visibility.Collapsed;
             }
         }
     }

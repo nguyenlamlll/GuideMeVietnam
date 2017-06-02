@@ -27,7 +27,12 @@ namespace Source.User_Interfaces.ContentDialogs
     /// </summary>
     public sealed partial class MapIconClicked_Dialog : Page
     {
+        //A pointer to the main page
+        private MainPage _rootPage = MainPage.Current;
+
+        //Store location of the parent Icon.
         public static Geopoint Location = null;
+
         public MapIconClicked_Dialog()
         {
             this.InitializeComponent();
@@ -82,8 +87,20 @@ namespace Source.User_Interfaces.ContentDialogs
             this.Visibility = Visibility.Collapsed;
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Save this icon into collection.
+        /// </summary>
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            //If this place existed, return.
+            List<PlaceInfo> list = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+            foreach (PlaceInfo place in list)
+            {
+                if (place.Location.Geopoint.Position.Latitude == Location.Position.Latitude &&
+                      place.Location.Geopoint.Position.Longitude == Location.Position.Longitude)
+                    return;
+            }
+
             string stringToAppend =
                 AddressTitleTextBlock.Text + "\n" +
                 LatitudeTextBlock.Text + "\n" +
@@ -91,8 +108,7 @@ namespace Source.User_Interfaces.ContentDialogs
             try
             {
                 Utilities.LocalDataAccess.Append(stringToAppend, Models.DefaultFile.UserPlaces);
-
-
+                _rootPage.NotifyUser("Saved!", NotifyType.StatusMessage);
             }
             catch (FileNotFoundException)
             {
@@ -101,6 +117,11 @@ namespace Source.User_Interfaces.ContentDialogs
             catch (Exception ex)
             {
                 Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+            finally
+            {
+                await Task.Delay(2000);
+                _rootPage.NotifyUser("", NotifyType.StatusMessage);
             }
 
         }
@@ -281,27 +302,50 @@ namespace Source.User_Interfaces.ContentDialogs
         /// <param name="e"></param>
         private async void DeleteLocationButton_Click(object sender, RoutedEventArgs e)
         {
-            List<PlaceInfo> list = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
-            List<PlaceInfo> storedList = list;
-            foreach (PlaceInfo place in list)
+            List<PlaceInfo> storedList = null;
+            try
             {
-                //Delete this location from the list
-                if (place.Location.Geopoint.Position.Latitude == Location.Position.Latitude &&
-                    place.Location.Geopoint.Position.Longitude == Location.Position.Longitude)
+                List<PlaceInfo> list = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+                storedList = list;
+                foreach (PlaceInfo place in list)
                 {
-                    list.Remove(place);
-                    Utilities.LocalDataAccess.WriteToLocalFolder(Models.DefaultFile.UserPlaces, ""); //Overwrite current file with an empty one.
-                    string stringToAppend = string.Empty;
-
-                    await list.ForEachAsync(async i =>
+                    //Delete this location from the list
+                    if (place.Location.Geopoint.Position.Latitude == Location.Position.Latitude &&
+                        place.Location.Geopoint.Position.Longitude == Location.Position.Longitude)
                     {
-                        await Utilities.LocalDataAccess.AppendAsync(i.Name + "\n" + i.Location.Geopoint.Position.Latitude + "\n" +
-                            i.Location.Geopoint.Position.Longitude + "\n", Models.DefaultFile.UserPlaces);
-                    });
+                        list.Remove(place);
+                        Utilities.LocalDataAccess.WriteToLocalFolder(Models.DefaultFile.UserPlaces, ""); //Overwrite current file with an empty one.
+                        string stringToAppend = string.Empty;
 
-                    DeleteIconButton_Click(sender, e);
-                    break;
+                        await list.ForEachAsync(async i =>
+                        {
+                            await Utilities.LocalDataAccess.AppendAsync(i.Name + "\n" + i.Location.Geopoint.Position.Latitude + "\n" +
+                                i.Location.Geopoint.Position.Longitude + "\n", Models.DefaultFile.UserPlaces);
+                        });
+                        _rootPage.NotifyUser("Deleted.", NotifyType.StatusMessage);
+                        DeleteIconButton_Click(sender, e);
+                        break;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog(ex.ToString(), "Unhandled Error");
+                //Try to revert all changes
+                if (storedList == null) return;
+                Utilities.LocalDataAccess.WriteToLocalFolder(Models.DefaultFile.UserPlaces, ""); //Overwrite current file with an empty one.
+                string stringToAppend = string.Empty;
+
+                await storedList.ForEachAsync(async i =>
+                {
+                    await Utilities.LocalDataAccess.AppendAsync(i.Name + "\n" + i.Location.Geopoint.Position.Latitude + "\n" +
+                        i.Location.Geopoint.Position.Longitude + "\n", Models.DefaultFile.UserPlaces);
+                });
+            }
+            finally
+            {
+                await Task.Delay(2000);
+                _rootPage.NotifyUser("", NotifyType.StatusMessage);
             }
         }
 
