@@ -175,6 +175,7 @@
     <Compile Include="User_Interfaces\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\AsyncHelper.cs" />
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\DialogEnum.cs" />

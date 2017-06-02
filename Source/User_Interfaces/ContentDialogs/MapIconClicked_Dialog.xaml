@@ -82,6 +82,7 @@
                     Content="&#xE141;"
                     Margin="10" ToolTipService.ToolTip="Save to collection"/>
                 <Button x:Name="DeleteLocationButton" Height="33"
+                        Click="DeleteLocationButton_Click"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE107;"
                     Margin="10" ToolTipService.ToolTip="Delete from collection"/>

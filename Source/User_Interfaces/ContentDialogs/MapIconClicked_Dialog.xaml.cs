@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using TravelGuide.Utilities;
 using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -265,10 +267,43 @@ namespace Source.User_Interfaces.ContentDialogs
         private void DeleteIconButton_Click(object sender, RoutedEventArgs e)
         {
             MapIconDeleting?.Invoke(sender, Location);
-            
+
         }
 
         public static event TypedEventHandler<object, Geopoint> MapIconDeleting;
+
+
+        /// <summary>
+        /// Get all locations into a list. 
+        /// Delete current location from the list then overwrite the file with newly created list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void DeleteLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<PlaceInfo> list = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+            List<PlaceInfo> storedList = list;
+            foreach (PlaceInfo place in list)
+            {
+                //Delete this location from the list
+                if (place.Location.Geopoint.Position.Latitude == Location.Position.Latitude &&
+                    place.Location.Geopoint.Position.Longitude == Location.Position.Longitude)
+                {
+                    list.Remove(place);
+                    Utilities.LocalDataAccess.WriteToLocalFolder(Models.DefaultFile.UserPlaces, ""); //Overwrite current file with an empty one.
+                    string stringToAppend = string.Empty;
+
+                    await list.ForEachAsync(async i =>
+                    {
+                        await Utilities.LocalDataAccess.AppendAsync(i.Name + "\n" + i.Location.Geopoint.Position.Latitude + "\n" +
+                            i.Location.Geopoint.Position.Longitude + "\n", Models.DefaultFile.UserPlaces);
+                    });
+
+                    DeleteIconButton_Click(sender, e);
+                    break;
+                }
+            }
+        }
 
     }
 }
