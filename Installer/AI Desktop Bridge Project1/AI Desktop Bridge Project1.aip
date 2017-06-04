@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="14.0.2" version="14.0.2" Modules="professional" RootPath="." Language="en" Id="{CC067B6B-6D30-4FCE-BC9E-1AC618F6266E}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Hosting.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.AspNetCore.Hosting.Abstractions\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Http.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.AspNetCore.Http.Abstractions\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Http.Features.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.AspNetCore.Http.Features\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Data.Sqlite.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Data.Sqlite\1.1.0\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Design.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.EntityFrameworkCore.Design\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Relational.Design.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.EntityFrameworkCore.Relational.Design\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Relational.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.EntityFrameworkCore.Relational\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Sqlite.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.EntityFrameworkCore.Sqlite\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.EntityFrameworkCore\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Caching.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.Caching.Abstractions\1.1.1\lib\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Caching.Memory.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.Caching.Memory\1.1.1\lib\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Configuration.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.1.1\lib\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyInjection.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.1.0\lib\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyInjection.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.1.0\lib\netstandard1.1"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.FileProviders.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.FileProviders.Abstractions\1.1.0\lib\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Logging.Abstractions.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.Logging.Abstractions\1.1.1\lib\netstandard1.1"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Logging.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.Logging\1.1.1\lib\netstandard1.1"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Options.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.Options\1.1.1\lib\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Primitives.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Extensions.Primitives\1.1.0\lib\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.VisualBasic.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.VisualBasic\10.0.1\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Win32.Primitives.dll" Value="C:\Users\LENOVO\.nuget\packages\Microsoft.Win32.Primitives\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Remotion.Linq.dll" Value="C:\Users\LENOVO\.nuget\packages\Remotion.Linq\2.1.1\lib\portable-net45+win+wpa81+wp80"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.AppContext.dll" Value="C:\Users\LENOVO\.nuget\packages\System.AppContext\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Collections.NonGeneric.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Collections.NonGeneric\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Collections.Specialized.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Collections.Specialized\4.0.1\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ComponentModel.Annotations.dll" Value="C:\Users\LENOVO\.nuget\packages\System.ComponentModel.Annotations\4.3.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Console.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Console\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Data.Common.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Data.Common\4.3.0\ref\netstandard1.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Diagnostics.StackTrace.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Diagnostics.StackTrace\4.0.2\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Globalization.Calendars.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Globalization.Calendars\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Globalization.Extensions.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Globalization.Extensions\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.ZipFile.dll" Value="C:\Users\LENOVO\.nuget\packages\System.IO.Compression.ZipFile\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.dll" Value="C:\Users\LENOVO\.nuget\packages\System.IO.Compression\4.3.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.FileSystem.Primitives.dll" Value="C:\Users\LENOVO\.nuget\packages\System.IO.FileSystem.Primitives\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.FileSystem.dll" Value="C:\Users\LENOVO\.nuget\packages\System.IO.FileSystem\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.IsolatedStorage.dll" Value="C:\Users\LENOVO\.nuget\packages\System.IO.IsolatedStorage\4.0.1\ref\netstandard1.4"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.UnmanagedMemoryStream.dll" Value="C:\Users\LENOVO\.nuget\packages\System.IO.UnmanagedMemoryStream\4.0.1\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Interactive.Async.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Interactive.Async\3.0.0\lib\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.Http.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Net.Http\4.3.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.NameResolution.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Net.NameResolution\4.0.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.NetworkInformation.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Net.NetworkInformation\4.1.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.Sockets.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Net.Sockets\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.WebSockets.Client.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Net.WebSockets.Client\4.0.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.WebSockets.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Net.WebSockets\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Numerics.Vectors\4.1.1\ref\netstandard1.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Reflection.DispatchProxy.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Reflection.DispatchProxy\4.0.1\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Reflection.TypeExtensions.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Reflection.TypeExtensions\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Runtime.InteropServices.RuntimeInformation\4.3.0\ref\netstandard1.1"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.Serialization.Primitives.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Runtime.Serialization.Primitives\4.1.1\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.Serialization.Xml.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Runtime.Serialization.Xml\4.1.2\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Security.Claims.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Security.Claims\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.Algorithms.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Security.Cryptography.Algorithms\4.3.0\ref\netstandard1.4"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.Encoding.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Security.Cryptography.Encoding\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.Primitives.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Security.Cryptography.Primitives\4.3.0\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.X509Certificates.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Security.Cryptography.X509Certificates\4.3.0\ref\netstandard1.4"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ServiceModel.Http.dll" Value="C:\Users\LENOVO\.nuget\packages\System.ServiceModel.Http\4.1.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ServiceModel.NetTcp.dll" Value="C:\Users\LENOVO\.nuget\packages\System.ServiceModel.NetTcp\4.1.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ServiceModel.Primitives.dll" Value="C:\Users\LENOVO\.nuget\packages\System.ServiceModel.Primitives\4.1.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Encoding.CodePages.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Text.Encoding.CodePages\4.0.1\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Threading.Overlapped.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Threading.Overlapped\4.0.1\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Xml.ReaderWriter.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netcore50"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Xml.XmlDocument.dll" Value="C:\Users\LENOVO\.nuget\packages\System.Xml.XmlDocument\4.0.1\ref\netstandard1.3"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_TravelGuide.exe" Value="..\..\Source\bin\x64\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_winsdkfb.winmd" Value="C:\Users\LENOVO\.nuget\packages\winsdkfb\0.13.20170131.2\lib\win10"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Hosting.Abstractions.dll" Value="Microsoft.AspNetCore.Hosting.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" Value="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Http.Abstractions.dll" Value="Microsoft.AspNetCore.Http.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Http.Features.dll" Value="Microsoft.AspNetCore.Http.Features.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.Sqlite.dll" Value="Microsoft.Data.Sqlite.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Design.dll" Value="Microsoft.EntityFrameworkCore.Design.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Relational.Design.dll" Value="Microsoft.EntityFrameworkCore.Relational.Design.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Relational.dll" Value="Microsoft.EntityFrameworkCore.Relational.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Sqlite.dll" Value="Microsoft.EntityFrameworkCore.Sqlite.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.dll" Value="Microsoft.EntityFrameworkCore.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Caching.Abstractions.dll" Value="Microsoft.Extensions.Caching.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Caching.Memory.dll" Value="Microsoft.Extensions.Caching.Memory.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Configuration.Abstractions.dll" Value="Microsoft.Extensions.Configuration.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyInjection.Abstractions.dll" Value="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyInjection.dll" Value="Microsoft.Extensions.DependencyInjection.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.FileProviders.Abstractions.dll" Value="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Logging.Abstractions.dll" Value="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Logging.dll" Value="Microsoft.Extensions.Logging.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Options.dll" Value="Microsoft.Extensions.Options.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Primitives.dll" Value="Microsoft.Extensions.Primitives.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.VisualBasic.dll" Value="Microsoft.VisualBasic.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Win32.Primitives.dll" Value="Microsoft.Win32.Primitives.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Remotion.Linq.dll" Value="Remotion.Linq.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.AppContext.dll" Value="System.AppContext.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Collections.NonGeneric.dll" Value="System.Collections.NonGeneric.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Collections.Specialized.dll" Value="System.Collections.Specialized.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ComponentModel.Annotations.dll" Value="System.ComponentModel.Annotations.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Console.dll" Value="System.Console.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Data.Common.dll" Value="System.Data.Common.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Diagnostics.StackTrace.dll" Value="System.Diagnostics.StackTrace.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Globalization.Calendars.dll" Value="System.Globalization.Calendars.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Globalization.Extensions.dll" Value="System.Globalization.Extensions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.ZipFile.dll" Value="System.IO.Compression.ZipFile.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.dll" Value="System.IO.Compression.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.FileSystem.Primitives.dll" Value="System.IO.FileSystem.Primitives.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.FileSystem.dll" Value="System.IO.FileSystem.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.IsolatedStorage.dll" Value="System.IO.IsolatedStorage.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.UnmanagedMemoryStream.dll" Value="System.IO.UnmanagedMemoryStream.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Interactive.Async.dll" Value="System.Interactive.Async.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.dll" Value="System.Net.Http.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.NameResolution.dll" Value="System.Net.NameResolution.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.NetworkInformation.dll" Value="System.Net.NetworkInformation.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.Sockets.dll" Value="System.Net.Sockets.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.WebSockets.Client.dll" Value="System.Net.WebSockets.Client.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.WebSockets.dll" Value="System.Net.WebSockets.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll" Value="System.Numerics.Vectors.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.DispatchProxy.dll" Value="System.Reflection.DispatchProxy.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.TypeExtensions.dll" Value="System.Reflection.TypeExtensions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Value="System.Runtime.InteropServices.RuntimeInformation.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.Serialization.Primitives.dll" Value="System.Runtime.Serialization.Primitives.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.Serialization.Xml.dll" Value="System.Runtime.Serialization.Xml.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Security.Claims.dll" Value="System.Security.Claims.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Algorithms.dll" Value="System.Security.Cryptography.Algorithms.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Encoding.dll" Value="System.Security.Cryptography.Encoding.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Primitives.dll" Value="System.Security.Cryptography.Primitives.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.X509Certificates.dll" Value="System.Security.Cryptography.X509Certificates.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.Http.dll" Value="System.ServiceModel.Http.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.NetTcp.dll" Value="System.ServiceModel.NetTcp.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.Primitives.dll" Value="System.ServiceModel.Primitives.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Text.Encoding.CodePages.dll" Value="System.Text.Encoding.CodePages.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Overlapped.dll" Value="System.Threading.Overlapped.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Xml.ReaderWriter.dll" Value="System.Xml.ReaderWriter.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Xml.XmlDocument.dll" Value="System.Xml.XmlDocument.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_TravelGuide.exe" Value="Guide Me.exe"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_winsdkfb.winmd" Value="winsdkfb.winmd"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="Manufacturer" Value="Ca Phe Dang"/>
+    <ROW Property="ProductCode" Value="1033:{B135E222-E891-4222-AB9A-4C1B1E51D078} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Guide Me!"/>
+    <ROW Property="ProductVersion" Value="0.8.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{2B6F7E4C-E934-4000-9458-8E7CBAAAA175}"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="Assets" Directory_Parent="TARGETDIR" DefaultDir="Assets" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="Source_Dir" Directory_Parent="APPDIR" DefaultDir="Source"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="ProductInformation" ComponentId="{EA3BCC01-22D4-4814-84FF-0E75CE475D5C}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{CF561281-D6BE-49ED-A00C-996CD0562322}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Source_PrimaryOutput" ComponentId="{C095F8D2-01C0-4573-8434-B65D37EECA2C}" Directory_="Source_Dir" Attributes="256" KeyPath="TravelGuide.exe"/>
+    <ROW Component="Source_References" ComponentId="{89E42805-0DF5-418B-B151-1979E118B853}" Directory_="Source_Dir" Attributes="0" KeyPath="System.Xml.XmlDocument.dll"/>
+    <ROW Component="YourApplicationSquare44x44Logo.scale100." ComponentId="{661C209D-E4ED-489C-8C65-39F5632C6941}" Directory_="Assets" Attributes="0" KeyPath="YourApplicationSquare44x44Logo.scale100.png" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="AiAppXAssets" Title="AiAppXAssets" Description="Description" Display="3" Level="0" Directory_="APPDIR" Attributes="0" Components="YourApplicationSquare44x44Logo.scale100." Builds="BuildUwpAppX"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="ProductInformation SHORTCUTDIR Source_PrimaryOutput Source_References"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Microsoft.AspNetCore.Hosting.Abstractions.dll" Component_="Source_References" FileName="MICROS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Hosting.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Hosting.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll"/>
+    <ROW File="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" Component_="Source_References" FileName="MICROS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Hosting.Server.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Hosting.Server.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.AspNetCore.Http.Abstractions.dll"/>
+    <ROW File="Microsoft.AspNetCore.Http.Abstractions.dll" Component_="Source_References" FileName="MICROS~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Http.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Http.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.AspNetCore.Http.Features.dll"/>
+    <ROW File="Microsoft.AspNetCore.Http.Features.dll" Component_="Source_References" FileName="MICROS~5.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Http.Features.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Http.Features.dll&gt;" SelfReg="false" NextFile="Microsoft.Data.Sqlite.dll"/>
+    <ROW File="Microsoft.Data.Sqlite.dll" Component_="Source_References" FileName="MICROS~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.Sqlite.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Data.Sqlite.dll&gt;" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Design.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Design.dll" Component_="Source_References" FileName="MICROS~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Design.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Design.dll&gt;" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Relational.Design.dll" Component_="Source_References" FileName="MICROS~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Relational.Design.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Relational.Design.dll&gt;" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Relational.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Relational.dll" Component_="Source_References" FileName="MICRO~10.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Relational.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Relational.dll&gt;" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Sqlite.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Sqlite.dll" Component_="Source_References" FileName="MICRO~11.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Sqlite.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Sqlite.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.Caching.Abstractions.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.dll" Component_="Source_References" FileName="MICROS~8.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.dll&gt;" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Relational.Design.dll"/>
+    <ROW File="Microsoft.Extensions.Caching.Abstractions.dll" Component_="Source_References" FileName="MICRO~12.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Caching.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.Caching.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.Caching.Memory.dll"/>
+    <ROW File="Microsoft.Extensions.Caching.Memory.dll" Component_="Source_References" FileName="MICRO~13.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Caching.Memory.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.Caching.Memory.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.Configuration.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.Configuration.Abstractions.dll" Component_="Source_References" FileName="MICRO~14.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Configuration.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.Configuration.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.dll" Component_="Source_References" FileName="MICRO~15.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyInjection.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyInjection.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.DependencyInjection.dll"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.dll" Component_="Source_References" FileName="MICRO~16.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyInjection.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyInjection.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.FileProviders.Abstractions.dll" Component_="Source_References" FileName="MICRO~17.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.FileProviders.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.FileProviders.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.Logging.Abstractions.dll" Component_="Source_References" FileName="MICRO~18.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Logging.Abstractions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.Logging.Abstractions.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.Logging.dll"/>
+    <ROW File="Microsoft.Extensions.Logging.dll" Component_="Source_References" FileName="MICRO~19.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Logging.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.Logging.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.Options.dll"/>
+    <ROW File="Microsoft.Extensions.Options.dll" Component_="Source_References" FileName="MICRO~20.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Options.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.Options.dll&gt;" SelfReg="false" NextFile="Microsoft.Extensions.Primitives.dll"/>
+    <ROW File="Microsoft.Extensions.Primitives.dll" Component_="Source_References" FileName="MICRO~21.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Primitives.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.Primitives.dll&gt;" SelfReg="false" NextFile="Microsoft.VisualBasic.dll"/>
+    <ROW File="Microsoft.VisualBasic.dll" Component_="Source_References" FileName="MICRO~22.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.VisualBasic.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.VisualBasic.dll&gt;" SelfReg="false" NextFile="Microsoft.Win32.Primitives.dll"/>
+    <ROW File="Microsoft.Win32.Primitives.dll" Component_="Source_References" FileName="MICRO~23.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Win32.Primitives.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Win32.Primitives.dll&gt;" SelfReg="false" NextFile="Remotion.Linq.dll"/>
+    <ROW File="Remotion.Linq.dll" Component_="Source_References" FileName="REMOTI~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Remotion.Linq.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Remotion.Linq.dll&gt;" SelfReg="false" NextFile="System.AppContext.dll"/>
+    <ROW File="Store50x50Logo.scale100.png" Component_="YourApplicationSquare44x44Logo.scale100." FileName="STORE5~1.PNG|Store50x50Logo.scale-100.png" Attributes="0" SourcePath="&lt;AI_RES&gt;appx\StoreLogo.png" SelfReg="false" NextFile="TravelGuide.exe"/>
+    <ROW File="System.AppContext.dll" Component_="Source_References" FileName="SYSTEM~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.AppContext.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.AppContext.dll&gt;" SelfReg="false" NextFile="System.Collections.NonGeneric.dll"/>
+    <ROW File="System.Collections.NonGeneric.dll" Component_="Source_References" FileName="SYSTEM~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Collections.NonGeneric.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Collections.NonGeneric.dll&gt;" SelfReg="false" NextFile="System.Collections.Specialized.dll"/>
+    <ROW File="System.Collections.Specialized.dll" Component_="Source_References" FileName="SYSTEM~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Collections.Specialized.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Collections.Specialized.dll&gt;" SelfReg="false" NextFile="System.ComponentModel.Annotations.dll"/>
+    <ROW File="System.ComponentModel.Annotations.dll" Component_="Source_References" FileName="SYSTEM~5.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ComponentModel.Annotations.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ComponentModel.Annotations.dll&gt;" SelfReg="false" NextFile="System.Console.dll"/>
+    <ROW File="System.Console.dll" Component_="Source_References" FileName="SYSTEM~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Console.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Console.dll&gt;" SelfReg="false" NextFile="System.Data.Common.dll"/>
+    <ROW File="System.Data.Common.dll" Component_="Source_References" FileName="SYSTEM~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Data.Common.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Data.Common.dll&gt;" SelfReg="false" NextFile="System.Diagnostics.StackTrace.dll"/>
+    <ROW File="System.Diagnostics.StackTrace.dll" Component_="Source_References" FileName="SYSTEM~8.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Diagnostics.StackTrace.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Diagnostics.StackTrace.dll&gt;" SelfReg="false" NextFile="System.Globalization.Calendars.dll"/>
+    <ROW File="System.Globalization.Calendars.dll" Component_="Source_References" FileName="SYSTEM~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Globalization.Calendars.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Globalization.Calendars.dll&gt;" SelfReg="false" NextFile="System.Globalization.Extensions.dll"/>
+    <ROW File="System.Globalization.Extensions.dll" Component_="Source_References" FileName="SYSTE~10.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Globalization.Extensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Globalization.Extensions.dll&gt;" SelfReg="false" NextFile="System.Interactive.Async.dll"/>
+    <ROW File="System.IO.Compression.ZipFile.dll" Component_="Source_References" FileName="SYSTE~13.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.ZipFile.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.Compression.ZipFile.dll&gt;" SelfReg="false" NextFile="System.IO.FileSystem.dll"/>
+    <ROW File="System.IO.Compression.dll" Component_="Source_References" FileName="SYSTE~12.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.Compression.dll&gt;" SelfReg="false" NextFile="System.IO.Compression.ZipFile.dll"/>
+    <ROW File="System.IO.FileSystem.Primitives.dll" Component_="Source_References" FileName="SYSTE~15.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.FileSystem.Primitives.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.FileSystem.Primitives.dll&gt;" SelfReg="false" NextFile="System.IO.IsolatedStorage.dll"/>
+    <ROW File="System.IO.FileSystem.dll" Component_="Source_References" FileName="SYSTE~14.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.FileSystem.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.FileSystem.dll&gt;" SelfReg="false" NextFile="System.IO.FileSystem.Primitives.dll"/>
+    <ROW File="System.IO.IsolatedStorage.dll" Component_="Source_References" FileName="SYSTE~16.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.IsolatedStorage.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.IsolatedStorage.dll&gt;" SelfReg="false" NextFile="System.IO.UnmanagedMemoryStream.dll"/>
+    <ROW File="System.IO.UnmanagedMemoryStream.dll" Component_="Source_References" FileName="SYSTE~17.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.UnmanagedMemoryStream.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.UnmanagedMemoryStream.dll&gt;" SelfReg="false" NextFile="System.Net.Http.dll"/>
+    <ROW File="System.Interactive.Async.dll" Component_="Source_References" FileName="SYSTE~11.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Interactive.Async.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Interactive.Async.dll&gt;" SelfReg="false" NextFile="System.IO.Compression.dll"/>
+    <ROW File="System.Net.Http.dll" Component_="Source_References" FileName="SYSTE~18.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.Http.dll&gt;" SelfReg="false" NextFile="System.Net.NameResolution.dll"/>
+    <ROW File="System.Net.NameResolution.dll" Component_="Source_References" FileName="SYSTE~19.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.NameResolution.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.NameResolution.dll&gt;" SelfReg="false" NextFile="System.Net.NetworkInformation.dll"/>
+    <ROW File="System.Net.NetworkInformation.dll" Component_="Source_References" FileName="SYSTE~20.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.NetworkInformation.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.NetworkInformation.dll&gt;" SelfReg="false" NextFile="System.Net.Sockets.dll"/>
+    <ROW File="System.Net.Sockets.dll" Component_="Source_References" FileName="SYSTE~21.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Sockets.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.Sockets.dll&gt;" SelfReg="false" NextFile="System.Net.WebSockets.Client.dll"/>
+    <ROW File="System.Net.WebSockets.Client.dll" Component_="Source_References" FileName="SYSTE~22.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.WebSockets.Client.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.WebSockets.Client.dll&gt;" SelfReg="false" NextFile="System.Net.WebSockets.dll"/>
+    <ROW File="System.Net.WebSockets.dll" Component_="Source_References" FileName="SYSTE~23.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.WebSockets.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.WebSockets.dll&gt;" SelfReg="false" NextFile="System.Numerics.Vectors.dll"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="Source_References" FileName="SYSTE~24.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll&gt;" SelfReg="false" NextFile="System.Reflection.DispatchProxy.dll"/>
+    <ROW File="System.Reflection.DispatchProxy.dll" Component_="Source_References" FileName="SYSTE~25.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.DispatchProxy.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Reflection.DispatchProxy.dll&gt;" SelfReg="false" NextFile="System.Reflection.TypeExtensions.dll"/>
+    <ROW File="System.Reflection.TypeExtensions.dll" Component_="Source_References" FileName="SYSTE~26.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.TypeExtensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Reflection.TypeExtensions.dll&gt;" SelfReg="false" NextFile="System.Runtime.InteropServices.RuntimeInformation.dll"/>
+    <ROW File="System.Runtime.InteropServices.RuntimeInformation.dll" Component_="Source_References" FileName="SYSTE~27.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll&gt;" SelfReg="false" NextFile="System.Runtime.Serialization.Primitives.dll"/>
+    <ROW File="System.Runtime.Serialization.Primitives.dll" Component_="Source_References" FileName="SYSTE~28.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.Serialization.Primitives.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.Serialization.Primitives.dll&gt;" SelfReg="false" NextFile="System.Runtime.Serialization.Xml.dll"/>
+    <ROW File="System.Runtime.Serialization.Xml.dll" Component_="Source_References" FileName="SYSTE~29.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.Serialization.Xml.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.Serialization.Xml.dll&gt;" SelfReg="false" NextFile="System.Security.Claims.dll"/>
+    <ROW File="System.Security.Claims.dll" Component_="Source_References" FileName="SYSTE~30.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Claims.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Security.Claims.dll&gt;" SelfReg="false" NextFile="System.Security.Cryptography.Algorithms.dll"/>
+    <ROW File="System.Security.Cryptography.Algorithms.dll" Component_="Source_References" FileName="SYSTE~31.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Algorithms.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Security.Cryptography.Algorithms.dll&gt;" SelfReg="false" NextFile="System.Security.Cryptography.Encoding.dll"/>
+    <ROW File="System.Security.Cryptography.Encoding.dll" Component_="Source_References" FileName="SYSTE~32.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Encoding.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Security.Cryptography.Encoding.dll&gt;" SelfReg="false" NextFile="System.Security.Cryptography.Primitives.dll"/>
+    <ROW File="System.Security.Cryptography.Primitives.dll" Component_="Source_References" FileName="SYSTE~33.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Primitives.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Security.Cryptography.Primitives.dll&gt;" SelfReg="false" NextFile="System.Security.Cryptography.X509Certificates.dll"/>
+    <ROW File="System.Security.Cryptography.X509Certificates.dll" Component_="Source_References" FileName="SYSTE~34.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.X509Certificates.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Security.Cryptography.X509Certificates.dll&gt;" SelfReg="false" NextFile="System.ServiceModel.Http.dll"/>
+    <ROW File="System.ServiceModel.Http.dll" Component_="Source_References" FileName="SYSTE~35.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.Http.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ServiceModel.Http.dll&gt;" SelfReg="false" NextFile="System.ServiceModel.NetTcp.dll"/>
+    <ROW File="System.ServiceModel.NetTcp.dll" Component_="Source_References" FileName="SYSTE~36.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.NetTcp.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ServiceModel.NetTcp.dll&gt;" SelfReg="false" NextFile="System.ServiceModel.Primitives.dll"/>
+    <ROW File="System.ServiceModel.Primitives.dll" Component_="Source_References" FileName="SYSTE~37.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.Primitives.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ServiceModel.Primitives.dll&gt;" SelfReg="false" NextFile="System.Text.Encoding.CodePages.dll"/>
+    <ROW File="System.Text.Encoding.CodePages.dll" Component_="Source_References" FileName="SYSTE~38.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Encoding.CodePages.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Text.Encoding.CodePages.dll&gt;" SelfReg="false" NextFile="System.Threading.Overlapped.dll"/>
+    <ROW File="System.Threading.Overlapped.dll" Component_="Source_References" FileName="SYSTE~39.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Overlapped.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Threading.Overlapped.dll&gt;" SelfReg="false" NextFile="System.Xml.ReaderWriter.dll"/>
+    <ROW File="System.Xml.ReaderWriter.dll" Component_="Source_References" FileName="SYSTE~40.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.ReaderWriter.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Xml.ReaderWriter.dll&gt;" SelfReg="false" NextFile="System.Xml.XmlDocument.dll"/>
+    <ROW File="System.Xml.XmlDocument.dll" Component_="Source_References" FileName="SYSTE~41.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.XmlDocument.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Xml.XmlDocument.dll&gt;" SelfReg="false" NextFile="winsdkfb.winmd"/>
+    <ROW File="TravelGuide.exe" Component_="Source_PrimaryOutput" FileName="TRAVEL~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_TravelGuide.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_TravelGuide.exe&gt;" SelfReg="false" NextFile="Microsoft.AspNetCore.Hosting.Abstractions.dll" DigSign="true"/>
+    <ROW File="YourApplicationSquare150x150Logo.scale100.png" Component_="YourApplicationSquare44x44Logo.scale100." FileName="YOURAP~2.PNG|YourApplicationSquare150x150Logo.scale-100.png" Attributes="0" SourcePath="&lt;AI_RES&gt;appx\Logo.png" SelfReg="false" NextFile="Store50x50Logo.scale100.png"/>
+    <ROW File="YourApplicationSquare44x44Logo.scale100.png" Component_="YourApplicationSquare44x44Logo.scale100." FileName="YOURAP~1.PNG|YourApplicationSquare44x44Logo.scale-100.png" Attributes="0" SourcePath="&lt;AI_RES&gt;appx\SmallLogo10.png" SelfReg="false" NextFile="YourApplicationSquare150x150Logo.scale100.png"/>
+    <ROW File="winsdkfb.winmd" Component_="Source_References" FileName="WINSDK~2.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_winsdkfb.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_winsdkfb.winmd&gt;" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Hosting.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Hosting.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Hosting.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Hosting.Server.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Hosting.Server.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Http.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Http.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Http.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.AspNetCore.Http.Features.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.AspNetCore.Http.Features.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.AspNetCore.Http.Features.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Data.Sqlite.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Data.Sqlite.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.Sqlite.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Design.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Design.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Design.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Relational.Design.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Relational.Design.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Relational.Design.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Relational.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Relational.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Relational.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.Sqlite.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.Sqlite.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.Sqlite.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.EntityFrameworkCore.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.EntityFrameworkCore.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.EntityFrameworkCore.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.Caching.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Caching.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Caching.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.Caching.Memory.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Caching.Memory.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Caching.Memory.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.Configuration.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Configuration.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Configuration.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyInjection.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyInjection.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyInjection.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyInjection.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyInjection.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyInjection.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.FileProviders.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.FileProviders.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.FileProviders.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.Logging.Abstractions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Logging.Abstractions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Logging.Abstractions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.Logging.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Logging.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Logging.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.Options.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Options.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Options.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.Primitives.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.Primitives.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.Primitives.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.VisualBasic.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.VisualBasic.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.VisualBasic.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Win32.Primitives.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Win32.Primitives.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Win32.Primitives.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Remotion.Linq.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Remotion.Linq.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Remotion.Linq.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.AppContext.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.AppContext.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.AppContext.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Collections.NonGeneric.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Collections.NonGeneric.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Collections.NonGeneric.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Collections.Specialized.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Collections.Specialized.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Collections.Specialized.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.ComponentModel.Annotations.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ComponentModel.Annotations.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ComponentModel.Annotations.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Console.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Console.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Console.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Data.Common.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Data.Common.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Data.Common.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Diagnostics.StackTrace.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Diagnostics.StackTrace.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Diagnostics.StackTrace.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Globalization.Calendars.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Globalization.Calendars.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Globalization.Calendars.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Globalization.Extensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Globalization.Extensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Globalization.Extensions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.Compression.ZipFile.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.ZipFile.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.ZipFile.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.Compression.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.Compression.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Compression.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.FileSystem.Primitives.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.FileSystem.Primitives.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.FileSystem.Primitives.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.FileSystem.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.FileSystem.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.FileSystem.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.IsolatedStorage.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.IsolatedStorage.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.IsolatedStorage.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.UnmanagedMemoryStream.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.UnmanagedMemoryStream.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.UnmanagedMemoryStream.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Interactive.Async.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Interactive.Async.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Interactive.Async.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.Http.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.Http.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.NameResolution.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.NameResolution.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.NameResolution.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.NetworkInformation.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.NetworkInformation.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.NetworkInformation.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.Sockets.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.Sockets.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Sockets.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.WebSockets.Client.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.WebSockets.Client.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.WebSockets.Client.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.WebSockets.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.WebSockets.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.WebSockets.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Reflection.DispatchProxy.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Reflection.DispatchProxy.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.DispatchProxy.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Reflection.TypeExtensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Reflection.TypeExtensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.TypeExtensions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.InteropServices.RuntimeInformation.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.Serialization.Primitives.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.Serialization.Primitives.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.Serialization.Primitives.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.Serialization.Xml.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.Serialization.Xml.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.Serialization.Xml.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Security.Claims.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Security.Claims.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Claims.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Security.Cryptography.Algorithms.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.Algorithms.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Algorithms.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Security.Cryptography.Encoding.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.Encoding.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Encoding.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Security.Cryptography.Primitives.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.Primitives.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.Primitives.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Security.Cryptography.X509Certificates.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Security.Cryptography.X509Certificates.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Cryptography.X509Certificates.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.ServiceModel.Http.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ServiceModel.Http.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.Http.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.ServiceModel.NetTcp.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ServiceModel.NetTcp.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.NetTcp.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.ServiceModel.Primitives.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ServiceModel.Primitives.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ServiceModel.Primitives.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Text.Encoding.CodePages.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Text.Encoding.CodePages.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Encoding.CodePages.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Threading.Overlapped.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Threading.Overlapped.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Overlapped.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Xml.ReaderWriter.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Xml.ReaderWriter.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.ReaderWriter.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Xml.XmlDocument.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Xml.XmlDocument.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.XmlDocument.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_TravelGuide.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_TravelGuide.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_TravelGuide.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_winsdkfb.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_winsdkfb.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_winsdkfb.winmd]" Type="2" Content="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppXCfgComponent">
+    <ROW ID="Configuration" Order="1" ManifestFile="AppxManifest.xml" TargetOs="4"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="BuildUwpAppX" BuildName="BuildUwpAppX" BuildOrder="1" BuildType="7" PackageFolder="BuildUwpAppXSetupFiles" Languages="en" UwpTargetDesktop="TargetDeviceFamily"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
+    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlAttributeComponent">
+    <ROW XmlAttribute="BackgroundColor" XmlElement="VisualElements" Name="BackgroundColor" Flags="0" Order="0" Value="transparent"/>
+    <ROW XmlAttribute="Description" XmlElement="VisualElements" Name="Description" Flags="0" Order="0" Value="Travel Guide"/>
+    <ROW XmlAttribute="DisplayName" XmlElement="VisualElements" Name="DisplayName" Flags="0" Order="0" Value="Travel Guide"/>
+    <ROW XmlAttribute="EntryPoint" XmlElement="Application" Name="EntryPoint" Flags="0" Order="0" Value="Windows.FullTrustApplication"/>
+    <ROW XmlAttribute="Executable" XmlElement="Application" Name="Executable" Flags="0" Order="0" FileId="TravelGuide.exe"/>
+    <ROW XmlAttribute="Id" XmlElement="Application" Name="Id" Flags="0" Order="0" Value="YourApplication"/>
+    <ROW XmlAttribute="Language" XmlElement="Resource" Name="Language" Flags="0" Order="0" Value="en-US"/>
+    <ROW XmlAttribute="MaxVersionTested" XmlElement="TargetDeviceFamily" Name="MaxVersionTested" Flags="0" Order="0" Value="10.0.15063.0"/>
+    <ROW XmlAttribute="MigrationUninstallCode" XmlElement="Package" Name="MigrationUninstallCode" Flags="0" Order="0" Value="{2B6F7E4C-E934-4000-9458-8E7CBAAAA175}"/>
+    <ROW XmlAttribute="MinVersion" XmlElement="TargetDeviceFamily" Name="MinVersion" Flags="0" Order="0" Value="10.0.14393.0"/>
+    <ROW XmlAttribute="Name" XmlElement="Identity" Name="Name" Flags="0" Order="0" Value="YourCompany.YourApplication"/>
+    <ROW XmlAttribute="Name_1" XmlElement="Capability" Name="Name" Flags="0" Order="0" Value="runFullTrust"/>
+    <ROW XmlAttribute="Name_2" XmlElement="TargetDeviceFamily" Name="Name" Flags="0" Order="0" Value="Windows.Desktop"/>
+    <ROW XmlAttribute="Preference" XmlElement="Rotation" Name="Preference" Flags="0" Order="0" Value="portrait"/>
+    <ROW XmlAttribute="Preference_1" XmlElement="Rotation_1" Name="Preference" Flags="0" Order="0" Value="landscape"/>
+    <ROW XmlAttribute="ProcessorArchitecture" XmlElement="Identity" Name="ProcessorArchitecture" Flags="0" Order="0" Value="x64"/>
+    <ROW XmlAttribute="Publisher" XmlElement="Identity" Name="Publisher" Flags="0" Order="0" Value="CN=Your Company"/>
+    <ROW XmlAttribute="Square150x150Logo" XmlElement="VisualElements" Name="Square150x150Logo" Flags="0" Order="0" FileId="YourApplicationSquare150x150Logo.scale100.png"/>
+    <ROW XmlAttribute="Square44x44Logo" XmlElement="VisualElements" Name="Square44x44Logo" Flags="0" Order="0" FileId="YourApplicationSquare44x44Logo.scale100.png"/>
+    <ROW XmlAttribute="Version" XmlElement="Identity" Name="Version" Flags="0" Order="0" Value="0.8.0.0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlElementComponent">
+    <ROW XmlElement="Application" ParentElement="Applications" Name="Application" Order="0" Flags="0" Type="4"/>
+    <ROW XmlElement="Applications" ParentElement="Package" Name="Applications" Order="1" Flags="0" Type="3"/>
+    <ROW XmlElement="Capabilities" ParentElement="Package" Name="Capabilities" Order="3" Flags="0" Type="0"/>
+    <ROW XmlElement="Capability" ParentElement="Capabilities" Name="Capability" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="Dependencies" ParentElement="Package" Name="Dependencies" Order="5" Flags="0" Type="0"/>
+    <ROW XmlElement="DisplayName" ParentElement="Properties" Name="DisplayName" Order="1" Flags="0" Text="Your Application" Type="0"/>
+    <ROW XmlElement="Identity" ParentElement="Package" Name="Identity" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="InitialRotationPreference" ParentElement="VisualElements" Name="InitialRotationPreference" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="Logo" ParentElement="Properties" Name="Logo" Order="2" Flags="0" FileId="Store50x50Logo.scale100.png" Type="0"/>
+    <ROW XmlElement="Package" Name="Package" Order="0" Flags="0" Type="6"/>
+    <ROW XmlElement="Properties" ParentElement="Package" Name="Properties" Order="4" Flags="0" Type="0"/>
+    <ROW XmlElement="PublisherDisplayName" ParentElement="Properties" Name="PublisherDisplayName" Order="0" Flags="0" Text="Your Company" Type="0"/>
+    <ROW XmlElement="Resource" ParentElement="Resources" Name="Resource" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="Resources" ParentElement="Package" Name="Resources" Order="2" Flags="0" Type="0"/>
+    <ROW XmlElement="Rotation" ParentElement="InitialRotationPreference" Name="Rotation" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="Rotation_1" ParentElement="InitialRotationPreference" Name="Rotation" Order="1" Flags="0" Type="0"/>
+    <ROW XmlElement="TargetDeviceFamily" ParentElement="Dependencies" Name="TargetDeviceFamily" Order="0" Flags="0" Type="28"/>
+    <ROW XmlElement="VisualElements" ParentElement="Application" Name="VisualElements" Order="0" Flags="0" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlFileComponent">
+    <ROW XmlFile="AppxManifest.xml" FileName="AppxManifest.xml" RootElement="Package" Flags="89" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="TravelGuide" Directory_="SHORTCUTDIR" Name="TRAVEL~1|Travel Guide" Component_="Source_PrimaryOutput" Target="[#TravelGuide.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="PrimaryOutput" OutputFile="TravelGuide.exe" OutputFileShortcut="TravelGuide"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.AspNetCore.Hosting.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.AspNetCore.Http.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.AspNetCore.Http.Features.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Data.Sqlite.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.EntityFrameworkCore.Design.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.EntityFrameworkCore.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.EntityFrameworkCore.Relational.Design.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.EntityFrameworkCore.Relational.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.EntityFrameworkCore.Sqlite.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.Caching.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.Caching.Memory.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.Configuration.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.DependencyInjection.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.Logging.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.Options.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Extensions.Primitives.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.VisualBasic.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Microsoft.Win32.Primitives.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="Remotion.Linq.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.AppContext.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Collections.NonGeneric.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Collections.Specialized.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.ComponentModel.Annotations.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Console.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Data.Common.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Diagnostics.StackTrace.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Globalization.Calendars.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Globalization.Extensions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Interactive.Async.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.IO.Compression.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.IO.Compression.ZipFile.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.IO.FileSystem.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.IO.FileSystem.Primitives.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.IO.IsolatedStorage.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.IO.UnmanagedMemoryStream.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Net.Http.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Net.NameResolution.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Net.NetworkInformation.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Net.Sockets.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Net.WebSockets.Client.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Net.WebSockets.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Numerics.Vectors.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Reflection.DispatchProxy.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Reflection.TypeExtensions.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Runtime.InteropServices.RuntimeInformation.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Runtime.Serialization.Primitives.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Runtime.Serialization.Xml.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Security.Claims.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Security.Cryptography.Algorithms.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Security.Cryptography.Encoding.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Security.Cryptography.Primitives.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Security.Cryptography.X509Certificates.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.ServiceModel.Http.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.ServiceModel.NetTcp.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.ServiceModel.Primitives.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Text.Encoding.CodePages.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Threading.Overlapped.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Xml.ReaderWriter.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="System.Xml.XmlDocument.dll"/>
+    <ROW ProjectId="{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}" ProjectName="Source" OutputGroup="References" OutputFile="winsdkfb.winmd"/>
+  </COMPONENT>
+</DOCUMENT>

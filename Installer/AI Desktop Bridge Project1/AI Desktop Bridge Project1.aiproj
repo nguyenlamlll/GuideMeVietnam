@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">All</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>fbaa79df-b7c3-4f7d-ae07-4501d411b311</ProjectGuid>
+    <OutputType>appx</OutputType>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>AI Desktop Bridge Project1.aip</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <ImportPath>
+    </ImportPath>
+    <AssemblyName>AI Desktop Bridge Project1</AssemblyName>
+    <Name>AI Desktop Bridge Project1</Name>
+    <RootNamespace>AI Desktop Bridge Project1</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
+  <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
+  <ItemGroup>
+    <Compile Include="AI Desktop Bridge Project1.aip">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Source.csproj">
+      <Name>Source</Name>
+      <Project>{f28b9c84-bbe4-4765-9a62-3b30daeffe1e}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput;References</OutputsToImport>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Caphyon\Advanced Installer\AdvInstExtTasks.Targets" />
+</Project>
