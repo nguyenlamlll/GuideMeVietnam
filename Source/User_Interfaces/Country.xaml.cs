@@ -32,7 +32,16 @@ namespace Source.User_Interfaces
         public Country()
         {
             this.InitializeComponent();
-            lvListProvince.DataContext = dataContext;
+            lvListProvince.DataContext = dataContext;         
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null)
+            {
+                lvListProvince.DataContext = null;
+                lvListProvince.DataContext = new CountryDataContext(e.Parameter.ToString());
+            }
         }
 
         private void Grid_PointerEntered(object sender, PointerRoutedEventArgs e)

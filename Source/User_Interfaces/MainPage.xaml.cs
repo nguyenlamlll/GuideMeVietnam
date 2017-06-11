@@ -38,6 +38,8 @@ namespace Source
 
         private List<MenuItem> MenuItems;
 
+        CountryDataContext countryNameDataContext = new CountryDataContext();
+
         //Param Login to Facebook
         FBSession sess = FBSession.ActiveSession;
 
@@ -53,6 +55,7 @@ namespace Source
 
             MenuItems = MenuItemManager.GetMenuItems();
 
+            SearchAutoSuggestBox.DataContext = countryNameDataContext;
 
             User_Interfaces.SettingsPage.ResetDataEvent += SettingsPage_ResetDataEvent_CreateDefaultSettings;
         }
@@ -101,12 +104,15 @@ namespace Source
 
         private void SearchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
-
+            var Auto = (AutoSuggestBox)sender;
+            var Suggestion = countryNameDataContext.GetListNameProvince.Where(p => p.IndexOf(Auto.Text, StringComparison.OrdinalIgnoreCase) >= 0).ToArray();
+            Auto.ItemsSource = Suggestion;
         }
 
         private void SearchAutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-
+            this.EnableSearchBox();
+            FirstFrame.Navigate(typeof(User_Interfaces.Country), args.QueryText);
         }
 
         private async void MenuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
@@ -132,7 +138,7 @@ namespace Source
                     }
                 case MenuItemCategory.Map:
                     {
-                        this.DisableSearchBox(); //MapViewPage has its own Search Box for places, addresses.
+                        this.EnableSearchBox();
                         LoadingIndicator.IsActive = true;
                         await Task.Delay(1000);
                         try
@@ -410,6 +416,11 @@ namespace Source
                 StatusBorder.Visibility = Visibility.Collapsed;
                 //StatusPanel.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void SearchAutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+
         }
     }
     public enum NotifyType
