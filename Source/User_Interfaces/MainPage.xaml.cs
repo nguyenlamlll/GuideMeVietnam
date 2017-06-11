@@ -172,7 +172,7 @@ namespace Source
                     }
                 case MenuItemCategory.Settings:
                     {
-                        this.DisableSearchBox();
+                        this.EnableSearchBox();
                         FirstFrame.Navigate(typeof(User_Interfaces.SettingsPage));
                         break;
                     }

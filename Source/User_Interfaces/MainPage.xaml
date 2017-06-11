@@ -147,7 +147,7 @@
                                RelativePanel.Above="StatusPanel"
                                RelativePanel.AlignRightWithPanel="True" 
                                RelativePanel.AlignLeftWithPanel="True"/>
-                    <StackPanel x:Name="StatusPanel" 
+                    <StackPanel x:Name="StatusPanel" Visibility="Collapsed" 
                                 RelativePanel.AlignBottomWithPanel="True" 
                                 RelativePanel.AlignRightWithPanel="True" 
                                 RelativePanel.AlignLeftWithPanel="True">
