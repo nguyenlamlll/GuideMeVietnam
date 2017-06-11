@@ -115,11 +115,19 @@
                 <!--#endregion-->
                 
                 <TextBlock Style="{StaticResource SectionTextBlock}">
-                    Dummy 1
+                    About
                 </TextBlock>
-                <TextBlock Style="{StaticResource SectionTextBlock}">
-                    Dummy 2
+                <TextBlock Style="{StaticResource DescriptionTextBlock}">
+                    The app is an open-source project started by Ca Phe Dang team. 
+                    <LineBreak/>
+                    Version: 0.8.0a
+                    <LineBreak/>
+                    GitHub: <Hyperlink NavigateUri="https://github.com/nguyenlamlll/GuideMeVietnam/" 
+                                       Foreground="#FF023F6F">nguyenlamlll/GuideMeVietnam</Hyperlink>
+                    <LineBreak/>
+                    For more information, please contact: nguyenlam1997@gmail.com
                 </TextBlock>
+               
             </StackPanel>
         </ScrollViewer>
     </Grid>

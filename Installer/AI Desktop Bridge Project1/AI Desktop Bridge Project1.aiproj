@@ -19,6 +19,9 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
   <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
+  <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
+  <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
+  <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
   <ItemGroup>
     <Compile Include="AI Desktop Bridge Project1.aip">
       <SubType>Code</SubType>

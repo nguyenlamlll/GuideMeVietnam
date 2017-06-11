@@ -112,9 +112,13 @@ public class TextEditorLibrary
         }
     }
 
+    /// <summary>
+    /// Create a new empty document.
+    /// </summary>
+    /// <param name="display">The FrameworkElement of RichEditBox type that will be cleared to default.</param>
     public async void New(RichEditBox display)
     {
-        if (await Confirm("Create New Document?", "Rich Editor", "Yes", "No"))
+        if (await Confirm("Create New Document?", "Journal Editor", "Yes", "No"))
         {
             set(ref display, string.Empty);
         }
@@ -140,7 +144,7 @@ public class TextEditorLibrary
     {
         try
         {
-            /*
+            
             FileSavePicker picker = new FileSavePicker();
             picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
             picker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
@@ -153,7 +157,7 @@ public class TextEditorLibrary
                 await FileIO.WriteTextAsync(file, get(ref display));
                 FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
             }
-            */
+            
             /*
             //string textToWrite = point.Position.Latitude.ToString() + "\n" +
             //    point.Position.Longitude.ToString() + "\n"
@@ -175,9 +179,9 @@ public class TextEditorLibrary
             Dialog.ShowDialog("Journal Saved Successfully", "Saved");
             //LocalDataAccess.Append(DefaultFile.UserJournals, textToWrite);
         }
-        catch
+        catch (Exception ex)
         {
-
+            Dialog.ShowDialog("Unhandled error: \n" + ex, "Error");
         }
     }
 }
