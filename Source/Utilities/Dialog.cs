@@ -8,6 +8,12 @@ namespace Source.Utilities
 {
     public static class Dialog
     {
+        /// <summary>
+        /// Show a pop-up dialog (of the old Winform and WPF's style).
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="title"></param>
+        /// <param name="option"></param>
         public static async void ShowDialog(string content, string title = "", DialogButtons option = 0)
         {
             var dialog = new Windows.UI.Popups.MessageDialog(content, title);

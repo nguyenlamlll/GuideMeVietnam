@@ -57,7 +57,7 @@
             </Grid.RowDefinitions>
 
             <Image Name="img" Grid.Row="0" Width="1360"
-                   Stretch="Fill">
+                   Stretch="Uniform">
                 <Image.Triggers>
                     <EventTrigger>
                         <BeginStoryboard>
@@ -135,7 +135,7 @@
                                   IsDoubleTapEnabled="True">
                             <Image Name = "mapImage" 
                                Source="{Binding MapImageSource}"
-                               Stretch= "Fill"   
+                               Stretch= "Fill"  
                                              
                                PointerWheelChanged = "mapImage_PointerWheelChanged"   
                                

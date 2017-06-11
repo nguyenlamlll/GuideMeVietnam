@@ -141,11 +141,10 @@
                 <RelativePanel>
                     <Frame x:Name="FirstFrame" Margin="0,5,0,0" 
                                RelativePanel.AlignTopWithPanel="True" 
-                               RelativePanel.Above="FrameStatusBar"
+                               RelativePanel.Above="StatusPanel"
                                RelativePanel.AlignRightWithPanel="True" 
                                RelativePanel.AlignLeftWithPanel="True"/>
-                    <StackPanel x:Name="FrameStatusBar" 
-                                Visibility="Collapsed"
+                    <StackPanel x:Name="StatusPanel" 
                                 RelativePanel.AlignBottomWithPanel="True" 
                                 RelativePanel.AlignRightWithPanel="True" 
                                 RelativePanel.AlignLeftWithPanel="True">

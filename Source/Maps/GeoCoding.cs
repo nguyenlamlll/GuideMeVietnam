@@ -65,7 +65,7 @@ namespace Source.Maps
             string resultCity = null;
             if (result.Status == MapLocationFinderStatus.Success)
             {
-                if (result.Locations.Any()) resultCity = result.Locations[0].Address.Country;
+                if (result.Locations.Any()) resultCity = result.Locations[0].Address.Region;
                 return resultCity;
             }
             return null;

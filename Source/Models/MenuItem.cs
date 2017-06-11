@@ -34,7 +34,7 @@ namespace Source.Models
             var items = new List<MenuItem>();
             items.Add(new MenuItem { IconFile = "\uE10F", Category = MenuItemCategory.Homepage });
             items.Add(new MenuItem { IconFile = "\uE909", Category = MenuItemCategory.Map });
-            items.Add(new MenuItem { IconFile = "\uE14C", Category = MenuItemCategory.Lists });
+            //items.Add(new MenuItem { IconFile = "\uE14C", Category = MenuItemCategory.Lists });
             items.Add(new MenuItem { IconFile = "\uE115", Category = MenuItemCategory.Settings });
             return items;
         }

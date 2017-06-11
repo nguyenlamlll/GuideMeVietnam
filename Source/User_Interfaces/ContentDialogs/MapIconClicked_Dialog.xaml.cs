@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Source.Maps;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using TravelGuide.Utilities;
 using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -23,7 +27,12 @@ namespace Source.User_Interfaces.ContentDialogs
     /// </summary>
     public sealed partial class MapIconClicked_Dialog : Page
     {
-        private static Geopoint Location = null;
+        //A pointer to the main page
+        private MainPage _rootPage = MainPage.Current;
+
+        //Store location of the parent Icon.
+        public static Geopoint Location = null;
+
         public MapIconClicked_Dialog()
         {
             this.InitializeComponent();
@@ -78,8 +87,20 @@ namespace Source.User_Interfaces.ContentDialogs
             this.Visibility = Visibility.Collapsed;
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Save this icon into collection.
+        /// </summary>
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            //If this place existed, return.
+            List<PlaceInfo> list = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+            foreach (PlaceInfo place in list)
+            {
+                if (place.Location.Geopoint.Position.Latitude == Location.Position.Latitude &&
+                      place.Location.Geopoint.Position.Longitude == Location.Position.Longitude)
+                    return;
+            }
+
             string stringToAppend =
                 AddressTitleTextBlock.Text + "\n" +
                 LatitudeTextBlock.Text + "\n" +
@@ -87,8 +108,7 @@ namespace Source.User_Interfaces.ContentDialogs
             try
             {
                 Utilities.LocalDataAccess.Append(stringToAppend, Models.DefaultFile.UserPlaces);
-
-
+                _rootPage.NotifyUser("Saved!", NotifyType.StatusMessage);
             }
             catch (FileNotFoundException)
             {
@@ -97,6 +117,11 @@ namespace Source.User_Interfaces.ContentDialogs
             catch (Exception ex)
             {
                 Utilities.Dialog.ShowDialog("Error unknown.\n" + ex.ToString(), "Error");
+            }
+            finally
+            {
+                await Task.Delay(2000);
+                _rootPage.NotifyUser("", NotifyType.StatusMessage);
             }
 
         }
@@ -254,6 +279,75 @@ namespace Source.User_Interfaces.ContentDialogs
         }
         // Open text editor that allows user to write the location's journal.
         // Save in a separated file with 3 lines: Latitude, Longitude, and The journal itself.
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteIconButton_Click(object sender, RoutedEventArgs e)
+        {
+            MapIconDeleting?.Invoke(sender, Location);
+
+        }
+
+        public static event TypedEventHandler<object, Geopoint> MapIconDeleting;
+
+
+        /// <summary>
+        /// Get all locations into a list. 
+        /// Delete current location from the list then overwrite the file with newly created list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void DeleteLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<PlaceInfo> storedList = null;
+            try
+            {
+                List<PlaceInfo> list = await ApplicationMapManager.LoadPlaceInfo(Models.DefaultFile.UserPlaces);
+                storedList = list;
+                foreach (PlaceInfo place in list)
+                {
+                    //Delete this location from the list
+                    if (place.Location.Geopoint.Position.Latitude == Location.Position.Latitude &&
+                        place.Location.Geopoint.Position.Longitude == Location.Position.Longitude)
+                    {
+                        list.Remove(place);
+                        Utilities.LocalDataAccess.WriteToLocalFolder(Models.DefaultFile.UserPlaces, ""); //Overwrite current file with an empty one.
+                        string stringToAppend = string.Empty;
+
+                        await list.ForEachAsync(async i =>
+                        {
+                            await Utilities.LocalDataAccess.AppendAsync(i.Name + "\n" + i.Location.Geopoint.Position.Latitude + "\n" +
+                                i.Location.Geopoint.Position.Longitude + "\n", Models.DefaultFile.UserPlaces);
+                        });
+                        _rootPage.NotifyUser("Deleted.", NotifyType.StatusMessage);
+                        DeleteIconButton_Click(sender, e);
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog(ex.ToString(), "Unhandled Error");
+                //Try to revert all changes
+                if (storedList == null) return;
+                Utilities.LocalDataAccess.WriteToLocalFolder(Models.DefaultFile.UserPlaces, ""); //Overwrite current file with an empty one.
+                string stringToAppend = string.Empty;
+
+                await storedList.ForEachAsync(async i =>
+                {
+                    await Utilities.LocalDataAccess.AppendAsync(i.Name + "\n" + i.Location.Geopoint.Position.Latitude + "\n" +
+                        i.Location.Geopoint.Position.Longitude + "\n", Models.DefaultFile.UserPlaces);
+                });
+            }
+            finally
+            {
+                await Task.Delay(2000);
+                _rootPage.NotifyUser("", NotifyType.StatusMessage);
+            }
+        }
 
     }
 }
