@@ -155,6 +155,26 @@ namespace Source.Utilities
         }
 
 
+        public static async Task AppendAsync(string textToAppend, string fileName = "default.txt")
+        {
+            try
+            {
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                StorageFile storageFileObject = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+                using (var writer = File.AppendText(storageFileObject.Path))
+                {
+                    writer.Write(textToAppend);
+                    writer.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                Utilities.Dialog.ShowDialog(ex.ToString(), "Error");
+            }
+
+        }
+
+
         public static async void DeleteAllFiles()
         {
             try

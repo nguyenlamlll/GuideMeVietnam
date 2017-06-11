@@ -49,6 +49,7 @@ namespace Source.Maps
         public string Name { get; set; }
         public PlaceLocation Location { get; set; }
         //public double 
+        
     }
 
     public class PlaceInfoManager

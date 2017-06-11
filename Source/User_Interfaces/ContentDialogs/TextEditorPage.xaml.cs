@@ -30,6 +30,9 @@ namespace Source.User_Interfaces.ContentDialogs
         }
         public TextEditorLibrary Library = new TextEditorLibrary();
 
+        /// <summary>
+        /// Toggle the bold effect for text input.
+        /// </summary>
         private void Bold_Click(object sender, RoutedEventArgs e)
         {
             Bold.IsChecked = Library.Bold(ref Display);

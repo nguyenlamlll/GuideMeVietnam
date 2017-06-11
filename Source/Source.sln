@@ -5,8 +5,13 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source", "Source.csproj", "{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "AI Desktop Bridge Project1", "..\Installer\AI Desktop Bridge Project1\AI Desktop Bridge Project1.aiproj", "{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		BuildUwpAppX|ARM = BuildUwpAppX|ARM
+		BuildUwpAppX|x64 = BuildUwpAppX|x64
+		BuildUwpAppX|x86 = BuildUwpAppX|x86
 		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
@@ -15,6 +20,15 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|ARM.ActiveCfg = Release|ARM
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|ARM.Build.0 = Release|ARM
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|ARM.Deploy.0 = Release|ARM
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|x64.ActiveCfg = Release|x64
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|x64.Build.0 = Release|x64
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|x64.Deploy.0 = Release|x64
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|x86.ActiveCfg = Release|x86
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|x86.Build.0 = Release|x86
+		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.BuildUwpAppX|x86.Deploy.0 = Release|x86
 		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.Debug|ARM.ActiveCfg = Debug|ARM
 		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.Debug|ARM.Build.0 = Debug|ARM
 		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -33,6 +47,24 @@ Global
 		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.Release|x86.ActiveCfg = Release|x86
 		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.Release|x86.Build.0 = Release|x86
 		{F28B9C84-BBE4-4765-9A62-3B30DAEFFE1E}.Release|x86.Deploy.0 = Release|x86
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.BuildUwpAppX|ARM.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.BuildUwpAppX|ARM.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.BuildUwpAppX|x64.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.BuildUwpAppX|x64.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.BuildUwpAppX|x86.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.BuildUwpAppX|x86.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Debug|ARM.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Debug|ARM.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Debug|x64.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Debug|x64.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Debug|x86.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Debug|x86.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Release|ARM.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Release|ARM.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Release|x64.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Release|x64.Build.0 = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Release|x86.ActiveCfg = BuildUwpAppX
+		{FBAA79DF-B7C3-4F7D-AE07-4501D411B311}.Release|x86.Build.0 = BuildUwpAppX
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

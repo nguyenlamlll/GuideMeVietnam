@@ -8,7 +8,7 @@
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravelGuide</RootNamespace>
-    <AssemblyName>Travel Guide</AssemblyName>
+    <AssemblyName>Guide Me</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
@@ -17,6 +17,9 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Source_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -116,6 +119,7 @@
     <Compile Include="Maps\DefinedGeopoints.cs" />
     <Compile Include="Maps\GeoCoding.cs" />
     <Compile Include="Maps\ApplicationMapManager.cs" />
+    <Compile Include="Maps\Location.cs" />
     <Compile Include="Maps\Place.cs" />
     <Compile Include="Migrations\20170514165954_Init.cs" />
     <Compile Include="Migrations\20170514165954_Init.designer.cs">
@@ -174,6 +178,7 @@
     <Compile Include="User_Interfaces\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\AsyncHelper.cs" />
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\DialogEnum.cs" />
@@ -782,6 +787,8 @@
     <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
     <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

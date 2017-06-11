@@ -20,6 +20,7 @@ using System.Diagnostics;
 using Windows.Security.Authentication.Web;
 using Windows.Globalization;
 using Windows.UI;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -31,6 +32,8 @@ namespace Source
     ///
     public sealed partial class MainPage : Page
     {
+        public static MainPage Current;
+
         public static int LogInTimes = 0;
 
         private List<MenuItem> MenuItems;
@@ -41,6 +44,10 @@ namespace Source
         public MainPage()
         {
             this.InitializeComponent();
+
+            // This is a static public property that allows downstream pages to get a handle to the MainPage instance
+            // in order to call methods that are in this class.
+            Current = this;
 
             FirstFrame.Navigate(typeof(User_Interfaces.BlankPage1));
 
@@ -267,7 +274,7 @@ namespace Source
         }
 
 
-#region Some methods relating to Facebook
+        #region Some methods relating to Facebook
         // <! Some method related Facebook
         private async void fbLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -354,7 +361,60 @@ namespace Source
                 popupProfile.IsOpen = false;
         }
         //Some method related Facebook !>
-#endregion
-    }
+        #endregion
 
+
+        /// <summary>
+        /// Display a message to the user.
+        /// This method may be called from any thread.
+        /// </summary>
+        /// <param name="strMessage"></param>
+        /// <param name="type"></param>
+        public void NotifyUser(string strMessage, NotifyType type)
+        {
+            // If called from the UI thread, then update immediately.
+            // Otherwise, schedule a task on the UI thread to perform the update.
+            if (Dispatcher.HasThreadAccess)
+            {
+                UpdateStatus(strMessage, type);
+            }
+            else
+            {
+                var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => UpdateStatus(strMessage, type));
+            }
+        }
+
+        private void UpdateStatus(string strMessage, NotifyType type)
+        {
+            switch (type)
+            {
+                case NotifyType.StatusMessage:
+                    StatusBorder.Background = new SolidColorBrush(Windows.UI.Colors.Green);
+                    break;
+                case NotifyType.ErrorMessage:
+                    StatusBorder.Background = new SolidColorBrush(Windows.UI.Colors.Red);
+                    break;
+            }
+
+            StatusBlock.Text = strMessage;
+
+            // Collapse the StatusBlock if it has no text to conserve real estate.
+            StatusBorder.Visibility = (StatusBlock.Text != String.Empty) ? Visibility.Visible : Visibility.Collapsed;
+            if (StatusBlock.Text != String.Empty)
+            {
+                StatusBorder.Visibility = Visibility.Visible;
+                StatusPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                StatusBorder.Visibility = Visibility.Collapsed;
+                //StatusPanel.Visibility = Visibility.Collapsed;
+            }
+        }
+    }
+    public enum NotifyType
+    {
+        StatusMessage,
+        ErrorMessage
+    };
 }
