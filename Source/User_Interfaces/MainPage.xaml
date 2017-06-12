@@ -53,8 +53,11 @@
                             QueryIcon="Find"
                             Margin="0,5,10,0"
                             TextChanged="SearchAutoSuggestBox_TextChanged"
+                            SuggestionChosen="SearchAutoSuggestBox_SuggestionChosen"
                             QuerySubmitted="SearchAutoSuggestBox_QuerySubmitted"
-                            RelativePanel.AlignRightWithPanel="True" />
+                            RelativePanel.AlignRightWithPanel="True"
+                            ItemsSource="{Binding GetListNameProvince}"
+                            />
             <Button Name="fbLogin"
                    Click="fbLogin_Click"
                    Width="35" Height="30"
@@ -144,7 +147,7 @@
                                RelativePanel.Above="StatusPanel"
                                RelativePanel.AlignRightWithPanel="True" 
                                RelativePanel.AlignLeftWithPanel="True"/>
-                    <StackPanel x:Name="StatusPanel" 
+                    <StackPanel x:Name="StatusPanel" Visibility="Collapsed" 
                                 RelativePanel.AlignBottomWithPanel="True" 
                                 RelativePanel.AlignRightWithPanel="True" 
                                 RelativePanel.AlignLeftWithPanel="True">

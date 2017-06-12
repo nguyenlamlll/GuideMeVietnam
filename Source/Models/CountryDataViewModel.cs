@@ -31,6 +31,11 @@ namespace Source.Models
 
     public class CountryDataContext
     {
+        string name = "";
+
+        public CountryDataContext() { name = ""; }
+        public CountryDataContext(string n) { name = n; }
+
         public List<CountryDataViewModel> GetListProvince
         {
             get
@@ -39,9 +44,16 @@ namespace Source.Models
 
                 using (var db = new VietTravelDBContext())
                 {
-                    foreach (var pro in db.PROVINCEs)
+                    if (name == "")
                     {
-                        listProvince.Add(new CountryDataViewModel(pro));
+                        foreach (var pro in db.PROVINCEs)
+                        {
+                            listProvince.Add(new CountryDataViewModel(pro));
+                        }
+                    }
+                    else
+                    {
+                        listProvince.Add(new CountryDataViewModel(db.PROVINCEs.Where(p => p.provinceName == name).FirstOrDefault()));
                     }
                 }
 
@@ -49,6 +61,22 @@ namespace Source.Models
             }
         }
 
+        public List<string> GetListNameProvince
+        {
+            get
+            {
+                List<string> listName = new List<string>();
 
+                using (var db = new VietTravelDBContext())
+                {
+                    foreach (var pro in db.PROVINCEs)
+                    {
+                        listName.Add(pro.provinceName);
+                    }
+                }
+
+                return listName;
+            }
+        }
     }
 }

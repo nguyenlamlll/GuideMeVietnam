@@ -50,11 +50,11 @@
           
         </StackPanel>
 
-        <TextBlock Grid.Column="0"  Grid.ColumnSpan="3"
+        <!--<TextBlock Grid.Column="0"  Grid.ColumnSpan="3"
                    FontSize="36"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Bottom">
             This prototype and the final product are for private uses only.
-        </TextBlock>
+        </TextBlock>-->
     </Grid>
 </Page>
