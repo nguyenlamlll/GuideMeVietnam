@@ -133,7 +133,20 @@ namespace Source
                 case MenuItemCategory.Homepage:
                     {
                         this.EnableSearchBox();
-                        FirstFrame.Navigate(typeof(User_Interfaces.Country));
+                        LoadingIndicator.IsActive = true;
+                        await Task.Delay(1000);
+                        try
+                        {
+                            FirstFrame.Navigate(typeof(User_Interfaces.Country));
+                        }
+                        catch
+                        {
+
+                        }
+                        finally
+                        {
+                            LoadingIndicator.IsActive = false;
+                        }
                         break;
                     }
                 case MenuItemCategory.Map:
